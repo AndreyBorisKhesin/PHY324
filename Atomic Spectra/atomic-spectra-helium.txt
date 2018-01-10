@@ -1,0 +1,8 @@
+# Measurement	Wavelength (nm)	Color
+6.66	706.5	red
+7.06	667.8	red
+8.31	587.6	yellow
+11.09	501.6	green
+11.50	492.2	green
+12.58	471.3	blue
+14.19	447.1	blue

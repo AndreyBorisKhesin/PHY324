@@ -1,0 +1,6 @@
+# lambda_0 = 285.2 +- 0.4 nm
+# Measurement	Color
+red	7.26
+blue-green	11.80
+violet	15.15
+violet	17.75
