@@ -4,6 +4,7 @@
 *.log
 *.lot
 *.fls
+*.pdf
 *.out
 *.toc
 *.fmt
