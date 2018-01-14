@@ -4,13 +4,14 @@
 *.log
 *.lot
 *.fls
-*.pdf
+paper.pdf
 *.out
 *.toc
 *.fmt
 *.fot
 *.cb
 *.cb2
+precompiled_figures/
 
 ## Intermediate documents:
 *.dvi
