@@ -1,0 +1,84 @@
+\input{header}
+\physics
+\begin{document}
+\papertitle{Non-linear Circuit Elements}
+\paperauth{A}{Khesin}{}
+\paperauth{P}{Zavyalova}{}
+\paperdate{January 17, 2018}
+\begin{paperabs}
+	
+	Abstract goes here
+	
+\end{paperabs}
+
+\begin{paper}
+	
+\papersec{Introduction}
+
+	The purpose of this experiment was to study the relationship between voltage and current for a thermistor and an incandescent lamp. Both of these circuit elements are nonlinear; for a thermistor, the resistance is a function of temperature and obeys the relation
+	
+	\papereq{Thermistor}{R = R_0e^{ -\frac{T}{T_0} }}{Serbanescu}
+	\begin{paperwhere}
+		\papervar{T}{absolute temperature}{\kelvin}
+		\papervar{T_0}{constant of device}{\kelvin}
+		\papervar{R_0}{constant of device}{\ohm}
+	\end{paperwhere}
+
+	The relationship was investigated using a multimeter, a thermistor, a thermometer and a thermal flask for maintaining the thermistor at different temperatures, set up as shown:
+	
+	\paperfig{Setup}{\pdf{setup1}}{The experimental setup (thermistor).}
+	
+	The temperature of the thermistor was decreased by adding cold water to the thermal flask. 
+	
+	The tungsten filament in a light bulb follows Ohm's law, 
+	
+	\papereq{Ohm}{ R = \frac{V}{I} }{Serbanescu}
+	\begin{paperwhere}
+		\papervar{R}{resistance}{\ohm}
+		\papervar{V}{potential}{\volt}
+		\papervar{I}{current}{\ampere}
+	\end{paperwhere}
+	
+	However, as the temperature increases, the resistance of the metal increases and above a certain temperature becomes proportional to the absolute temperature. The actual relationship between \( V \) and \( I \) is investigated in this experiment by fitting obtained measurements of current and potential to 
+	
+	\papereq{bulb-model}{ V = k I^a }{Serbanescu}
+	\begin{paperwhere}
+		\papervar{V}{potential}{\volt}
+		\papervar{I}{current}{\ampere}
+		\papervar{k}{constant}{}
+		\papervar{a}{costant}{}
+	\end{paperwhere}
+
+	Potential and current are measured using two multimeters, a power supply, a tungsten filament light bulb, and a switch arranged as follows:
+	
+	\paperfig{Setup}{\pdf{setup2}}{The experimental setup (light bulb).}
+	
+\papersec{Observations}
+
+	\paperfig{Hydrogen}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}
+			\paperoline\papertableindexheader&\textsc{Scale}&\multirow{2}{*}{\textsc{Colour}}\\
+			\papertablecheaderunit{.02}{\hspace{-0.5ex}}&\\\paperiline
+			\papertableindex\papertablecval{7.26}\papertablecval{Red}\\\paperiline
+			\papertableindex\papertablecval{11.80}\papertablecval{Blue-Green}\\\paperiline
+			\papertableindex\papertablecval{15.15}\papertablecval{Violet}\\\paperiline
+			\papertableindex\papertablecval{17.75}\papertablecval{Violet}\\\paperoline
+		\end{papertable}\vspace{-1.5em}}
+	{The scale readings and colours of the spectral lines of hydrogen.}\vspace{1em}
+
+\papersec{Analysis}
+
+	Analysis
+
+\papersec{Conclusion}
+
+	Conclusion
+
+\papersec{Sources}
+
+	Sources
+
+\papersource{}
+
+\end{paper}
+
+\end{document}
