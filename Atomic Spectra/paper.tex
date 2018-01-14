@@ -6,35 +6,66 @@
 \paperauth{P}{Zavyalova}{Data Analyst}
 \paperdate{January 15, 2018}
 \begin{paperabs}
-Abstract goes here
+TODO Abstract
 \end{paperabs}
 
 \begin{paper}
 \papersec{Introduction}
 
-In this exercise, a prism spectrometer is calibrated and used to determine the Rydberg constant \( R_H \). Further, an ``unknown'' gas is identified by measuring its spectral lines and comparing them with the obtained calibration curve. 
+The purpose of this experiment was to use a prism spectrometer to identify
+unknown gases based on their atomic spectra.
+Furthermore, the Rydberg constant ($R_H$) was determined by examining the
+spectral lines of hydrogen.
+The apparatus consisted of a spectrometer, a sodium lamp, a tube of hydrogen
+gas, a tube of helium gas, and two tubes of unknown compounds marked ``Unknown
+\#7'' and ``Unknown \#9''.
 
-\papersec{Method}
+The spectrometer was calibrated by aligning the eyepiece with the lines produced
+by the sodium lamp and the Hartmann relation method was used to determine the
+relation between the observed wavelength and the scale reading on the
+spectrometer.
 
-Method goes here
+By examining the spectral lines of hydrogen, the Rydberg constant was
+determined with the following formula.
 
-\papersec{Data}
+\papereq{Rydberg}{\frac1\lambda=R_H\pars{\frac14-\frac1{n^2}}}{Serbanescu}
+\begin{paperwhere}
+\papervar{\lambda}{observed wavelength}{\meter}
+\papervar{R_H}{Rydberg constant}{\per\meter}
+\papervar{n}{index of spectral line}{}
+\end{paperwhere}
 
-(Helium)
+To determine the relation between the scale reading of the spectrometer and the
+observed wavelength, the Hartmann relation was used.
 
-\begin{tabular}{|l|c|r|}
-	\hline
-	Vernier & Wavelength (nm) & Color \\ \hline
-	6.66 & 706.5 & red \\ \hline
-	7.06 & 667.8 & red \\ \hline
-	8.31 & 587.6 & yellow \\ \hline
-	11.09 & 501.6 & green \\ \hline
-	11.50 & 492.2 & green \\ \hline
-	12.58 & 471.3 & blue \\ \hline
-	14.19 & 447.1 & blue \\ \hline
-\end{tabular}
+\papereq{Hartmann}{y=\frac{m}{\lambda-\lambda_0}+b}{Serbanescu}
+\begin{paperwhere}
+\papervar{y}{scale reading}{}
+\papervar{m}{slope of fit}{\meter}
+\papervar{\lambda}{observed wavelength}{\meter}
+\papervar{\lambda_0}{fundamental wavelength of spectrometer}{\meter}
+\papervar{b}{constant of fit}{}
+\end{paperwhere}
 
-\noindent\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
+For the spectrometer used in the experiment, the value of $\lambda_0$ was
+provided as $(285.2\pm.4)\si{\nano\meter}$.
+
+The experiment was setup as shown.
+\paperfig{Setup}{\pdf{setup}}{The experimental setup.
+The spectrometer (left) is pointing at a tube containing ``Unknown \#7'' (right).}
+\papersec{Observations}
+
+The vernier scale on the spectrometer had a reading error of
+$\pm.02\si{\nano\meter}$.
+The uncertainties in the wavelengths for the spectral lines of helium were
+deemed too small to consider.
+
+The vernier scale readings were recorded for helium, hydrogen, ``Unknown \#7'',
+and ``Unknown \#9''.
+Additionally, the colours of the observed lines and matched wavelengths for the
+spectral lines of helium were recorded.
+
+\paperfig{Helium}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
 \paperoline\papertableindexheader&\textsc{Scale}&\textsc{Wavelength}&\multirow{2}{*}{\textsc{Colour}}\\
 \papertablecheaderunit{.02}{\hspace{-0.5ex}}\papertablecheadersymbol{\lambda~(\si{\nano\meter})}&\\\paperiline
 \papertableindex\papertablecval{6.66}\papertablecval{706.5}\papertablecval{Red}\\\paperiline
@@ -44,47 +75,38 @@ Method goes here
 \papertableindex\papertablecval{11.50}\papertablecval{492.2}\papertablecval{Green}\\\paperiline
 \papertableindex\papertablecval{12.58}\papertablecval{471.3}\papertablecval{Blue}\\\paperiline
 \papertableindex\papertablecval{14.19}\papertablecval{447.1}\papertablecval{Blue}\\\paperoline
-\end{papertable}
+\end{papertable}\vspace{-1.5em}}
+{The scale readings, matched wavelengths, and colours of the spectral lines of helium.}\vspace{1em}
 
-(Hydrogen)
-
-\begin{tabular}{|l|r|}
-	\hline
-	Vernier & Color \\ \hline
-	7.26 & red \\ \hline
-	11.80 & blue-green \\ \hline
-	15.15 & violet \\ \hline
-	17.75 & violet \\ \hline
-\end{tabular}
-
-\noindent\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}
+\paperfig{Hydrogen}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}
 \paperoline\papertableindexheader&\textsc{Scale}&\multirow{2}{*}{\textsc{Colour}}\\
 \papertablecheaderunit{.02}{\hspace{-0.5ex}}&\\\paperiline
 \papertableindex\papertablecval{7.26}\papertablecval{Red}\\\paperiline
 \papertableindex\papertablecval{11.80}\papertablecval{Blue-Green}\\\paperiline
 \papertableindex\papertablecval{15.15}\papertablecval{Violet}\\\paperiline
 \papertableindex\papertablecval{17.75}\papertablecval{Violet}\\\paperoline
-\end{papertable}
+\end{papertable}\vspace{-1.5em}}
+{The scale readings and colours of the spectral lines of hydrogen.}\vspace{1em}
 
-(Unknown \# 7)
-
-\begin{tabular}{|l|r|}
-	\hline
-	Vernier & Color \\ \hline
-	8.44 & orange \\ \hline
-	9.18 & green \\ \hline
-	13.89 & violet \\ \hline
-	15.38 & violet \\ \hline
-\end{tabular}
-
-\noindent\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}
+\paperfig{UnknownSeven}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}
 \paperoline\papertableindexheader&\textsc{Scale}&\multirow{2}{*}{\textsc{Colour}}\\
 \papertablecheaderunit{.02}{\hspace{-0.5ex}}&\\\paperiline
 \papertableindex\papertablecval{8.44}\papertablecval{Orange}\\\paperiline
 \papertableindex\papertablecval{9.18}\papertablecval{Green}\\\paperiline
 \papertableindex\papertablecval{13.89}\papertablecval{Violet}\\\paperiline
 \papertableindex\papertablecval{15.38}\papertablecval{Violet}\\\paperoline
-\end{papertable}
+\end{papertable}\vspace{-1.5em}}
+{The scale readings and colours of the spectral lines of ``Unknown \#7''.}\vspace{1em}
+
+\paperfig{UnknownNine}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}
+\paperoline\papertableindexheader&\textsc{Scale}&\multirow{2}{*}{\textsc{Colour}}\\
+\papertablecheaderunit{.02}{\hspace{-0.5ex}}&\\\paperiline
+\papertableindex\papertablecval{TODO}\papertablecval{Red}\\\paperiline
+\papertableindex\papertablecval{TODO}\papertablecval{Orange}\\\paperiline
+\papertableindex\papertablecval{TODO}\papertablecval{Yellow}\\\paperiline
+\papertableindex\papertablecval{TODO}\papertablecval{Green}\\\paperoline
+\end{papertable}\vspace{-1.5em}}
+{The scale readings and colours of the spectral lines of ``Unknown \#9''.}
 
 \papersec{Analysis}
 
@@ -93,5 +115,9 @@ Analysis goes here
 \papersec{Conclusion}
 
 Conclusion goes here
+
+\papersec{Sources}
+
+\papersource{Serbanescu, R., Measuring atomic spectra, 2014}
 \end{paper}
 \end{document}
