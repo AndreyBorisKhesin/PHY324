@@ -110,7 +110,48 @@ spectral lines of helium were recorded.
 
 \papersec{Analysis}
 
-Analysis goes here
+We start by finding the relationship between the observed wavelength and the
+scale reading on the spectrometer.
+We subtract $\lambda_0$ from all of the values in the wavelength column of
+\figHelium and then take the reciprocals to get the values of our independent
+variable.
+The scale column forms the values for the dependent variable.
+Applying the fit yields a slope of $(2.00\pm.02)\si{\micro\meter}$ and a
+y-intercept of $(1.83\pm.09)$.
+The $R^2$ value for the fit is 0.999489.
+TODO ADD CHI SQUARED AND RESIDUALS\\
+
+\paperfig{ScaleFit}{\begin{tikzpicture}[scale=0.95]
+\begin{axis}[width=\linewidth,
+tick label style={font=\fontsize{10pt}{1em}},
+xlabel={\fontsize{10pt}{1em}\selectfont $\frac{1}{\lambda-\lambda_0}$ ($10^6$ $\si{\per\meter})\rightarrow$},
+ylabel={\fontsize{10pt}{1em}\selectfont $y\rightarrow$},
+\paperaxis{Scale Reading vs. Modified Wavelength}{y}{x}{2}{5}{8}{15}{2}{2}]
+\papergraphoutline{2}{5}{8}{15};
+\addplot [color=black,only marks,mark=o,mark size=1.5,
+error bars/.cd,
+y dir=both,y explicit,
+x dir=both,x explicit
+] coordinates {
+(2.374, 6.66) +- (0.002,0.02)
+(2.614, 7.06) +- (0.003,0.02)
+(3.307, 8.31) +- (0.004,0.02)
+(4.621, 11.09) +- (0.009,0.02)
+(4.831, 11.50) +- (0.009,0.02)
+(5.37, 12.58) +- (0.01,0.02)
+(6.18, 14.19) +- (0.02,0.02)
+};
+\addplot[no marks,
+samples=250,
+domain=2:8]
+{2*x+1.83};
+\end{axis}
+\end{tikzpicture}}
+{The scale readings on the spectrometer plotted against the modified
+wavelengths with the line of best fit.
+The line has a function of $(2.00\pm.02)\text{E-6}x+(1.83\pm.09)$ and an
+\smash{$R^2$} value of 0.999489.
+Error bars were included but were too small to be visible.}
 
 \papersec{Conclusion}
 
