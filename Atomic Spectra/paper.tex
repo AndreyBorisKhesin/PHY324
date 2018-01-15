@@ -101,10 +101,10 @@ spectral lines of helium were recorded.
 \paperfig{UnknownNine}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}
 \paperoline\papertableindexheader&\textsc{Scale}&\multirow{2}{*}{\textsc{Colour}}\\
 \papertablecheaderunit{.02}{\hspace{-0.5ex}}&\\\paperiline
-\papertableindex\papertablecval{TODO}\papertablecval{Red}\\\paperiline
-\papertableindex\papertablecval{TODO}\papertablecval{Orange}\\\paperiline
-\papertableindex\papertablecval{TODO}\papertablecval{Yellow}\\\paperiline
-\papertableindex\papertablecval{TODO}\papertablecval{Green}\\\paperoline
+\papertableindex\papertablecval{6.61}\papertablecval{Red}\\\paperiline
+\papertableindex\papertablecval{8.05}\papertablecval{Orange}\\\paperiline
+\papertableindex\papertablecval{8.50}\papertablecval{Yellow}\\\paperiline
+\papertableindex\papertablecval{9.65}\papertablecval{Green}\\\paperoline
 \end{papertable}\vspace{-1.5em}}
 {The scale readings and colours of the spectral lines of ``Unknown \#9''.}
 
@@ -143,7 +143,7 @@ The reduced $ \chi^2 $ obtained is $ 12.5827907379 $ with residuals visualized b
 \paperfig{ScaleFit}{\begin{tikzpicture}[scale=0.95]
 \begin{axis}[width=\linewidth,
 tick label style={font=\fontsize{10pt}{1em}},
-xlabel={\fontsize{10pt}{1em}\selectfont $\frac{1}{\lambda-\lambda_0}$ ($10^6$ $\si{\per\meter})\rightarrow$},
+xlabel={\fontsize{10pt}{1em}\selectfont $\frac{1}{\lambda-\lambda_0}$ $(\SI{E6}{\per\meter})\rightarrow$},
 ylabel={\fontsize{10pt}{1em}\selectfont $y\rightarrow$},
 \paperaxis{Scale Reading vs. Modified Wavelength}{y}{x}{2}{5}{8}{15}{2}{2}]
 \papergraphoutline{2}{5}{8}{15};
@@ -168,7 +168,7 @@ domain=2:8]
 \end{tikzpicture}}
 {The scale readings on the spectrometer plotted against the modified
 wavelengths with the line of best fit.
-The line has a function of $(2.00\pm.02)\text{E-6}x+(1.83\pm.09)$ and an
+The line has a function of $(2.00\pm.02)\x\SI{E-6}{}x+(1.83\pm.09)$ and an
 \smash{$R^2$} value of 0.999489.
 Error bars were included but were too small to be visible.}
 
@@ -181,7 +181,31 @@ wavelengths and the line indices into \eqRydberg, four approximations
 for the Rydberg constant were obtained.
 They were averaged to get the final value for $R_H$, which was
 $(1.097\pm.003)\x\SI{E7}{\per\meter}$, which was well within the range of the
-experimental error from the accepted $\SI{1.09737316E7}{\per\meter}$.
+experimental error from the accepted value of $\SI{1.09737316E7}{\per\meter}$.
+
+The reversed formula was used to compute the wavelengths of the observed
+spectral lines for the two unknown gases.
+The following results were obtained for the two unknown gases.
+
+\paperfig{UnknownSevenResult}{\begin{papertable}{|[outer]I|[inner]U|[inner]C|[outer]}
+\paperoline\papertableindexheader&\multicolumn{2}{c|[inner]}{\textsc{Wavelength}}&\multirow{2}{*}{\textsc{Colour}}\\
+\papertableuheaderunit{\si{\nano\meter}}&\\\paperiline
+\papertableindex\papertableuval{TODO}{TODO}\papertablecval{Orange}\\\paperiline
+\papertableindex\papertableuval{TODO}{TODO}\papertablecval{Green}\\\paperiline
+\papertableindex\papertableuval{TODO}{TODO}\papertablecval{Violet}\\\paperiline
+\papertableindex\papertableuval{TODO}{TODO}\papertablecval{Violet}\\\paperoline
+\end{papertable}\vspace{-1.5em}}
+{The wavelengths and colours of the spectral lines of ``Unknown \#7''.}\vspace{1em}
+
+\paperfig{UnknownNineResult}{\begin{papertable}{|[outer]I|[inner]U|[inner]C|[outer]}
+\paperoline\papertableindexheader&\multicolumn{2}{c|[inner]}{\textsc{Wavelength}}&\multirow{2}{*}{\textsc{Colour}}\\
+\papertableuheaderunit{\si{\nano\meter}}&\\\paperiline
+\papertableindex\papertableuval{TODO}{TODO}\papertablecval{Red}\\\paperiline
+\papertableindex\papertableuval{TODO}{TODO}\papertablecval{Orange}\\\paperiline
+\papertableindex\papertableuval{TODO}{TODO}\papertablecval{Yellow}\\\paperiline
+\papertableindex\papertableuval{TODO}{TODO}\papertablecval{Green}\\\paperoline
+\end{papertable}\vspace{-1.5em}}
+{The wavelengths and colours of the spectral lines of ``Unknown \#9''.}
 
 \papersec{Conclusion}
 
