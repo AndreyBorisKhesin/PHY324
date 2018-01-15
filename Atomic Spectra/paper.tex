@@ -6,18 +6,22 @@
 \paperauth{P}{Zavyalova}{Data Analyst}
 \paperdate{January 15, 2018}
 \begin{paperabs}
-In this experiment a spectrometer was used to study the spectra of various lines, determine the Rydberg constant, and identify several unknown substances.
-The Rydberg constant was computed to be $(1.097\pm.003)\x\SI{E7}{\per\meter}$.
-The gases ``Unknown \#7'' and ``Unknown \#9'' were identified to be krypton and neon respectively. a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+In this experiment a spectrometer was used to study the spectra of various gases, determine the Rydberg constant, and identify several unknown substances.
+The spectrometer was calibrated by performing a least-squares data fitting with the Hartmann relation as the model function. Upon calibrating the device, further measurements of the emission spectra of hydrogen and two unknown substances could be perfomed. 
+The Rydberg constant was computed to be $(1.097\pm.003)\x\SI{E7}{\per\meter}$, with uncertainty arising from the reading of the vernier scale and the alignment of the crosshairs on the emission lines. 
+The gases ``Unknown \#7'' and ``Unknown \#9'' were identified to be krypton and neon respectively. 
+% a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
 \end{paperabs}
 
 \begin{paper}
 \papersec{Introduction}
 
-a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+As an excited atom makes a transition to a lower state, a photon of discrete energy equal to the energy difference between the states is released. The collection of all possible transitions and corresponding emission lines makes up an atom's \textit{atomic spectrum}.
+
+% a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
 
 The purpose of this experiment was to use a prism spectrometer to identify
-unknown gases based on their atomic spectra.
+unknown gases based on their atomic spectra. %emission spectra. 
 Furthermore, the Rydberg constant ($R_H$) was determined by examining the
 spectral lines of hydrogen.
 The apparatus consisted of a spectrometer, a sodium lamp, a tube of hydrogen
@@ -122,7 +126,7 @@ The scale column formed the values for the dependent variable.
 Applying the fit yielded a slope of $(2.00\pm.02)\x\SI{E-6}{\meter}$ and a
 y-intercept of $(1.83\pm.09)$.
 The $R^2$ value for the fit is 0.999489.
-The reduced $ \chi^2 $ obtained is $12.5828$ with residuals visualized below.
+The reduced $ \chi^2 $ obtained is $12.5828$, mostly due to two outliers, with residuals visualized below.
 
 \paperfig{ScaleFit}{\begin{tikzpicture}[scale=0.95]
 \begin{axis}[width=\linewidth,
@@ -149,7 +153,7 @@ samples=250,
 domain=2:8]
 {2*x+1.83};
 \end{axis}
-\end{tikzpicture}}
+\end{tikzpicture}\vspace{-1em}}
 {The scale readings on the spectrometer plotted against the modified
 wavelengths with the line of best fit.
 The line has a function of $(2.00\pm.02)\x\SI{E-6}{}x+(1.83\pm.09)$ and an
