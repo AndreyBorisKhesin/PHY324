@@ -38,6 +38,9 @@ print "Reduced chi squared:", chisq / ddof
 
 print "Parameters:", popt
 
+print "Wavelengths: \n", wavelength
+print "Residuals: \n", r
+
 # Generate data for plotting (using fit parameters)
 x_fit = np.linspace(np.amin(wavelength), np.amax(wavelength), 100)
 y_fit = f(x_fit, *popt)

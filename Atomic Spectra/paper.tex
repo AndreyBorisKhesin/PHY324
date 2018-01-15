@@ -120,7 +120,25 @@ The scale column formed the values for the dependent variable.
 Applying the fit yielded a slope of $(2.00\pm.02)\x\SI{E-6}{\meter}$ and a
 y-intercept of $(1.83\pm.09)$.
 The $R^2$ value for the fit s 0.999489.
-TODO ADD CHI SQUARED AND RESIDUALS\\
+The reduced $ \chi^2 $ obtained is $ 12.5827907379 $ with residuals visualized below.
+
+\paperfig{Residuals}{\begin{tikzpicture}[scale = 0.95]
+	\begin{axis}
+		[width=\linewidth,
+		tick label style={font=\fontsize{10pt}{1em}},
+		xlabel={\fontsize{10pt}{1em}\selectfont $\lambda$ (\si{\nm}) $\rightarrow$},
+		ylabel={\fontsize{10pt}{1em}\selectfont $ y - y_{fit} \rightarrow$},
+		\paperaxis{Residuals vs. Wavelength}{y}{x}{450}{-0.15}{750}{0.15}{0}{2}]
+		\papergraphoutline{450}{0}{750}{0};
+		\addplot[color = black, only marks, mark = o, mark size = 1.5, error bars/.cd,
+		y dir = both, y explicit, x dir = both, x explicit] 
+		coordinates {
+			(706.5, 0.0836354) (667.8, 0.00358039) (587.6, -0.13242233)
+			(501.6, 0.01987709) (492.2, 0.01029522) (471.3, 0.00550431)
+			(447.1, 0.00952993)
+		};
+	\end{axis}
+\end{tikzpicture}}{WHAT TO ADD HERE?}
 
 \paperfig{ScaleFit}{\begin{tikzpicture}[scale=0.95]
 \begin{axis}[width=\linewidth,
