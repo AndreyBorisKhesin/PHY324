@@ -27,13 +27,13 @@ scale, wavelength = np.loadtxt(path_to_file, unpack = True, usecols = (0, 1))
 scale_unc = np.empty(scale.size)
 scale_unc.fill(unc)
 # Degrees of freedom
-ddof = np.size(wavelength - 2)
+ddof = np.size(wavelength) - 2
 
 # Fit data
 popt, pcov = curve_fit(f, wavelength, scale, sigma = scale_unc)
 # Calculate chi squared + residuals
 r = scale - f(wavelength, *popt)
-chisq = np.sum(r ** 2 / scale_unc)
+chisq = np.sum((r / scale_unc) ** 2)
 print "Reduced chi squared:", chisq / ddof
 
 print "Parameters:", popt
