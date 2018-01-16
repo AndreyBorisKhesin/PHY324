@@ -15,7 +15,7 @@
 	
 \papersec{Introduction}
 
-	Circuit components may be grouped into linear and nonlinear. In linear components, such as resistors, capacitors, and some inductors, the signal obeys the principle of superposition; such components process electronic signals without distorting them. Nonlinear circuit components do not have a linear relationship between current and potential, and thus may distort electrical signals. 
+	Circuit components may be classified based on how they process signals as either linear or nonlinear. In linear components, such as resistors, capacitors, and some inductors, the signal obeys the principle of superposition; such components process electrical signals without distorting them. Nonlinear circuit elements do not have a linear relationship between current and potential, and thus may distort electrical signals. 
 	
 	The purpose of this experiment was to study the relationship between voltage and current for a thermistor and an incandescent lamp. Both of these circuit elements are nonlinear; for a thermistor, the resistance is a function of temperature and obeys the relation
 	
@@ -26,20 +26,13 @@
 		\papervar{R_0}{constant of device}{\ohm}
 	\end{paperwhere}
 
-	The relationship was investigated using a multimeter, a thermistor, a thermometer and a thermal flask for maintaining the thermistor at different temperatures, set up as shown below. The temperature of the thermistor was decreased by adding cold water to the thermal flask. 
+	As evident from the above expression, the thermistor's resistance decreases with increasing temperature. This is unlike the resistance of metals (such as the filament of an incandescent light bulb examined further in the experiment), which exhibit the opposite relationship.
+
+	The relation in (1) was investigated using a multimeter, a thermistor, a thermometer and a thermal flask for maintaining the thermistor at different temperatures, set up as shown below. The temperature of the thermistor was decreased by adding cold water to the thermal flask and stirring to ensure uniform temperature in the flask. 
 	
 	\paperfig{Setup}{\pdf{setup1}}{The experimental setup (thermistor).}
 	
-	The tungsten filament in a light bulb follows Ohm's law, 
-	
-	\papereq{Ohm}{ R = \frac{V}{I} }{Serbanescu}
-	\begin{paperwhere}
-		\papervar{R}{resistance}{\ohm}
-		\papervar{V}{potential}{\volt}
-		\papervar{I}{current}{\ampere}
-	\end{paperwhere}
-	
-	However, as the temperature increases, the resistance of the metal increases and above a certain temperature becomes proportional to the absolute temperature. The actual relationship between \( V \) and \( I \) is investigated in this experiment by fitting obtained measurements of current and potential to 
+	In general, the tungsten filament in an incandescent light bulb obeys Ohm's law. As the temperature increases, however, the resistance of the metal increases and above a certain temperature becomes proportional to the absolute temperature. The actual relationship between \( V \) and \( I \) is investigated in this experiment by fitting obtained measurements of current and potential to 
 	
 	\papereq{bulb-model}{ V = k I^a }{Serbanescu}
 	\begin{paperwhere}
@@ -49,13 +42,13 @@
 		\papervar{a}{costant}{}
 	\end{paperwhere}
 
-	Potential and current were measured using two multimeters, with one measuring potential and the other current, a power supply, a tungsten filament light bulb, and a switch arranged as follows:
+	Potential and current were measured using two multimeters, with one measuring potential and the other current, a power supply, a tungsten filament light bulb, and a switch arranged as follows. 
 	
 	\paperfig{Setup}{\pdf{setup2}}{The experimental setup (light bulb).}
 	
 \papersec{Observations}
 
-	The resistance of the thermistor at various temperatures was obtained and recorded. The uncertainty in resistance is taken to be the last digit increment in the least significant digit displayed.
+	The resistance of the thermistor at various temperatures was measured and recorded. The uncertainty, as specified by the manufacturer, was $ \pm (0.2\% + 1) $ for resistances in the $ (2 \si{\kilo\ohm}, 200 \si{\kilo\ohm}) $ range. The uncertainty in temperature measurements was taken to be $ \pm 0.5 \si{\kelvin} $.
 	
 	\paperfig{Thermistor}{\begin{papertable}{|[outer]I|[inner]C|[inner]U|[outer]}
 			\paperoline\papertableindexheader&\textsc{Temperature}&\multicolumn{2}{c|[outer]}{\textsc{Resistance}}\\
@@ -91,9 +84,9 @@
 			\papertableindex\papertablecval{283.0}\papertableuval{104.7}{.3}\\\paperiline
 			\papertableindex\papertablecval{278.0}\papertableuval{~126.2}{\parbox{\widthof{126.2~}}{.4}}\\\paperoline
 		\end{papertable}\vspace{-1.5em}}
-	{Resistance of thermistor at the given temperatures.}\vspace{1em}
-
-	Further, current and potential for a tungsten filament light bulb were measured and recorded. The uncertainty is again taken to be the last digit increment in the least significant digit displayed. 
+	{Resistance of thermistor at the given temperatures. As expected, resistance decreased with increasing temperature.}\vspace{1em}
+	
+	Further, current and potential for a tungsten filament light bulb were measured and recorded. As specified by the manufacturer, the uncertainty in potential measurements was taken to be \( \pm (0.25\% + 1) \); current measurements carried an uncertainty of \( \pm (1\% + 3) \).
 
 	\paperfig{Light bulb}{\begin{papertable}{|[outer]I|[inner]U|[inner]U|[outer]}
 			\paperoline\papertableindexheader&\multicolumn{2}{c|[inner]}{\textsc{Potential}}&\multicolumn{2}{c|[outer]}{\textsc{Current}}\\
@@ -125,12 +118,20 @@
 			\papertableindex\papertableuval{24.0}{.2}\papertableuval{36.4}{.4}\\\paperiline
 			\papertableindex\papertableuval{25.1}{.2}\papertableuval{37.3}{.4}\\\paperoline
 			\end{papertable}\vspace{-1.5em}}
-	{Potential and current through the light bulb.}\vspace{1em}
+	{Potential and current through the incandescent bulb. Evidently, increased current through the filament led to an increase in potential.} \vspace{1em}
 
 \papersec{Analysis}
 
-	Analysis
+	Using the expression in (1) as the model function, the relationship between the temperature and resistance of a thermistor was calculated. Least squares fitting of all data points yielded \( R_0 = (1.0 \pm 0.1) \times 10^{13} \si{\ohm} \) and \( T_0 = (24.7 \pm 0.3) \si{\kelvin} \) as the fit parameters, with a reduced \( \chi ^ 2 \) value of \( 252.1710 \). The data, model, and residuals for this fit are shown below.
+	
+	\paperfig{Data}{\pdf{Thermistor}}{Resistance of the thermistor plotted against the temperature in the thermal flask, with least squares fit included in blue. Error bars on both temperature and resistance were too small to be visible. The plot of residuals indicated that the model is a better fit for greater temperatures.} \vspace{1em}
 
+	A visualization of residuals clearly indicated that the data can be better modelled for greater temperatures. Indeed, least squares fitting performed without the data points corresponding to three lowest temperatures yielded a reduced \( \chi ^ 2 \) value of \( 181.5543 \). Removing the six lower-temperature points led to a model with reduced \( \chi ^ 2 \) value of \( 130.1026 \). 
+	
+	Further, a least squares fitting was performed on the data obtained for the incandescent light bulb, with the expression in (2) used as a model function. The formula was found to hold; the resulting parameters were \( k =  (0.067 \pm 0.002) \si{\volt\per\ampere} \) and \( a = 1.63 \pm 0.01 \). The value of reduced \( \chi ^ 2 \) obtained was \( 176.8952 \). The data, model, and residuals for this fit are shown below.
+
+	\paperfig{Data}{\pdf{Bulb}}{Potential of the incandescent light bulb plotted against the current. Least squares fit was indicated in blue; residuals visualized below. Error bars on the data points were too small to be visible.} \vspace{1em}
+	
 \papersec{Conclusion}
 
 	Conclusion
