@@ -1,7 +1,7 @@
 \input{header}
 \physics
 \begin{document}
-\papertitle{Non-linear Circuit Elements}
+\papertitle{Nonlinear Circuit Elements}
 \paperauth{A}{Khesin}{1002442029}
 \paperauth{P}{Zavyalova}{1002345036}
 \paperdate{January 17, 2018}
@@ -9,7 +9,7 @@
 	
 	% a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
 	
-	The relationships between current, potential, resistance, and temperature are of particular interest in nonlinear circuit components as they do not follow the principle of superposition when processing and amplifying signals. In this experiment, these physical quantities were investigated for a thermistor and an incandescent light bulb. For the thermistor, the resistance was found to decrease exponentially as temperature increased. The relationship between potential and current of the light bulb was determined to obey a power law. Further, the power of temperature in Stefan-Boltzmann law was approximated to be \( 4.17 \pm 0.05 \). 
+	The relationships between current, potential, resistance, and temperature are of particular interest in nonlinear circuit components. In this experiment, these physical quantities were investigated for a thermistor and an incandescent light bulb. For the thermistor, resistance was found to decrease exponentially as temperature increased, following the relation \( R = \pars{1.0 \pm 0.1} \times 10^{13}e^{-T/\pars{24.7 \pm 0.3}} \). The relationship between potential and current of the light bulb was determined to obey a power law, \( V = \pars{0.067 \pm 0.002} I^{\pars{1.63 \pm 0.01}} \). Further, the exponential relational constant in Stefan-Boltzmann law was approximated to be \( 4.17 \pm 0.05 \). 
 	
 \end{paperabs}
 
@@ -28,9 +28,9 @@
 		\papervar{R_0}{maximum resistance (device specific)}{\ohm}
 	\end{paperwhere}
 
-	As evident from the above expression, the thermistor's resistance decreases with increasing temperature. This is unlike the resistance of metals (such as the filament of an incandescent light bulb examined further in the experiment), which exhibit the opposite relationship.
+	As evident from the above expression, the thermistor's resistance decreases with increasing temperature. This is unlike resistance of metals (such as the filament of a light bulb examined further in the experiment), which exhibit the opposite relationship.
 
-	The relation in (1) was investigated using a multimeter, a thermistor, a thermometer and a thermal flask for maintaining the thermistor at different temperatures, set up as shown below. The temperature of the thermistor was decreased by adding cold water to the thermal flask and stirring to ensure uniform temperature in the flask. \vspace{-0.8em}
+	The relation in (1) was investigated using a multimeter, a thermistor, a thermometer and a thermal flask for maintaining the thermistor at different temperatures, set up as shown below. Temperature of the thermistor was decreased by adding cold water to the thermal flask and stirring to ensure uniform temperature in the flask. \vspace{-0.8em}
 	
 	\paperfig{setup1}{\pdf{setup1} \vspace{-2.5em} }{The experimental setup used to measure resistance of a thermistor at varying temperatures. \vspace{0.5em}}
 	
@@ -66,17 +66,17 @@
 		\papervar{A}{surface area of filament}{\si{\meter\squared}}
 	\end{paperwhere}
 	
-	Further, using  \( R = k'T \), (with \( k' \) being a constant of proportionality) it was shown that
+	By using the fact that resistance of a pure metal is directly proportional to its temperature (\( R = k'T \), with \( k' \) being a constant of proportionality) it was shown that
 	
 	\papereq{temperature}{ T = \frac{1}{k'} \frac{V}{I} =  \frac{k}{k'} I^{(a-1)}.}{}
 	
-	Finally, combining the above expressions and setting constants to be equal, the following relationship for \( n \) in terms of \( a \) was obtained.
+	Finally, combining the above expressions and setting constants to be equal, the following relationship for \( n \) in terms of \( a \) was obtained. \vspace{-0.5em}
 	
 	\papereq{temperature}{ n = \frac{a+1}{a-1} }{}
 		
 \papersec{Observations}
 
-	The resistance of the thermistor at various temperatures was measured and recorded. The uncertainty, as specified by the manufacturer, was $ \pm (0.2\% + 1 $ LSD) for resistances in the $ (2 \si{\kilo\ohm}, 200 \si{\kilo\ohm}) $ range. The reading error of the thermometer was taken to be $ \pm 0.5 \si{\kelvin} $. \vspace{0.5em}
+	The resistance of the thermistor at various temperatures was measured. The uncertainty, as specified by the manufacturer, was $ \pm (0.2\% + 1 $ LSD) for resistances in the $ (2 \si{\kilo\ohm}, 200 \si{\kilo\ohm}) $ range. The reading error of the thermometer was taken to be $ \pm 0.5 \si{\kelvin} $. \vspace{0.5em}
 	
 	\paperfig{thermistor}{\begin{papertable}{|[outer]I|[inner]C|[inner]U|[outer]}
 			\paperoline\papertableindexheader&\textsc{Temperature}&\multicolumn{2}{c|[outer]}{\textsc{Resistance}}\\
@@ -112,7 +112,7 @@
 			\papertableindex\papertablecval{283.0}\papertableuval{104.7}{.3}\\\paperiline
 			\papertableindex\papertablecval{278.0}\papertableuval{~126.2}{\parbox{\widthof{126.2~}}{.4}}\\\paperoline
 		\end{papertable}\vspace{-1.5em}}
-	{Resistance of thermistor at the given temperatures. }\vspace{0.5em}
+	{Thermistor's resistance at given temperatures. }\vspace{0.5em}
 	
 	Further, current and potential for a tungsten filament light bulb were measured and recorded. As specified by the manufacturer, the uncertainty in potential measurements was taken to be \( \pm (0.25\% + 1 \) LSD); current measurements carried an uncertainty of \( \pm (1\% + 3 \) LSD). \vspace{0.5em}
 
@@ -146,27 +146,28 @@
 			\papertableindex\papertableuval{24.0}{.2}\papertableuval{36.4}{.4}\\\paperiline
 			\papertableindex\papertableuval{25.1}{.2}\papertableuval{37.3}{.4}\\\paperoline
 			\end{papertable}\vspace{-1.5em}}
-	{Potential and current through the incandescent bulb.} %  \vspace{1em}
+	{Potential and current through the light bulb.} 
 
-\papersec{Analysis}
+\papersec{Analysis} 
 	
 	Upon propagating uncertainties in the obtained data using the method of quadratures, the relationship between the temperature and resistance of a thermistor was calculated using the expression in (1) as the model function. Least squares fitting of all data points yielded \( R_0 = (1.0 \pm 0.1) \times 10^{13} \si{\ohm} \) and \( T_0 = (24.7 \pm 0.3) \si{\kelvin} \) as the fit parameters, with a reduced \( \chi ^ 2 \) value of \( 252.1710 \). The data, model, and residuals for this fit are shown below.
 	
-	\paperfig{thermistor-plot}{\pdf{Thermistor}}{Resistance and residuals plotted against the temperature in the thermal flask, with least squares fit included in blue. Error bars on both temperature and resistance were too small to be visible.} \vspace{1em}
-
-	A visualization of residuals clearly indicated that the data can be better modelled for greater temperatures. Indeed, least squares fitting performed without the data points corresponding to three lowest temperatures yielded a reduced \( \chi ^ 2 \) value of \( 181.5543 \). Removing more lower-temperature data points further improved reduced \( \chi ^ 2 \). % Removing the six lower-temperature points led to a model with reduced \( \chi ^ 2 \) value of \( 130.1026 \). 
+	\paperfig{thermistor-plot}{\pdf{Thermistor}}{Resistance and residuals plotted against the temperature in the thermal flask. The curve has the function \( (1.0 \pm 0.1) \times 10^{13}e^\frac{T}{\pars{24.7 \pm 0.3}} \) and an \( R^2 \) value of 0.992783. Error bars on both temperature and resistance were included but were too small to be visible.} \vspace{1em}
+	
+	A visualization of residuals clearly indicated that the data can be better modelled for greater temperatures. Indeed, least squares fitting performed without the data points corresponding to three lowest temperatures yielded a reduced \( \chi ^ 2 \) value of \( 181.5543 \). Removing more lower-temperature data points further improved reduced \( \chi ^ 2 \). 
+	% Removing the six lower-temperature points led to a model with reduced \( \chi ^ 2 \) value of \( 130.1026 \). 
 	
 	Further, a least squares fitting was performed on the data obtained for the incandescent light bulb, with the expression in (2) used as a model function. The formula was found to hold; the resulting parameters were \( k =  (0.067 \pm 0.002) \si{\volt\per\ampere} \) and \( a = (1.63 \pm 0.01) \). The value of reduced \( \chi ^ 2 \) obtained was \( 176.8952 \). The data, model, and residuals for this fit are shown below.
 
-	\paperfig{bulb-plot}{\pdf{Bulb}}{Potential of the incandescent light bulb plotted against the current. Least squares fit was indicated in blue; residuals visualized at the bottom. Error bars on the data points were too small to be visible.} \vspace{1em}
+	\paperfig{bulb-plot}{\pdf{Bulb}}{Potential and residuals plotted against current through the incandescent bulb. The curve has the function \( \pars{0.067 \pm 0.002} I^{\pars{1.63 \pm 0.01}} \) with an \( R^2 \) value of \( 0.999532 \). Error bars on the data points were included but were too small to be visible.} \vspace{1em}
 	
 	As evidenced above, thermistors and metal resistors have different variations of resistance with temperatures. For metal resistors, resistance increasing with temperature is intuitively explained by considering increasing vibrations of electrons in the metal. At higher temperatures, electrons will interfere more with free currents and thus the resistance will increase. Thermistors, on the other hand, are semiconductors. Increasing the temperature increases the number of available electrons, the conductivity increases, and thus the resistance decreases.
 	
-	Upon obtaining the value of \( a \), the universal constant \( n \) in Stefan-Boltzmmann law could be approximated. Plugging \( a = (1.63 \pm 0.01) \) into (6) yielded \( 4.17 \pm 0.05 \) (uncertainty propagated using the method  of quadratures), which was close the actual value of \( n = 4\). Another constant appearing in Stefan-Boltzmann law, \( \epsilon \) (emissivity of the radiating body), differs depending on the material. \( \epsilon = 1 \) corresponds to a body that is a perfect absorber and emitter of radiant energy (i.e., a \textit{black body}); \( \epsilon = 0 \) corresponds to a perfect reflector of radiant energy. 
+	Upon obtaining the value of \( a \), the universal constant \( n \) in Stefan-Boltzmmann law could be approximated. Plugging \( a = (1.63 \pm 0.01) \) into (6) yielded \( 4.17 \pm 0.05 \) (uncertainty propagated using the method  of quadratures), which was close the actual value of \( n = 4\). Another constant appearing in Stefan-Boltzmann law, \( \epsilon \) (emissivity of the radiating body), differs depending on the material. \( \epsilon = 1 \) corresponds to a body that is a perfect absorber and emitter of radiant energy (i.e., a black body); \( \epsilon = 0 \) corresponds to a perfect reflector of radiant energy. 
 	
 \papersec{Conclusion}
 
-		This experiment has investigated two nonlinear circuit elements, a thermistor and an incandescent tungsten filament light bulb. Resistance of the thermistor was found to be a function of the temperature, satisfying the exponential relation in (1) with \( R_0 = (1.0 \pm 0.1) \times 10^{13} \si{\ohm} \) and \( T_0 = (24.7 \pm 0.3) \si{\kelvin} \).  For the light bulb, the relationship between potential and current was shown to follow a power law introduced in (2), with \( k =  (0.067 \pm 0.002) \si{\volt\per\ampere} \) and \( a = 1.63 \pm 0.01 \). The most significant sources of error arose from potential uneven temperature of water in the thermal flask with the thermistor and inconsistencies in current and potential readings of the multimeter when switching the range of input signal. 
+		This experiment has investigated two nonlinear circuit elements, a thermistor and an incandescent tungsten filament light bulb. Resistance of the thermistor was found to be a function of the temperature, satisfying the exponential relation in (1) with \( R_0 = (1.0 \pm 0.1) \times 10^{13} \si{\ohm} \) and \( T_0 = (24.7 \pm 0.3) \si{\kelvin} \).  For the light bulb, the relationship between potential and current was shown to follow a power law introduced in (2), with \( k =  (0.067 \pm 0.002) \si{\volt\per\ampere} \) and \( a = \pars{1.63 \pm 0.01} \). The most significant sources of error arose from potential uneven temperature of water in the thermal flask with the thermistor and inconsistencies in current and potential readings of the multimeter when switching the range of input signal. 
 		
 		The above value of \( a \) was further used to approximate the power \( n \) of \( T \) in Stefan-Boltzmann law; \( n \) was found to be \( 4.17 \pm 0.05 \), reasonably close to the actual value of \( n = 4 \). 
 
