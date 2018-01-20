@@ -7,7 +7,7 @@
 \paperdate{January 22, 2018}
 \begin{paperabs}
 	
-	Abstract
+	a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
 	
 \end{paperabs}
 
@@ -15,11 +15,60 @@
 	
 \papersec{Introduction}
 
-	Introduction
+	The purpose of this experiment was to determine the index of refraction, \( n \), of a sphere and two hemispheres of different sizes made of a clear plastic. In general, refraction of light at a single spherical surface obeys the following relationship.
+	\papereq{SphericalSurfaceRefraction}{\frac{n}{s} + \frac{n'}{s'} = \frac{n' - n}{R}}{Serbanescu}
+	\begin{paperwhere}
+		\papervar{n}{index of refraction of the first medium}{}
+		\papervar{n}{index of refraction of the second medium}{}
+		\papervar{s}{object distance}{\meter}
+		\papervar{s'}{image distance}{\meter}
+		\papervar{R}{radius of curvature}{\meter}
+	\end{paperwhere}
+	
+	Applying \eqSphericalSurfaceRefraction to two spherical surfaces sharing a common axis, the Lens Maker's Formula is obtained. 
+	\papereq{LensMakersFormula}{\frac{1}{f} = \pars{n-1}\pars{\frac{1}{R_1} - \frac{1}{R_2} + \frac{\pars{n-1}t}{nR_1R_2}}}{Serbanescu}
+	\begin{paperwhere}
+		\papervar{f}{focal length of lens}{\meter}
+		\papervar{n}{index of refraction of lens}{}
+		\papervar{R_1}{radius of curvature of surface closest to object}{\meter}
+		\papervar{R_2}{radius of curvature of surface closest to image}{\meter}
+		\papervar{t}{axial thickness of lens}{\meter}
+	\end{paperwhere}
+	
+	To obtain an expression for the focal length and refractive index of hemispheres and the sphere, \eqLensMakersFormula was used with appropriate radii. For a hemisphere with the flat side facing the source, \( R_1 = \infty \) and \( R_2 = R \).
+	\papereq{HemisphereFlatSource}{\frac{1}{f} = \pars{1-n}{\frac{1}{R}}}{}
+	
+	To model a hemisphere with the flat side facing away from the source, setting \( R1 = R \) and \( R_2 = \infty \) led to the following expression.
+	\papereq{HemisphereFlatScreen}{\frac{1}{f} = \pars{n-1}{\frac{1}{R}}}{}
+	
+	Finally, a sphere with \( R_1 = R_2 = R \) was characterized by the formula below.
+	\papereq{Sphere}{\frac{1}{f} =	\pars{\frac{n-1}{R}}^2\frac{t}{n}}{}
 		
+	The experimental setup consisted of an optical bench with a screen, holder for the lenses, a sliding calibrated measuring rod, and a light source mounted as shown.
+	\paperfig{Setup}{\pdf{setup} \vspace{-2.5em}}{The experimental setup with the smaller hemisphere mounted.} \vspace{0.5em}
+	
+	The calibrated rod was used to measure the distance between the screen and either the flat side or the vertex of the lens, depending on the orientation with respect to the source. Each distance is obtained by finding the difference between the position of the rod holder while in contact with the screen (\figSetup) and with the lens, ensuring to account for screen thickness. Before making each measurement, the rod was aligned with the vertex of the lens to attain a more accurate result.
+	
+	Of particular interest was the position on the bench where the image on the screen had a magnification \( m = -1 \) (i.e., same size as the source, inverted). This position corresponded to \( s_0 = s_i = 2f \), as evident from the Thin Lens Equation below.
+	\papereq{ThinLensEquation}{\frac{1}{s_0} + \frac{1}{s_i} = \frac{1}{f}}{Serbanescu}
+	\begin{paperwhere}
+		\papervar{s_0}{object distance}{\meter}
+		\papervar{s_i}{image distance}{\meter}
+		\papervar{f}{focal length}{\meter}
+	\end{paperwhere}
+
+	While \eqThinLensEquation describes a thin lens in the paraxial region, it can be applied to a lens with nonzero thickness by taking \( s_0 \) to be the distance between the object and the first principle plane and \( s_i \) to be the distance between the image and the second principal plane.
+	
 \papersec{Observations}
 
-	Observations
+	The difference in position of the calibrated rod was measured for two hemispheres and the sphere. The error of position readings was taken to be \( \pm 0.05 \si{\cm} \); uncertainty of the difference of positions was propagated using the method of quadratures. The difference accounts for the thickness of the screen, which was measured to be \( (1.75 \pm 0.02) \si{\mm} \) using a caliper.
+
+	\paperfig{Helium}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
+			\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
+			\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+			\papertableindex\papertablecval{37.05}\papertablecval{28.95}\papertablecval{}\\\paperiline
+			\papertableindex\papertablecval{36.25}\papertablecval{28.40}\papertablecval{}\\\paperoline
+		\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the small hemisphere, flat surface facing the source.}	
 
 \papersec{Analysis} 
 	
