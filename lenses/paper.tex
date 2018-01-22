@@ -35,17 +35,16 @@
 		\papervar{t}{axial thickness of lens}{\meter}
 	\end{paperwhere}
 	
-	To obtain an expression for the focal length and refractive index of hemispheres and the sphere, \eqLensMakersFormula was used with appropriate radii. For a hemisphere with the flat side facing the source, \( R_1 = \infty \) and \( R_2 = R \).
-	\papereq{HemisphereFlatSource}{\frac{1}{f} = \pars{1-n}{\frac{1}{R}}}{}
+	To obtain an expression for the focal length and refractive index of hemispheres and the sphere, \eqLensMakersFormula was used with appropriate radii. For a hemisphere with the flat side facing the source, \( R_1 = \infty \) and \( R_2 = -R \).
+	\papereq{HemisphereFlatSource}{\frac{1}{f} = \pars{n-1}{\frac{1}{R}}}{}
 	
-	To model a hemisphere with the flat side facing away from the source, setting \( R1 = R \) and \( R_2 = \infty \) led to the following expression.
-	\papereq{HemisphereFlatScreen}{\frac{1}{f} = \pars{n-1}{\frac{1}{R}}}{}
+	To model a hemisphere with the flat side facing away from the source, setting \( R1 = R \) and \( R_2 = \infty \) yields \eqHemisphereFlatSource again.
 	
 	Finally, a sphere with \( R_1 = R_2 = R \) was characterized by the formula below.
-	\papereq{Sphere}{\frac{1}{f} =	\pars{\frac{n-1}{R}}^2\frac{t}{n}}{}
+	\papereq{Sphere}{\frac{1}{f} =	\pars{\frac{n-1}{R}}^2\frac{t}{n} = \frac{2\pars{n-1}}{nR}}{}
 		
 	The experimental setup consisted of an optical bench with a screen, holder for the lenses, a sliding calibrated measuring rod, and a light source mounted as shown.
-	\paperfig{Setup}{\pdf{setup} \vspace{-2.5em}}{The experimental setup with the smaller hemisphere mounted.} \vspace{0.5em}
+	\paperfig{Setup}{\pdf{setup} \vspace{-2.0em}}{The experimental setup with the smaller hemisphere mounted.} \vspace{0.5em}
 	
 	The calibrated rod was used to measure the distance between the screen and either the flat side or the vertex of the lens, depending on the orientation with respect to the source. Each distance is obtained by finding the difference between the position of the rod holder while in contact with the screen (\figSetup) and with the lens, ensuring to account for screen thickness. Before making each measurement, the rod was aligned with the vertex of the lens to attain a more accurate result.
 	
@@ -61,18 +60,32 @@
 	
 \papersec{Observations}
 
-	The difference in position of the calibrated rod was measured for two hemispheres and the sphere. The error of position readings was taken to be \( \pm 0.05 \si{\cm} \); uncertainty of the difference of positions was propagated using the method of quadratures. The difference accounts for the thickness of the screen, which was measured to be \( (1.75 \pm 0.02) \si{\mm} \) using a caliper.
+	The difference in position of the calibrated rod was measured for two hemispheres and the sphere. The error of position readings was taken to be \( \pm .05 \si{\cm} \); uncertainty of the difference of positions was propagated using the method of quadratures. The difference accounts for the thickness of the screen, which was measured to be \( (1.75 \pm .02) \si{\mm} \) using a caliper. 
 
-	\paperfig{Helium}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
+	\paperfig{HemisphereFlatSource}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
 			\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
 			\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
 			\papertableindex\papertablecval{37.05}\papertablecval{28.95}\papertablecval{}\\\paperiline
 			\papertableindex\papertablecval{36.25}\papertablecval{28.40}\papertablecval{}\\\paperoline
 		\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the small hemisphere, flat surface facing the source.}	
-
+		
 \papersec{Analysis} 
 	
-	Analysis
+	Principal planes of a hemisphere and a sphere were visualized using the ray diagrams sketched below.
+	
+	\paperfig{Hemisphere}{\pdf{hemisphere} \vspace{-1.5em} }{A sketch of locations of primary and secondary principal planes (\( H_1 \) and \( H_2 \) respectively) for a hemisphere.}
+	
+	If the hemisphere is facing the light source with its curved side, the arrangement in \figHemisphere is mirrored with \( H_2 \) and \( H_1 \) being exchanged. This follows naturally from the Principle of Reversibility of light. 
+	
+	\paperfig{Sphere}{\pdf{sphere} \vspace{-2.0em}}{A sketch of locations of primary and secondary principal planes (\( H_1 \) and \( H_2 \) respectively) for a sphere.}
+	
+	The measured distance between the screen and the closest vertex for the hemisphere with its flat side facing the light source equalled \( 2f \), as evident by taking \( R1 = \infty \) in the expression for the distance \( h_2 \) between the right vertex and the secondary principal plane.
+	\papereq{VertexToSecondary}{h_2 = -\frac{f\pars{n-1}t}{nR_1}}{Serbanescu}
+	
+	Combining \eqVertexToSecondary with the expression for the focal lens of a spherical lens, \( f_{ball} \) provided a way to solve for and calculate the refractive index of the lenses.
+	\papereq{SphereFocalLength}{f_{ball} = \frac{nR}{2\pars{n-1}}}{Serbanescu}
+	
+	
 	
 \papersec{Conclusion}
 

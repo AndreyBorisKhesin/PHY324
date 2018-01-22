@@ -18,6 +18,7 @@ def f(x, a):
 
 # Set desired font
 plt.rc('font', family = 'Times New Roman')
+
 path_to_file = "/home/polina/Documents/3rd_Year/PHY324/thermocouple/measurements.txt"
 # Load data
 T1, T1_unc, T2, T2_unc, V, V_unc = np.loadtxt(path_to_file, unpack = True)
@@ -25,6 +26,8 @@ T1, T1_unc, T2, T2_unc, V, V_unc = np.loadtxt(path_to_file, unpack = True)
 T1 = T1 + 273.15
 T2 = T2 + 273.15
 T_diff = T2 - T1
+T_diff_unc = np.sqrt(T1_unc ** 2 + T2_unc ** 2)
+print(T_diff_unc)
 
 ddof = np.size(T_diff) - 1	# degrees of freedom for reduced chi squared
 print ddof
@@ -44,10 +47,26 @@ ss_tot = np.sum((V - np.mean(V)) ** 2)
 r_squared = 1 - (ss_res / ss_tot)
 print "R^2:", r_squared
 
-plt.plot(T_diff, V)
+fig1 = plt.figure(1)
+# Plot data + model
+frame1 = fig1.add_axes((0.1, 0.3, 0.8, 0.6))
+plt.scatter(T_diff, V, s = 3, color = "black")
+plt.errorbar(T_diff, V, xerr = T_diff_unc, yerr = V_unc, linestyle = "None", color = "black", linewidth = 0.5)
+plt.plot(T_diff, f(T_diff, *popt), color = "black", linewidth = 0.5)
+plt.title("Potential vs. temperature difference of a thermocouple")
+plt.xlim([-5, 105])
+plt.ylim([-0.5, 4.5])
+plt.ylabel("Potnetial (mV)")
+frame1.set_xticklabels([])
+plt.grid(True)
+# Residual plot
+frame2 = fig1.add_axes((0.1, 0.1, 0.8, 0.2))
+plt.scatter(T_diff, r, s = 3, color = "black")
+plt.xlim([-5, 105])
+plt.ylim([-0.19, 0.19])
+plt.xlabel("Temperature difference (K)")
+plt.ylabel("Residuals")
+plt.grid(True)
+plt.savefig("ThermistorCalibration.pdf")
 plt.show()
 
-#fig1 = plt.figure(1)
-# Plot data + model
-#frame1 = fig1.add_axes((0.1, 0.3, 0.8, 0.6))
-#plt.scatter(T_diff, V, )
