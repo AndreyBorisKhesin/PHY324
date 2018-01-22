@@ -7,7 +7,7 @@
 \paperdate{January 22, 2018}
 \begin{paperabs}
 	
-	a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+	In this experiment, the refractive index of various thick lenses was determined. In particular, expressions relating the distance between the image and the right vertex and the index of refraction \( n \) were determined for hemispherical and spherical lenses. The refractive index of the spherical and large hemispherical lenses was found to equal \( \pars{1.32 \pm .05} \). Further, using the expression for \( n \) in terms of the data for the hemispherical lenses only, \( n \) was calculated again. For the large hemisphere, \( n = \pars{1.30 \pm .02} \) was obtained. For the small hemisphere, \( n \) was found to equal \( \pars{1.56 \pm .02} \).
 	
 \end{paperabs}
 
@@ -72,7 +72,7 @@
 	\paperfig{SmallHemisphereFlatScreen}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
 			\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
 			\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
-			\papertableindex\papertablecval{36.15}\papertablecval{29.50}\papertablecval{7.48}\\\paperiline
+			\papertableindex\papertablecval{36.15}\papertablecval{29.50}\papertablecval{6.48}\\\paperiline
 			\papertableindex\papertablecval{36.10}\papertablecval{29.60}\papertablecval{6.32}\\\paperoline
 		\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the small hemisphere, flat surface facing the screen.}	
 		
@@ -102,39 +102,43 @@
 	
 	Principal planes of a hemisphere and a sphere were visualized using the ray diagrams sketched below.
 	
-	\paperfig{Hemisphere}{\pdf{hemisphere} \vspace{-1.5em} }{A sketch of locations of primary and secondary principal planes (\( H_1 \) and \( H_2 \) respectively) for a hemisphere.}
+	\paperfig{Hemisphere}{\pdf{hemisphere} \vspace{-1.5em} }{A sketch of locations of primary and secondary principal planes (\( H_1 \) and \( H_2 \) respectively) for a hemisphere. Ideally, \( H_2 \) should be tangent to the right vertex of the lens.}
 	
 	If the hemisphere is facing the light source with its curved side, the arrangement in \figHemisphere is mirrored with \( H_2 \) and \( H_1 \) being exchanged. This follows naturally from the Principle of Reversibility of light. 
 	
-	\paperfig{Sphere}{\pdf{sphere} \vspace{-2.0em}}{A sketch of locations of primary and secondary principal planes (\( H_1 \) and \( H_2 \) respectively) for a sphere.}
+	\paperfig{Sphere}{\pdf{sphere} \vspace{-2.0em}}{A sketch of locations of primary and secondary principal planes (\( H_1 \) and \( H_2 \) respectively) for a sphere. Ideally, the two principle planes should coincide at the center of the sphere.}
 	
 	Despite measurements being taken for arrangements where \( s_o = s_i = 2f \), \( \Delta d \) did not always correspond to a constant multiple of the focal length. Instead, it was equal to double the focal length minus the distance \( h_2 \) from the right vertex of the lens to the second principal plane. In general, \( h_2 \) was given by the following expression.
 	\papereq{VertexToSecondaryPrincipalPlane}{h_2 = - \frac{f\pars{n-1}t}{nR_1}}{Serbanescu} 
 	
-	By repeatedly applying \eqVertexToSecondaryPrincipalPlane for each orientation and shape of the lens, expressions for \( \Delta d \) in terms of \( R \) and \( n \) were obtained. In the case of the sphere,
+	By repeatedly applying \eqVertexToSecondaryPrincipalPlane and \eqLensMakersFormula for each orientation and shape of the lens, expressions for \( \Delta d \) in terms of \( R \) and \( n \) were obtained. In the case of the sphere,
 	\papereq{SphereData}{\Delta d_{sphere} = \frac{R}{n-1}.}{}
 	
 	For a hemisphere with its flat side facing the source, 
 	\papereq{HemisphereFlatSource}{\Delta d_{hemisphere} = 2\frac{R}{n-1}.}{}
 	
-	Finally, for a hemisphere with its flat side facing the screen (prime denoting this particular orientation),
-	\papereq{HemisphereFlatScreen}{\Delta d'_{hemisphere} = 2\frac{R}{n\pars{n-1}}.}{}
+	Finally, for a hemisphere with its flat side facing the screen (prime denoting this particular orientation from now on),
+	\papereq{HemisphereFlatScreen}{\Delta d'_{hemisphere} = 2\frac{R\pars{n+1}}{n\pars{n-1}}.}{}
 	
 	To use the measurements obtained for the large sphere and the large hemisphere, expressions in \eqSphereData and \eqHemisphereFlatScreen were rearranged to obtain the following.
-	\papereq{nValueWithSphere}{n= 2 \frac{\Delta d_{sphere}}{\Delta d'_{hemisphere}}}{}
+	\papereq{nValueWithSphere}{ n = \pars{\frac{\Delta d'_{hemisphere}}{\Delta d_{sphere}} - 1}^{-1} }{}
 	
-	Upon averaging and plugging in the corresponding measurements for the large sphere and hemisphere, \( n = \pars{1.14 \pm 0.16} \) was obtained, with uncertainty propagated using the method of quadratures. Furthermore, by rearranging equations \eqHemisphereFlatSource and \eqHemisphereFlatScreen, the value of \( n \) could be obtained without using the measurements for the sphere, as indicated below.
-	\papereq{nHemisphereOnly}{n = \frac{\Delta d_{hemisphere}}{\Delta d'_{hemisphere}}}{}
+	Upon averaging and plugging in the corresponding measurements for the large sphere and hemisphere, \( n = \pars{1.32 \pm .05} \) was obtained, with uncertainty propagated using the method of quadratures. Furthermore, by rearranging equations \eqHemisphereFlatSource and \eqHemisphereFlatScreen, the value of \( n \) could be obtained without using the measurements for the sphere, as indicated below.
+	\papereq{nHemisphereOnly}{n = \pars{\frac{2 \Delta d'_{hemisphere}}{\Delta d_{hemisphere}} - 1}^{-1} }{}
 	
-	For the large hemisphere, \eqnHemisphereOnly yielded \( n = \pars{1.13 \pm 0.14} \), agreeing with the value obtained using the expression in \eqnValueWithSphere. For the small hemisphere, \( n = \pars{1.06 \pm 0.14} \) was obtained. 
+	For the large hemisphere, \eqnHemisphereOnly yielded \( n = \pars{1.30 \pm .02} \), agreeing with the value obtained using the expression in \eqnValueWithSphere. For the small hemisphere, \( n = \pars{1.56 \pm .02} \) was obtained. All uncertainties were propagated using the method of quadratures. 
+	
+	Possible sources of error in this experiment arose from potential misalignment of the calibrated rod when determining the position of the vertex of the lens and inconsistent focusing of the image. Uncertainty of all values of \( n \) could be improved significantly if the optical bench allowed for more accurate measurements of position of the rod.
 	
 \papersec{Conclusion}
 
-		Conclusion 
+		In this experiment, the refractive index of three thick lenses (two hemispheres of different sizes and a sphere) was determined without finding the radius of the lenses. It was shown that it is sufficient to determine the separation between the screen and the closest vertex of the lens for the sphere and two orientations of the hemisphere (flat side facing the source and the screen). 
+		
+		Using the data for the sphere and the large hemisphere, a refractive index of \( n = \pars{1.32 \pm .05} \) was obtained. Using the data for two orientations of the large hemisphere only, \( n = \pars{1.30 \pm .02} \) was determined, agreeing with the previous value of \( n \). Finally, for the smaller hemisphere, the refractive index was determined to be \( n = \pars{1.56 \pm .02} \).
 
 \papersec{Sources}
 
-	Sources
+	\papersource{Serbanescu, R., Thick Lenses, 2013}
 
 \end{paper}
 
