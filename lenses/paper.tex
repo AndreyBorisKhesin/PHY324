@@ -60,14 +60,43 @@
 	
 \papersec{Observations}
 
-	The difference in position of the calibrated rod was measured for two hemispheres and the sphere. The error of position readings was taken to be \( \pm .05 \si{\cm} \); uncertainty of the difference of positions was propagated using the method of quadratures. The difference accounts for the thickness of the screen, which was measured to be \( (1.75 \pm .02) \si{\mm} \) using a caliper. 
+	The difference in position of the calibrated rod was measured for two hemispheres and the sphere. The error of position readings was taken to be \( \pm .05 \si{\cm} \); uncertainty in the difference of positions was propagated using the method of quadratures. The difference accounts for the thickness of the screen, which was measured to be \( (1.75 \pm .02) \si{\mm} \) using a caliper. 
 
-	\paperfig{HemisphereFlatSource}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
+	\paperfig{SmallHemisphereFlatSource}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
 			\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
 			\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
-			\papertableindex\papertablecval{37.05}\papertablecval{28.95}\papertablecval{}\\\paperiline
-			\papertableindex\papertablecval{36.25}\papertablecval{28.40}\papertablecval{}\\\paperoline
+			\papertableindex\papertablecval{37.05}\papertablecval{28.95}\papertablecval{7.92}\\\paperiline
+			\papertableindex\papertablecval{36.25}\papertablecval{28.40}\papertablecval{7.68}\\\paperoline
 		\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the small hemisphere, flat surface facing the source.}	
+	
+	\paperfig{SmallHemisphereFlatScreen}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
+			\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
+			\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+			\papertableindex\papertablecval{36.15}\papertablecval{29.50}\papertablecval{7.48}\\\paperiline
+			\papertableindex\papertablecval{36.10}\papertablecval{29.60}\papertablecval{6.32}\\\paperoline
+		\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the small hemisphere, flat surface facing the screen.}	
+		
+		\paperfig{LargeHemisphereFlatSource}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
+				\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
+				\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+				\papertableindex\papertablecval{41.10}\papertablecval{31.00}\papertablecval{9.92}\\\paperiline
+				\papertableindex\papertablecval{41.75}\papertablecval{31.35}\papertablecval{10.22}\\\paperoline
+			\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the large hemisphere, flat surface facing the source.}	
+		
+		\paperfig{LargeHemisphereFlatScreen}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
+				\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
+				\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+				\papertableindex\papertablecval{41.85}\papertablecval{32.95}\papertablecval{8.72}\\\paperiline
+				\papertableindex\papertablecval{42.40}\papertablecval{33.15}\papertablecval{9.08}\\\paperoline
+			\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the large hemisphere, flat surface facing the screen.}
+		
+		\paperfig{SphereData}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
+				\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
+				\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+				\papertableindex\papertablecval{35.40}\papertablecval{30.40}\papertablecval{4.82}\\\paperiline
+				\papertableindex\papertablecval{35.85}\papertablecval{30.50}\papertablecval{5.18}\\\paperiline
+				\papertableindex\papertablecval{35.95}\papertablecval{30.55}\papertablecval{5.22}\\\paperoline
+			\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the sphere.}
 		
 \papersec{Analysis} 
 	
@@ -79,7 +108,25 @@
 	
 	\paperfig{Sphere}{\pdf{sphere} \vspace{-2.0em}}{A sketch of locations of primary and secondary principal planes (\( H_1 \) and \( H_2 \) respectively) for a sphere.}
 	
+	Despite measurements being taken for arrangements where \( s_o = s_i = 2f \), \( \Delta d \) did not always correspond to a constant multiple of the focal length. Instead, it was equal to double the focal length minus the distance \( h_2 \) from the right vertex of the lens to the second principal plane. In general, \( h_2 \) was given by the following expression.
+	\papereq{VertexToSecondaryPrincipalPlane}{h_2 = - \frac{f\pars{n-1}t}{nR_1}}{Serbanescu} 
 	
+	By repeatedly applying \eqVertexToSecondaryPrincipalPlane for each orientation and shape of the lens, expressions for \( \Delta d \) in terms of \( R \) and \( n \) were obtained. In the case of the sphere,
+	\papereq{SphereData}{\Delta d_{sphere} = \frac{R}{n-1}.}{}
+	
+	For a hemisphere with its flat side facing the source, 
+	\papereq{HemisphereFlatSource}{\Delta d_{hemisphere} = 2\frac{R}{n-1}.}{}
+	
+	Finally, for a hemisphere with its flat side facing the screen (prime denoting this particular orientation),
+	\papereq{HemisphereFlatScreen}{\Delta d'_{hemisphere} = 2\frac{R}{n\pars{n-1}}.}{}
+	
+	To use the measurements obtained for the large sphere and the large hemisphere, expressions in \eqSphereData and \eqHemisphereFlatScreen were rearranged to obtain the following.
+	\papereq{nValueWithSphere}{n= 2 \frac{\Delta d_{sphere}}{\Delta d'_{hemisphere}}}{}
+	
+	Upon averaging and plugging in the corresponding measurements for the large sphere and hemisphere, \( n = \pars{1.14 \pm 0.16} \) was obtained, with uncertainty propagated using the method of quadratures. Furthermore, by rearranging equations \eqHemisphereFlatSource and \eqHemisphereFlatScreen, the value of \( n \) could be obtained without using the measurements for the sphere, as indicated below.
+	\papereq{nHemisphereOnly}{n = \frac{\Delta d_{hemisphere}}{\Delta d'_{hemisphere}}}{}
+	
+	For the large hemisphere, \eqnHemisphereOnly yielded \( n = \pars{1.13 \pm 0.14} \), agreeing with the value obtained using the expression in \eqnValueWithSphere. For the small hemisphere, \( n = \pars{1.06 \pm 0.14} \) was obtained. 
 	
 \papersec{Conclusion}
 
