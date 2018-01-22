@@ -35,13 +35,13 @@
 		\papervar{t}{axial thickness of lens}{\meter}
 	\end{paperwhere}
 	
-	To obtain an expression for the focal length and refractive index of hemispheres and the sphere, \eqLensMakersFormula was used with appropriate radii. For a hemisphere with the flat side facing the source, \( R_1 = \infty \) and \( R_2 = -R \).
+	To obtain an expression for the focal length and refractive index of hemispheres and the sphere, \eqLensMakersFormula was used with appropriate radii. For a hemisphere with the flat side facing the source, \( R_1 = \infty \) and \( R_2 = - R \).
 	\papereq{HemisphereFlatSource}{\frac{1}{f} = \pars{n-1}{\frac{1}{R}}}{}
 	
-	To model a hemisphere with the flat side facing away from the source, setting \( R1 = R \) and \( R_2 = \infty \) yields \eqHemisphereFlatSource again.
+	To model a hemisphere with the flat side facing away from the source, setting \( R_1 = -R \) and \( R_2 = - \infty \) yields \eqHemisphereFlatSource again.
 	
 	Finally, a sphere with \( R_1 = R_2 = R \) was characterized by the formula below.
-	\papereq{Sphere}{\frac{1}{f} =	\pars{\frac{n-1}{R}}^2\frac{t}{n} = \frac{2\pars{n-1}}{nR}}{}
+	\papereq{Sphere}{\frac{1}{f} =\pars{\frac{n-1}{R}}^2\frac{t}{n} = \frac{2\pars{n-1}}{nR}}{}
 		
 	The experimental setup consisted of an optical bench with a screen, holder for the lenses, a sliding calibrated measuring rod, and a light source mounted as shown.
 	\paperfig{Setup}{\pdf{setup} \vspace{-2.0em}}{The experimental setup with the smaller hemisphere mounted.} \vspace{0.5em}
@@ -78,12 +78,6 @@
 	If the hemisphere is facing the light source with its curved side, the arrangement in \figHemisphere is mirrored with \( H_2 \) and \( H_1 \) being exchanged. This follows naturally from the Principle of Reversibility of light. 
 	
 	\paperfig{Sphere}{\pdf{sphere} \vspace{-2.0em}}{A sketch of locations of primary and secondary principal planes (\( H_1 \) and \( H_2 \) respectively) for a sphere.}
-	
-	The measured distance between the screen and the closest vertex for the hemisphere with its flat side facing the light source equalled \( 2f \), as evident by taking \( R1 = \infty \) in the expression for the distance \( h_2 \) between the right vertex and the secondary principal plane.
-	\papereq{VertexToSecondary}{h_2 = -\frac{f\pars{n-1}t}{nR_1}}{Serbanescu}
-	
-	Combining \eqVertexToSecondary with the expression for the focal lens of a spherical lens, \( f_{ball} \) provided a way to solve for and calculate the refractive index of the lenses.
-	\papereq{SphereFocalLength}{f_{ball} = \frac{nR}{2\pars{n-1}}}{Serbanescu}
 	
 	
 	
