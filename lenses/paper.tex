@@ -1,7 +1,7 @@
 \input{header}
 \physics
 \begin{document}
-\papertitle{Thick Lenses}
+\papertitle{Analysis of Refractive Indices of Thick Lenses}
 \paperauth{A}{Khesin}{1002442029}
 \paperauth{P}{Zavyalova}{1002345036}
 \paperdate{January 22, 2018}
@@ -19,7 +19,7 @@
 	\papereq{SphericalSurfaceRefraction}{\frac{n}{s} + \frac{n'}{s'} = \frac{n' - n}{R}}{Serbanescu}
 	\begin{paperwhere}
 		\papervar{n}{index of refraction of the first medium}{}
-		\papervar{n}{index of refraction of the second medium}{}
+		\papervar{n'}{index of refraction of the second medium}{}
 		\papervar{s}{object distance}{\meter}
 		\papervar{s'}{image distance}{\meter}
 		\papervar{R}{radius of curvature}{\meter}
@@ -30,8 +30,8 @@
 	\begin{paperwhere}
 		\papervar{f}{focal length of lens}{\meter}
 		\papervar{n}{index of refraction of lens}{}
-		\papervar{R_1}{radius of curvature of surface closest to object}{\meter}
-		\papervar{R_2}{radius of curvature of surface closest to image}{\meter}
+		\papervar{R_1}{radius of curvature of surface near object}{\meter}
+		\papervar{R_2}{radius of curvature of surface near image}{\meter}
 		\papervar{t}{axial thickness of lens}{\meter}
 	\end{paperwhere}
 	
@@ -63,36 +63,36 @@
 	The difference in position of the calibrated rod was measured for two hemispheres and the sphere. The error of position readings was taken to be \( \pm .05 \si{\cm} \); uncertainty in the difference of positions was propagated using the method of quadratures. The difference accounts for the thickness of the screen, which was measured to be \( (1.75 \pm .02) \si{\mm} \) using a caliper. 
 
 	\paperfig{SmallHemisphereFlatSource}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
-			\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
-			\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+			\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\textsc{\( \Delta d \)}\\
+			\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.07 cm}{\hspace{-0.5ex}}\\\paperiline
 			\papertableindex\papertablecval{37.05}\papertablecval{28.95}\papertablecval{7.92}\\\paperiline
 			\papertableindex\papertablecval{36.25}\papertablecval{28.40}\papertablecval{7.68}\\\paperoline
 		\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the small hemisphere, flat surface facing the source.}	
 	
 	\paperfig{SmallHemisphereFlatScreen}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
-			\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
-			\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+			\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\textsc{\( \Delta d \)}\\
+			\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.07 cm}{\hspace{-0.5ex}}\\\paperiline
 			\papertableindex\papertablecval{36.15}\papertablecval{29.50}\papertablecval{6.48}\\\paperiline
 			\papertableindex\papertablecval{36.10}\papertablecval{29.60}\papertablecval{6.32}\\\paperoline
 		\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the small hemisphere, flat surface facing the screen.}	
 		
 		\paperfig{LargeHemisphereFlatSource}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
-				\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
-				\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+				\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\textsc{\( \Delta d \)}\\
+				\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.07 cm}{\hspace{-0.5ex}}\\\paperiline
 				\papertableindex\papertablecval{41.10}\papertablecval{31.00}\papertablecval{9.92}\\\paperiline
 				\papertableindex\papertablecval{41.75}\papertablecval{31.35}\papertablecval{10.22}\\\paperoline
 			\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the large hemisphere, flat surface facing the source.}	
 		
 		\paperfig{LargeHemisphereFlatScreen}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
-				\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
-				\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+				\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\textsc{\( \Delta d \)}\\
+				\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.07 cm}{\hspace{-0.5ex}}\\\paperiline
 				\papertableindex\papertablecval{41.85}\papertablecval{32.95}\papertablecval{8.72}\\\paperiline
 				\papertableindex\papertablecval{42.40}\papertablecval{33.15}\papertablecval{9.08}\\\paperoline
 			\end{papertable}\vspace{-1.5em}}{Positions of the rod and the distance between screen and lens for the large hemisphere, flat surface facing the screen.}
 		
 		\paperfig{SphereData}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[outer]}
-				\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\multirow{2}{*}{\textsc{\( \Delta d \)}}\\
-				\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}&\\\paperiline
+				\paperoline\papertableindexheader&\textsc{Screen position}&\textsc{Lens position}&\textsc{\( \Delta d \)}\\
+				\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.05 cm}{\hspace{-0.5ex}}\papertablecheaderunit{.07 cm}{\hspace{-0.5ex}}\\\paperiline
 				\papertableindex\papertablecval{35.40}\papertablecval{30.40}\papertablecval{4.82}\\\paperiline
 				\papertableindex\papertablecval{35.85}\papertablecval{30.50}\papertablecval{5.18}\\\paperiline
 				\papertableindex\papertablecval{35.95}\papertablecval{30.55}\papertablecval{5.22}\\\paperoline
