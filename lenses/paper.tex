@@ -118,13 +118,13 @@
 	\papereq{HemisphereFlatSource}{\Delta d_{hemisphere} = 2\frac{R}{n-1}.}{}
 	
 	Finally, for a hemisphere with its flat side facing the screen (prime denoting this particular orientation from now on),
-	\papereq{HemisphereFlatScreen}{\Delta d'_{hemisphere} = 2\frac{R\pars{n+1}}{n\pars{n-1}}.}{}
+	\papereq{HemisphereFlatScreen}{\Delta d'_{hemisphere} = \frac{R\pars{n+1}}{n\pars{n-1}}.}{}
 	
 	To use the measurements obtained for the large sphere and the large hemisphere, expressions in \eqSphereData and \eqHemisphereFlatScreen were rearranged to obtain the following.
-	\papereq{nValueWithSphere}{ n = \pars{\frac{\Delta d'_{hemisphere}}{\Delta d_{sphere}} - 1}^{-1} }{}
+	\papereq{nValueWithSphere}{ n = \frac{\Delta d_{sphere}}{\Delta d'_{hemisphere} - \Delta d_{sphere}} }{}
 	
 	Upon averaging and plugging in the corresponding measurements for the large sphere and hemisphere, \( n = \pars{1.32 \pm .05} \) was obtained, with uncertainty propagated using the method of quadratures. Furthermore, by rearranging equations \eqHemisphereFlatSource and \eqHemisphereFlatScreen, the value of \( n \) could be obtained without using the measurements for the sphere, as indicated below.
-	\papereq{nHemisphereOnly}{n = \pars{\frac{2 \Delta d'_{hemisphere}}{\Delta d_{hemisphere}} - 1}^{-1} }{}
+	\papereq{nHemisphereOnly}{n = \frac{\Delta d_{hemisphere}}{2 \Delta d'_{hemisphere} - \Delta d_{hemisphere}} }{}
 	
 	For the large hemisphere, \eqnHemisphereOnly yielded \( n = \pars{1.30 \pm .02} \), agreeing with the value obtained using the expression in \eqnValueWithSphere. For the small hemisphere, \( n = \pars{1.56 \pm .02} \) was obtained. All uncertainties were propagated using the method of quadratures. 
 	
