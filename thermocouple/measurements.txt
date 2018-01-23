@@ -1,6 +1,6 @@
 # Thermocouple measurements
 # Resistance: 1.8 +- 0.4 ohms	
-# T1 (C)	T1_unc (C)	T2(C)	T2_unc	V (mV)
+# T1 (C)	T1_unc (C)	T2(C)	T2_unc	V (mV) V_unc (C)
 0.0	0.5	97.0	0.5	4.0	0.1
 0.0	0.5	79.5	0.5	3.3	0.1
 0.0	0.5	70.0	0.5	2.9	0.1

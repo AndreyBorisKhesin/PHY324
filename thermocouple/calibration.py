@@ -1,5 +1,6 @@
 #!/usr/bin/python
-# 
+# Calibration curve of the thermocouple; estimates Seebeck constant using curve_fit
+
 # ---------- Import Statements ----------
 
 import numpy as np
@@ -56,7 +57,7 @@ plt.plot(T_diff, f(T_diff, *popt), color = "black", linewidth = 0.5)
 plt.title("Potential vs. temperature difference of a thermocouple")
 plt.xlim([-5, 105])
 plt.ylim([-0.5, 4.5])
-plt.ylabel("Potnetial (mV)")
+plt.ylabel("EMF (mV)")
 frame1.set_xticklabels([])
 plt.grid(True)
 # Residual plot
@@ -67,6 +68,6 @@ plt.ylim([-0.19, 0.19])
 plt.xlabel("Temperature difference (K)")
 plt.ylabel("Residuals")
 plt.grid(True)
-plt.savefig("ThermistorCalibration.pdf")
+plt.savefig("ThermocoupleCalibration.pdf")
 plt.show()
 
