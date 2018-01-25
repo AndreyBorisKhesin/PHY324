@@ -1,14 +1,14 @@
 \input{header}
 \physics
 \begin{document}
-\papertitle{The Thermocouple}
+\papertitle{Analysis of the Constantan Thermocouple}
 \paperauth{A}{Khesin}{1002442029}
 \paperauth{N}{Rahnamaei}{1002552686}
 \paperauth{P}{Zavyalova}{1002345036}
 \paperdate{January 24, 2018}
 \begin{paperabs}
 	
-	In this experiment the EMF across a thermocouple was measured at a variety of temperatures to invesigate the Seebeck Effect. Plotting the obtained data on a calibration curve proved the expected linear relationship. Upon fitting the temperature differences to the potential using the least squares method, the Seebeck coefficient was determined to be \( \pars{0.0410 \pm 0.0003} \si{\milli\volt\per\kelvin} \). Further, the resistance of the thermocouple was measured to be $(1.8\pm.4)\si{\ohm}$.
+	In this experiment the EMF across a thermocouple was measured at a variety of temperatures to investigate the Seebeck Effect. Plotting the obtained data on a calibration curve proved the expected linear relationship. Upon fitting the temperature differences to the potential using the least squares method, the Seebeck coefficient was determined to be \( \pars{41.0 \pm .3} \si{\micro\volt\per\kelvin} \). Further, the resistance of the thermocouple was measured to be $(1.8\pm.4)\si{\ohm}$.
 	
 \end{paperabs}
 
@@ -21,14 +21,18 @@
 	EMF generated along the conductor is quantified by the Seebeck Effect, a proportionality law relating the potential and the temperature difference.
 	\papereq{Seebeck}{V = S\pars{T_1 - T_2}}{Serbanescu}
 	\begin{paperwhere}
+		\papervar{V}{potential difference}{\volt}
 		\papervar{S}{Seebeck coefficient}{\volt\per\kelvin}
 		\papervar{T_1}{absolute temperature at first junction}{\kelvin}
 		\papervar{T_2}{absolute temperature at second junction}{\kelvin}
 	\end{paperwhere}
 	
-	The experiment setup included a multimeter acting as a voltmeter, two thermal flasks to ensure that the temperature was kept constant and a thermometer all arranged as shown below.
+	This equation is convenient as it is linear in both temperature difference and potential.
+	Temperatures were measured in degrees Celsius and compared to freezing, so they were equal to the temperature differences.
 	
-	\paperfig{setup}{\pdf{setup}}{}	
+	The experiment setup included a voltmeter, two thermal flasks to ensure that the temperature was kept constant and a thermometer all arranged as shown below.
+	
+	\paperfig{setup}{\centering\includegraphics[width=0.9\columnwidth]{setup.pdf}}{The setup of the experiment.}	
 	
 	The circuit used in the experiment was as follows.
 	
@@ -53,7 +57,7 @@
 	This value was occasionally remeasured during the experiment to make sure that it was unchanged.
 	The recorded values for the temperatures at $T_2$ and for the potential differences $V$ were recorded in the table below.
 	
-	\paperfig{Table}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}\paperoline
+	\paperfig{Table}{\centering\scalebox{0.9}[0.9]{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}\paperoline
 	\papertableindexheader&\multirow{2}{*}{\textsc{Temperature}\vspace{0.5em}}&\multirow{2}{*}{\textsc{Potential}\vspace{0.5em}}\\
 	\papertablecheadersymbol{T_2$ ($\si{\celsius}$) $(\pm.5\si{\celsius})}\papertablecheadersymbol{V$ ($\si{\volt}$) $(\pm.1\si{\volt})}\\\paperiline
 	\papertableindex\papertablecval{97.0}\papertablecval{4.0}\\\paperiline
@@ -68,14 +72,14 @@
 	\papertableindex\papertablecval{9.5}\papertablecval{0.3}\\\paperiline
 	\papertableindex\papertablecval{3.0}\papertablecval{0.1}\\\paperiline
 	\papertableindex\papertablecval{0.0}\papertablecval{0.0}\\\paperoline
-	\end{papertable}\vspace{-1em}}{The observations recorded during the experiment of the relationship between $T_2$ and $V$.
+	\end{papertable}}\vspace{-0.5em}}{The observations recorded during the experiment of the relationship between $T_2$ and $V$.
 	The value of $T_1$ was not included in the table as it was constant.}
 		
 \papersec{Analysis} 
 	
-	To calibrate the thermocouple, measured EMF values were plotted against the temperature difference between the junctions. Upon fitting the data using least squares method, the Seebeck coefficient was determined to be \( \pars{0.0410 \pm 0.0003} \si{\milli\volt\per\kelvin} \). The value of reduced \( \chi ^2 \) for this fit was \( 0.202632 \). The calibration curve, fit, and residuals are visualized below. 
+	To calibrate the thermocouple, measured EMF values were plotted against the temperature difference between the junctions. Upon fitting the data using least squares method, the Seebeck coefficient was determined to be \( \pars{41.0 \pm .3} \si{\milli\volt\per\kelvin} \). The value of reduced \( \chi ^2 \) for this fit was \( 0.202632 \). The calibration curve, fit, and residuals are visualized below. 
 	
-	\paperfig{CalibrationCurve}{\pdf{ThermocoupleCalibration}}{EMF and residuals plotted against the temperature difference between the junctions. The curve has the function \(  \pars{0.0410 \pm 0.0003} \Delta T \) and an \( R^2 \) value of \( 0.998821 \).}
+	\paperfig{CalibrationCurve}{\pdf{ThermocoupleCalibration}}{EMF and residuals plotted against the temperature difference between the junctions. The curve has the function \(  \pars{0.041.0 \pm 0.000.3} \Delta T \) and an \( R^2 \) value of \( 0.998821 \).}\columnbreak
 	
 	In this experiment, the output resistance of the thermocouple was measured.
 	The value of this resistance was calculated to be $(1.8\pm.4)\si{\ohm}$.
@@ -87,7 +91,12 @@
 	
 \papersec{Conclusion}
 
-	Conclusion goes here
+	The experiment investigated the Seebeck Effect.
+	Although the goodness of the obtained fit was quite high, the experiment was not free from sources of error.
+	In spite of the fact that the ice water bath temperature was occasionally measured, its temperature might have fluctuated during the experiment.
+	Furthermore, the construction and connections in the actual thermocouple itself could have been less than ideal.
+	
+	The Seebeck coefficient was determined to be \( \pars{41.0 \pm .3} \si{\micro\volt\per\kelvin} \), close the value for Constantan, -35. Note that the sign of the coefficient is not relevant as it is obtained by flipping the poles of the voltmeter. Further, the resistance of the thermocouple was measured to be $(1.8\pm.4)\si{\ohm}$.
 
 \papersec{Sources}
 
