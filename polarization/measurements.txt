@@ -1,0 +1,20 @@
+Exercise 1 - Two Polarizers, Malus's Law
+Laser position = 35.55 cm
+1st polairizer position = 39.40 cm
+2nd polarizer (rotary) position = 43.20 cm
+Detector position = 53.70 cm
+
+Exercise 3 - Brewster's Angle
+Data: actual measurements start at 120 & go down
+Slit: 5, biggest 
+Gain: 1
+
+.txt files
+1: two polarizers #1
+2: two polatizers #2
+3: 1st part of 3 polarizers
+4: 2nd part of 3 polarizers
+5: junk
+6: good Brewster's angle
+7: horizontal
+8: vertical
