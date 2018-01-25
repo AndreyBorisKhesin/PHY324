@@ -8,7 +8,7 @@
 \paperdate{January 24, 2018}
 \begin{paperabs}
 	
-	Abstract goes here
+	In this experiment the EMF across a thermocouple was measured at a variety of temperatures to invesigate the Seebeck Effect. Plotting the obtained data on a calibration curve proved the expected linear relationship. Upon fitting the temperature differences to the potential using the least squares method, the Seebeck coefficient was determined to be \( \pars{0.0410 \pm 0.0003} \si{\milli\volt\per\kelvin} \). Further, the resistance of the thermocouple was measured to be $(1.8\pm.4)\si{\ohm}$.
 	
 \end{paperabs}
 
@@ -18,7 +18,17 @@
 
 	Thermocouples convert a temperature difference into an electromotive force (EMF), and are made of two wires of dissimilar metals which are joined at each end. The wires in a temperature gradient will allow the free carriers at the hot end have more kinetic energy and tend to diffuse towards the cold end, which will in turn create an electric field which has a averse tendency the heat flow. In this experiment, the temperature difference was established between an ice bath staying at constant temperature, and another body of water with varying temperature. 
 	
+	EMF generated along the conductor is quantified by the Seebeck Effect, a proportionality law relating the potential and the temperature difference.
+	\papereq{Seebeck}{V = S\pars{T_1 - T_2}}{Serbanescu}
+	\begin{paperwhere}
+		\papervar{S}{Seebeck coefficient}{\volt\per\kelvin}
+		\papervar{T_1}{absolute temperature at first junction}{\kelvin}
+		\papervar{T_2}{absolute temperature at second junction}{\kelvin}
+	\end{paperwhere}
 	
+	The experiment setup included a multimeter acting as a voltmeter, two thermal flasks to ensure that the temperature was kept constant and a thermometer all arranged as shown below.
+	
+	\paperfig{setup}{\pdf{setup}}{}	
 	
 	The circuit used in the experiment was as follows.
 	
