@@ -14,7 +14,7 @@ from scipy.optimize import curve_fit
 # ---------- Main Code ----------
 
 # Set desired font
-# plt.rc('font', family = 'Times New Roman')
+plt.rc('font', family = 'Times New Roman')
 path_to_file = "/home/polina/Documents/3rd_Year/PHY324/polarization/exercise3-no-polarizer.txt"
 position_raw, intensity_raw = np.loadtxt(path_to_file, unpack = True)
 

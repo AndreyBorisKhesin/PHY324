@@ -10,6 +10,8 @@ import matplotlib.pyplot as plt
 
 # ---------- Main Code ----------
 
+# Set desired font
+plt.rc('font', family = 'Times New Roman')
 path_to_file_1 = "/home/polina/Documents/3rd_Year/PHY324/polarization/exercise2-1.txt"
 path_to_file_2 = "/home/polina/Documents/3rd_Year/PHY324/polarization/exercise2-2.txt"
 pos_1, I_1 = np.loadtxt(path_to_file_1,unpack = True)
