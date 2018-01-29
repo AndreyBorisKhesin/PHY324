@@ -86,7 +86,7 @@ plt.ylabel("Light Intensity (V)")
 plt.grid(True)
 plt.title("Intensity vs. position data for two polarizers")
 plt.savefig("exercise1-data.pdf")
-plt.show()
+# plt.show()
 plt.close()
 
 fig1 = plt.figure(1)
