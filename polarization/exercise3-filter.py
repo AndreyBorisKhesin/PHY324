@@ -6,65 +6,70 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
 from scipy.optimize import curve_fit
 
 # ---------- User-Defined Function ----------
 
-# Fit function (quartic)
-def func(x, a, b, c, d, e): 
-	return a * x ** 4 + b * x ** 3 + c * x ** 2 + d * x + e
-
 # ---------- Main Code ----------
 
 # Set desired font
-plt.rc('font', family = 'Times New Roman')
+# plt.rc('font', family = 'Times New Roman')
 path_to_file = "/home/polina/Documents/3rd_Year/PHY324/polarization/exercise3-no-polarizer.txt"
 position_raw, intensity_raw = np.loadtxt(path_to_file, unpack = True)
 
-# Filtered arrays
+# Sort the two original arrays
+permutation = position_raw.argsort()
+position_raw = position_raw[permutation]
+intensity_raw = intensity_raw[permutation]
+
 position = np.array([])
 intensity = np.array([])
-for i in range(0, position_raw.size):
-	# First data point for this position
-	if position_raw[i] not in position:
-		position = np.append(position, position_raw[i])
-		intensity = np.append(intensity, intensity_raw[i])
-	# Position aleready in array
+
+# Number of ipoints per interval for selecting max
+pts_per_interval = 300
+for i in range(0, position_raw.size, pts_per_interval):
+	# Check not working w/ last interval:
+	if i < position_raw.size - pts_per_interval:
+		temp_index = np.argmax(intensity_raw[i:i + pts_per_interval])
+		position = np.append(position, position_raw[i:i + pts_per_interval][temp_index])
+		intensity = np.append(intensity, intensity_raw[i:i + pts_per_interval][temp_index])
+	# Last interval
 	else:
-		if intensity_raw[i] >= intensity[ np.where(position == position_raw[i])[0][0] ]:
-			intensity[ np.where(position == position_raw[i])[0][0] ] = intensity_raw[i]
+		temp_index = np.argmax(intensity_raw[i:])
+		position = np.append(position, position_raw[i:][temp_index])
+		intensity = np.append(intensity, intensity_raw[i:][temp_index])
 
-# Uncertainty in intensity
-I_unc = 0.01
-intensity_unc = np.full(intensity.size, I_unc)
+# Fit filtered data to a polynomial
+coeffs =  np.polyfit(position, intensity, 7, full = False)
+polynomial_fit = np.poly1d(coeffs)
+intensity_fit = polynomial_fit(position)
 
-# Number of fit parameters
-num_parameters = 5
-# Find degrees of freedom for redeced chi squared
-ddof = intensity.size - num_parameters
-
-print np.sort(position)
-
-# Fit data
-popt, pcov = curve_fit(func, position, intensity, sigma = intensity_unc)
-# Find residuals
-r = intensity - func(position, *popt)
-chisq = np.sum((r / intensity_unc) ** 2)
-print "Reduced chi squared:", chisq / ddof
-# Calculate and print R^2
-ss_res = np.sum(r ** 2)
-ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
-r_squared = 1 - (ss_res / ss_tot)
-print "R^2:", r_squared
-
-fig1 = plt.figure(1)
-# Add raw data (all collected intensitites)
-frame1 = fig1.add_subplot(121)
 plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
-plt.title("All data points")
-# Add filtered data (maximum intensitites in each position array)
-frame2 = fig1.add_subplot(122)
-plt.scatter(position, intensity, s = 5, color = "black")
-plt.plot(np.sort(position), func(np.sort(position), *popt))
-plt.title("Filtered data")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.ylim([0, 1.2])
+plt.title("Intensity vs. position, polarization by refraction")
+plt.grid()
+plt.savefig("exercise3-data.pdf")
 plt.show()
+plt.close()
+
+# Plot original (collected data)
+plt.subplot(121)
+plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
+plt.plot(position, intensity_fit, color = "red")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.ylim([0, 1.2])
+plt.gca().set_title('Collected data')
+# Plot filtered data
+plt.subplot(122)
+plt.scatter(position, intensity, s = 5, color = "black")
+# plt.plot(position, intensity_fit, color = "red")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intensity (V)")
+plt.ylim([0, 1.2])
+plt.gca().set_title('Filtered data')
+plt.show()
+

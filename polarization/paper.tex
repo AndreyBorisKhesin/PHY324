@@ -1,0 +1,94 @@
+\input{header}
+\physics
+\begin{document}
+\papertitle{Polarization of Light}
+\paperauth{A}{Khesin}{1002442029}
+\paperauth{P}{Zavyalova}{1002345036}
+\paperdate{February 1, 2018}
+\begin{paperabs}
+	
+	Abstract goes here
+	
+\end{paperabs}
+
+\begin{paper}
+	
+\papersec{Introduction}
+
+	Classical optics treats light as a transverse electromagnetic wave for which the directions of oscillation of electric and magnetic fields are both orthogonal to the direction of propagation. A light wave is said to be polarized if it has a well-defined, albeit possibly time-dependent, direction of oscillation of the electric field, also commonly referred to as the optical field. Light may be polarized by shining it through a sheet of Polaroid, transmitting only one component of light about a certain direction, coined the transmission axis of the polarizer.  
+	
+	In this experiment, ...
+	
+	The intensity of light passing through two polarizing element can be shown to be a function of the angle between their transmission axes, resulting in an expression known as Malus's law. 
+	\papereq{MalusLaw}{I(\theta) = I_0 \cos^2 \pars{\theta}}{Serbanescu}
+	\begin{paperwhere}
+		\papervar{I_0}{intensity of incident light}{\volt}
+		\papervar{\theta}{angle between transmission axes}{\degree}
+	\end{paperwhere}
+	
+	In a two polarizing element setup, the first element is known as the \textit{polarizer}; the second is referred to as the \textit{analyzer}. As clearly seen from \eqMalusLaw, crossing the polarizer and the analyzer (i.e., \( \theta = 90 \si{\degree}\)) results in no light exiting the arrangement.
+	
+	In an extended setup including a third polarizer, with the transmission axes of the first and last polarizers at \( 90 \si{\degree} \), an expression for light intensity may be found by applying \eqMalusLaw twice; now, it is given in terms of \( \phi = 45 \si{\degree} + \Theta \), where \( \Theta \) is the measured angle.
+	\papereq{ThreePolarizers}{I_3 = \frac{I_1}{4} \sin^2 \pars{2 \phi} }{}
+	\begin{paperwhere}
+		\papervar{I_1}{intensity after passing through the first polarizer}{\volt}
+		\papervar{\phi}{angle between transmission axes of first and second polarizers}{\degree}
+	\end{paperwhere}
+	
+	The underlying physical concept behind a Polaroid is dichroism, or selective absorption of light. Other mechanisms involved in polarization of light include scattering, birefringence, and reflection. Of particular interest in this experiment was polarization of light by reflection. For a light beam reflected at an air-glass interface, the Fresnel equations provide the reflection coefficients \( r_{\parallel} \) and \( r_{\perp} \).
+	\papereq{ReflectionPerp}{r_{\perp} = \frac{n_1 \cos \theta_1 - n_2 \cos \theta_2}{n_1 \cos \theta_1 + n_2 \cos \theta_2}}{Serbanescu}
+	\papereq{ReflectionParallel}{r_{\parallel} = \frac{n_1 \cos \theta_2 - n_2 \cos \theta_1}{n_1 \cos \theta_2 + n_2 \cos \theta_1}}{Serbanescu}
+	\begin{paperwhere}
+		\papervar{n_1}{refractive index of air}{}
+		\papervar{n_2}{refractive index of glass}{}
+		\papervar{\theta_1}{angle of incidence}{\degree}
+		\papervar{\theta_2}{angle of refraction}{\degree}
+	\end{paperwhere}
+	
+	The subscripts of the above coefficients reflect the orientation of the optical field of incident ray with respect to the plane of incidence. The reflectances of the rays are defined as the squares of the respective reflection coefficients. 
+	\papereq{ReflectancePerp}{R_{\perp} = r_{\perp}^2}{Serbanescu}
+	\papereq{ReflectanceParallel}{R_{\parallel} = r_{\parallel}^2}{Serbanescu}
+	
+	Finally, the angle of refraction is determined using Snell's law.
+	\papereq{SnellsLaw}{n_1 \sin \theta_1 = n_2 \sin \theta_2}{Serbanescu}
+	\begin{paperwhere}
+		\papervar{n_1}{refractive index of air}{}
+		\papervar{n_2}{refractive index of glass}{}
+		\papervar{\theta_1}{angle of incidence}{\degree}
+		\papervar{\theta_2}{angle of refraction}{\degree}
+	\end{paperwhere}
+
+	Reflected light is completely polarized with its optical field perpendicular to the plane of incidence when \( R_{\parallel} = 0 \). In this case, the angle between the reflected and refracted ray is \( 90 \si{\degree} \). The angle of incidence resulting in completely polarized light is known as the Brewster angle, or polarizing angle. An expression for \( \theta_p \) is derived from \eqSnellsLaw by making appropriate angle substitutions.
+	\papereq{PolarizingAngle}{\tan \theta_p = \frac{n_2}{n_1}}{Serbanescu}
+	
+	This experiment verified Malus's law, \eqMalusLaw, for arrangements of two and three polarizers. In the former case, the laser, two polarizers (one with a rotary motion sensor) and the detector were setup such that maximum amount of light was allowed through without oversaturating the detector. Collecting intensity measurements involved unifromly rotating the polarizer with the rotary motion sensor through \( 180 \si{\degree} \). Data was collected using provided \textit{Polarization of Light} software.
+	
+	To verify Malus's law for three polarizers, two polarizers were initially arranged to achieve maximum intensity of transmitted light. Furter, a third polarizer with a rotary motion sensor was inserted between the two initial polarizers and rotated to obtain a minimum in the intensity of transmitted light. Intensity measurements were collected through \( 360 \si{\degree} \) using the provided software.
+	
+	The experimental arrangements for investigating polarization of light by reflection involved an acrylic semi-circular lens, a polarizer mounted on the optical bench, a spectrophotometer table with a rotary motion sensor and an optional square polarizer to be mounter on the spectrophotometer table. Furhter, a set of collimating slits was used for focusing the light beam. To calibrate the setup, \textbf{TODO}. The optical benches along with required optical elements are shown below \textbf{TODO}.
+	
+\papersec{Observations}
+	
+	Intensity of light passing through two polarizers was measured as a function of position. Uncertainties in intensities and positions were found by recording non-changing decimal points in the measurements provided by the software; uncertainty in intensity was determined to be \( \pm .01 \si{\volt} \), uncertainty in position was \( \pm \)\textbf{TODO}. Obtained data is visualized below.
+	\paperfig{Exercise1Data}{\pdf{exercise1-data}}{Intensity of light as a function of rotary sensor position for two polarizers. Error bars are included but are too small to be visible.}
+		
+	Further, intensity vs. position of the rotary motion sensor of the middle polarizer was measured for three polarizers. Uncertainties in intensity and position were again determined to be \( \pm .01 \si{\volt} \) and \( \pm \)\textbf{TODO} respectively.
+	\paperfig{Exercise2Data}{\pdf{exercise2-data}}{Intensity of light as a function of rotary sensor position for three polarizers. Error bars are not included \textbf{TODO} explain why.}
+	
+	Finally, intensity vs. position data was collected for the experimental setup measuring 
+	
+\papersec{Analysis} 
+	
+	Analysis goes here
+	
+\papersec{Conclusion}
+
+	Conclusion goes here
+
+\papersec{Sources}
+
+	\papersource{Serbanescu, R., The Thermocouple, 2017}
+
+\end{paper}
+
+\end{document}

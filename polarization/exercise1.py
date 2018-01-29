@@ -77,10 +77,22 @@ ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
 r_squared = 1 - (ss_res / ss_tot)
 print "R^2:", r_squared
 
+# Plot and save raw data only
+plt.scatter(position, intensity, label = "Data", s = 10, color = "black")
+plt.errorbar(position, intensity, yerr = intensity_unc, linestyle = "None", color = "black")
+plt.title("Intensity vs. position for two polarizers")
+plt.xlabel("Sensor Position (rad)")
+plt.ylabel("Light Intensity (V)")
+plt.grid(True)
+plt.title("Intensity vs. position data for two polarizers")
+plt.savefig("exercise1-data.pdf")
+plt.show()
+plt.close()
+
 fig1 = plt.figure(1)
 # Plot data + model
 frame1 = fig1.add_axes((0.1, 0.3, 0.8, 0.6))
-plt.scatter(position, intensity, label = "Data", s = 10, color = "black")
+plt.scatter(position, intensity, label = "Data", s = 5, color = "black")
 plt.errorbar(position, intensity, yerr = intensity_unc, linestyle = "None", color = "black")
 plt.plot(position, f2(position, *popt), label = "Model", color = "red")
 plt.title("Intensity vs. position for two polarizers")
