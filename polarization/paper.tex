@@ -80,13 +80,22 @@
 	
 \papersec{Analysis} 
 	
-	To begin with, Malus's law was verified using the obtained data for two polarizers. Fitting the measured intensity and angles to \( \cos \theta \) using the least squares method yielded a poor fit characterized by a reduced \( \chi ^ 2 \) of \( 48020.4 \) and an \( R^2 \) value of \( -1.53364 \). Fitting the data to \eqMalusLaw instead (i.e. testing a dependence on cosine squared) yielded a better fit characterized by a reduced \( \chi ^ 2 \)	of \( 8.56036 \) and an \( R ^ 2 \) value of \( 0.999548 \), indicating that the data obeys the theoretical model. The fit parameter was determined to be \( I_0 = 3.8269 \pm 0.0008 \). A visualization of the fit along with residuals is shown below.
-	\paperfig{Exercise1Fit}{\pdf{exercise1-model}}{Light intensity and and fit residuals plotted against the angular position of the sensor for the two polarizer setup. The curve in red has the function \( 3.8269 \pm 0.0008 \cos ^ 2 \theta \). Error bars were included but are too small to be visible.} 
+	To begin with, Malus's law was verified using the obtained data for two polarizers. Fitting the measured intensity and angles to \( \cos \theta \) using the least squares method yielded a poor fit characterized by a reduced \( \chi ^ 2 \) of \( 48020.4 \) and an \( R^2 \) value of \( -1.53364 \). Fitting the data to \eqMalusLaw instead (i.e. testing a dependence on cosine squared) yielded a better fit characterized by a reduced \( \chi ^ 2 \)	of \( 8.56036 \) and an \( R ^ 2 \) value of \( 0.999548 \), indicating that the data obeys the theoretical model. The fit parameter was determined to be \( I_0 = \pars{3.8269 \pm 0.0008} \). A visualization of the fit along with residuals is shown below.
+	\paperfig{Exercise1Fit}{\pdf{exercise1-model}}{Light intensity and and fit residuals plotted against the angular position of the sensor for the two polarizer setup. The curve in red has the function \( \pars{3.8269 \pm 0.0008} \cos ^ 2 \theta \); \( R ^ 2 \) value of the fit is \( 0.999548 \). Error bars were included but are too small to be visible.} 
+	
+	Further, the data obtained for three polarizers was fit to \eqThreePolarizers using the least squares method. The intentensity of light through the first polarizer, \( I_0 \), was determined to be \( \pars{2.891 \pm 0.002} \si{\volt} \). Reduced \( \chi^2 \) was \( 3.422214 \); \( R^2 \) for this fit was \( 0.994677 \).
+	\paperfig{Exercise2Fit}{\pdf{exercise2-model}}{Intensity of light exiting the third polarizer and fit residuals vs. the angular position of the second polarizer. The curve has the function \( \pars{2.891 \pm 0.002} \sin^2 \pars{2\phi} \). \( R^2 \) of this fit was \( 0.994677 \). Error bars are not included due to \textbf{TODO}.}
+	
+	\textbf{TODO}: questions for exercise 2.
+	
+	\textbf{TODO}: discussion for exercise 3 (still need to finish code).
+	
+	\textbf{TODO}: include python code using \texttt{texttt}? (Another section?)
 	
 \papersec{Conclusion}
 
 	Conclusion goes here
-
+	
 \papersec{Sources}
 
 	\papersource{Serbanescu, R., The Thermocouple, 2017}

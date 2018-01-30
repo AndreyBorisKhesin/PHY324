@@ -59,7 +59,7 @@ frame1 = fig1.add_axes((0.1, 0.3, 0.8, 0.6))
 plt.scatter(position, intensity, label = "Data", s = 10, color = "black")
 plt.title("Intensity vs. position for three polarizers")
 plt.ylabel("Light Intensity (V)")
-plt.plot(position, f(position, *popt))
+plt.plot(position, f(position, *popt), color = "red")
 frame1.set_xticklabels([])
 plt.grid(True)
 # Residual plot
