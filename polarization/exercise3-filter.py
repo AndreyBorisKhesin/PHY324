@@ -1,6 +1,6 @@
 #!/bin/python
 # Filters data to get the maxima curve
-# Go back & fit using np.polyfit
+# Go back & relabel angles --> software took them incorrectly
 
 # ---------- Import Statements ----------
 
@@ -22,6 +22,7 @@ position_raw, intensity_raw = np.loadtxt(path_to_file, unpack = True)
 permutation = position_raw.argsort()
 position_raw = position_raw[permutation]
 intensity_raw = intensity_raw[permutation]
+position_raw = 120.0 - np.abs(180.0 - position_raw)
 
 position = np.array([])
 intensity = np.array([])
@@ -45,6 +46,19 @@ coeffs =  np.polyfit(position, intensity, 7, full = False)
 polynomial_fit = np.poly1d(coeffs)
 intensity_fit = polynomial_fit(position)
 
+# Find the local minima
+crit = polynomial_fit.deriv().r
+r_crit = crit[crit.imag==0].real
+test = polynomial_fit.deriv(2)(r_crit) 
+# Find local minima (excluding endpoints)
+x_min = r_crit[test > 0]
+y_min = polynomial_fit(x_min)
+print "Minimum angle (Brewster angle):", x_min[0] / 2
+n1 = 1.00 	# Index of refraction of intial medium (air)
+p_angle = x_min[0] / 2 * np.pi / 180.0
+n2 = n1 * np.tan(p_angle)
+print "Refractive index of acrylic:", n2
+
 plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
 plt.xlabel("Sensor Position (degrees)")
 plt.ylabel("Light Intentisty (V)")
@@ -61,15 +75,19 @@ plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
 plt.plot(position, intensity_fit, color = "red")
 plt.xlabel("Sensor Position (degrees)")
 plt.ylabel("Light Intentisty (V)")
+plt.xlim([94, 121])
 plt.ylim([0, 1.2])
 plt.gca().set_title('Collected data')
 # Plot filtered data
 plt.subplot(122)
 plt.scatter(position, intensity, s = 5, color = "black")
+# plt.plot(x_min, y_min, "o")
 # plt.plot(position, intensity_fit, color = "red")
 plt.xlabel("Sensor Position (degrees)")
 plt.ylabel("Light Intensity (V)")
+plt.xlim([94, 121])
 plt.ylim([0, 1.2])
 plt.gca().set_title('Filtered data')
+plt.savefig("exercise3-model.pdf")
 plt.show()
 
