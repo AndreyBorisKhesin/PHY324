@@ -70,13 +70,13 @@
 \papersec{Observations}
 	
 	Intensity of light passing through two polarizers was measured as a function of position. Uncertainties in intensities and positions were found by recording non-changing decimal points in the measurements provided by the software; uncertainty in intensity was determined to be \( \pm .01 \si{\volt} \), uncertainty in position was \( \pm \)\textbf{TODO}. Obtained data is visualized below.
-	\paperfig{Exercise1Data}{\pdf{exercise1-data}}{Intensity of light as a function of rotary sensor position for two polarizers. Error bars are included but are too small to be visible.}
+	\paperfig{ExerciseOneData}{\pdf{exercise1-data}}{Intensity of light as a function of rotary sensor position for two polarizers. Error bars are included but are too small to be visible.}
 		
 	Further, intensity vs. position of the rotary motion sensor of the middle polarizer was measured for three polarizers. Uncertainties in intensity and position were again determined to be \( \pm .01 \si{\volt} \) and \( \pm \)\textbf{TODO} respectively.
-	\paperfig{Exercise2Data}{\pdf{exercise2-data}}{Intensity of light as a function of rotary sensor position for three polarizers. Error bars are not included \textbf{TODO} explain why.}
+	\paperfig{ExerciseTwoData}{\pdf{exercise2-data}}{Intensity of light as a function of rotary sensor position for three polarizers. Error bars are not included \textbf{TODO} explain why.}
 	
 	Finally, intensity vs. position data was collected for the experimental setup investigating polarization by reflection. Uncertainties were taken to be \textbf{TODO}. 
-	\paperfig{Exercise3-Data}{\pdf{exercise3-data}}{Intensity of reflected ray as a function of position of the rotary motion sensor. Error bars are not included \textbf{TODO} explain why.}
+	\paperfig{ExerciseThreeData}{\pdf{exercise3-data}}{Intensity of reflected ray as a function of position of the rotary motion sensor. Error bars are not included \textbf{TODO} explain why.}
 	
 \papersec{Analysis} 
 	
@@ -86,11 +86,19 @@
 	Further, the data obtained for three polarizers was fit to \eqThreePolarizers using the least squares method. The intentensity of light through the first polarizer, \( I_0 \), was determined to be \( \pars{2.891 \pm 0.002} \si{\volt} \). Reduced \( \chi^2 \) was \( 3.422214 \); \( R^2 \) for this fit was \( 0.994677 \).
 	\paperfig{Exercise2Fit}{\pdf{exercise2-model}}{Intensity of light exiting the third polarizer and fit residuals vs. the angular position of the second polarizer. The curve has the function \( \pars{2.891 \pm 0.002} \sin^2 \pars{2\phi} \). \( R^2 \) of this fit was \( 0.994677 \). Error bars are not included due to \textbf{TODO}.}
 	
-	\textbf{TODO}: questions for exercise 2.
+	\textbf{TODO} questions for exercise 2.
 	
-	\textbf{TODO}: discussion for exercise 3 (still need to finish code).
+	To estimate the value of Brewster's angle \( \theta_p \), given by \eqPolarizingAngle, obtained experimental data for intensity of light vs. angular position of the sensor (\figExerciseThreeData) was filtered to include only the maximum intensity data points. A least squares fit on the obtained boundary points was then performed with a degree-7 polynomial as the model function. 
 	
-	\textbf{TODO}: include python code using \texttt{texttt}? (Another section?)
+	\textbf{TODO} include coefficients of polynomial, \( R^2 \), reduced \( \chi^2 \)
+	
+	\paperfig{ExerciseThreeFit}{\pdf{exercise3-model}}{Intensity of light vs. angular position of the sensor for rays reflected off acrylic semi-circular block. Curve in red is a degree-7 polynomial; data was filtered by taking the maximum-intensity data point in 300-point intervals.}
+	
+	\textbf{TODO} increase distance between plots to prevent ylabel from overlapping w/ left subplot.
+	
+	\textbf{TODO} exercise 3 questions.
+	
+	
 	
 \papersec{Conclusion}
 
