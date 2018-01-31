@@ -1,7 +1,7 @@
 \input{header}
 \physics
 \begin{document}
-\papertitle{Polarization of Light}
+\papertitle{Analysis of Light Intensity with Polarizers}
 \paperauth{A}{Khesin}{1002442029}
 \paperauth{P}{Zavyalova}{1002345036}
 \paperdate{February 1, 2018}
@@ -19,11 +19,12 @@
 	
 	In this experiment, \textbf{TODO}.
 	
-	The intensity of light passing through two polarizing element can be shown to be a function of the angle between their transmission axes, resulting in an expression known as Malus's law. 
+	The intensity of light passing through two polarizing elements can be shown to be a function of the angle between their transmission axes, resulting in an expression known as Malus's law. 
 	\papereq{MalusLaw}{I(\theta) = I_0 \cos^2 \pars{\theta}}{Serbanescu}
 	\begin{paperwhere}
-		\papervar{I_0}{intensity of incident light}{\volt}
-		\papervar{\theta}{angle between transmission axes}{\degree}
+		\papervar{I_0}{intensity of incident light}{}
+		\papervar{I}{intensity of transmitted light}{}
+		\papervar{\theta}{angle between transmission axes}{}
 	\end{paperwhere}
 	
 	In a two polarizing element setup, the first element is known as the \textit{polarizer}; the second is referred to as the \textit{analyzer}. As clearly seen from \eqMalusLaw, crossing the polarizer and the analyzer (i.e., \( \theta = 90 \si{\degree}\)) results in no light exiting the arrangement.
@@ -31,33 +32,33 @@
 	In an extended setup including a third polarizer, with the transmission axes of the first and last polarizers at \( 90 \si{\degree} \), an expression for light intensity may be found by applying \eqMalusLaw twice; now, it is given in terms of \( \phi = 45 \si{\degree} + \Theta \), where \( \Theta \) is the measured angle.
 	\papereq{ThreePolarizers}{I_3 = \frac{I_1}{4} \sin^2 \pars{2 \phi} }{}
 	\begin{paperwhere}
-		\papervar{I_1}{intensity after passing through the first polarizer}{\volt}
-		\papervar{\phi}{angle between transmission axes of first and second polarizers}{\degree}
+		\papervar{I_1}{intensity after first polarizer}{}
+		\papervar{I_3}{intensity of transmitted light}{}
+		\papervar{\phi}{angle between transmission axes of polarizers}{}
 	\end{paperwhere}
 	
 	The underlying physical concept behind a Polaroid is dichroism, or selective absorption of light. Other mechanisms involved in polarization of light include scattering, birefringence, and reflection. Of particular interest in this experiment was polarization of light by reflection. For a light beam reflected at an air-glass interface, the Fresnel equations provide the reflection coefficients \( r_{\parallel} \) and \( r_{\perp} \).
 	\papereq{ReflectionPerp}{r_{\perp} = \frac{n_1 \cos \theta_1 - n_2 \cos \theta_2}{n_1 \cos \theta_1 + n_2 \cos \theta_2}}{Serbanescu}
 	\papereq{ReflectionParallel}{r_{\parallel} = \frac{n_1 \cos \theta_2 - n_2 \cos \theta_1}{n_1 \cos \theta_2 + n_2 \cos \theta_1}}{Serbanescu}
 	\begin{paperwhere}
+		\papervar{r_{\perp}}{perpendicular reflection coefficient}{}
+		\papervar{r_{\parallel}}{parallel reflection coefficient}{}
 		\papervar{n_1}{refractive index of air}{}
 		\papervar{n_2}{refractive index of glass}{}
-		\papervar{\theta_1}{angle of incidence}{\degree}
-		\papervar{\theta_2}{angle of refraction}{\degree}
+		\papervar{\theta_1}{angle of incidence}{}
+		\papervar{\theta_2}{angle of refraction}{}
 	\end{paperwhere}
 	
 	The subscripts of the above coefficients reflect the orientation of the optical field of incident ray with respect to the plane of incidence. The reflectances of the rays are defined as the squares of the respective reflection coefficients. 
 	\papereq{ReflectancePerp}{R_{\perp} = r_{\perp}^2}{Serbanescu}
 	\papereq{ReflectanceParallel}{R_{\parallel} = r_{\parallel}^2}{Serbanescu}
+	\begin{paperwhere}
+		\papervar{R_{\perp}}{perpendicular reflectance}{}
+		\papervar{R_{\parallel}}{parallel reflectance}{}
+	\end{paperwhere}
 	
 	Finally, the angle of refraction is determined using Snell's law.
 	\papereq{SnellsLaw}{n_1 \sin \theta_1 = n_2 \sin \theta_2}{Serbanescu}
-	\begin{paperwhere}
-		\papervar{n_1}{refractive index of air}{}
-		\papervar{n_2}{refractive index of glass}{}
-		\papervar{\theta_1}{angle of incidence}{\degree}
-		\papervar{\theta_2}{angle of refraction}{\degree}
-	\end{paperwhere}
-
 	Reflected light is completely polarized with its optical field perpendicular to the plane of incidence when \( R_{\parallel} = 0 \). In this case, the angle between the reflected and refracted ray is \( 90 \si{\degree} \). The angle of incidence resulting in completely polarized light is known as the Brewster angle, or polarizing angle. An expression for \( \theta_p \) is derived from \eqSnellsLaw by making appropriate angle substitutions.
 	\papereq{PolarizingAngle}{\tan \theta_p = \frac{n_2}{n_1}}{Serbanescu}
 	
@@ -98,8 +99,7 @@
 	
 \papersec{Sources}
 
-	\papersource{Serbanescu, R., The Thermocouple, 2017}
+	\papersource{Serbanescu, R., Polarization of Light, 2017}
 
 \end{paper}
-
 \end{document}
