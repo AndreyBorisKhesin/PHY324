@@ -98,5 +98,30 @@ plt.xlim([94, 121])
 plt.ylim([0, 1.2])
 plt.gca().set_title('Filtered data')
 plt.savefig("exercise3-model.pdf")
-plt.show()
+plt.close()
 
+position_hor, intensity_hor = np.loadtxt("/home/polina/Documents/3rd_Year/PHY324/polarization/exercise3-horizontal.txt", unpack = True)
+position_vert, intensity_vert = np.loadtxt("/home/polina/Documents/3rd_Year/PHY324/polarization/exercise3-vertical.txt", unpack = True)
+
+position_hor = 120.0 - np.abs(180.0 - position_hor)
+position_vert = 120.0 - np.abs(180.0 - position_vert)
+
+# Plot horizontal polarizer intensity
+plt.scatter(position_hor, intensity_hor, s = 5, color = "black")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.title("Intensity vs. angluar position for horizontal polarizer")
+plt.grid(True)
+plt.savefig("exercise3-horizontal.pdf")
+plt.show()
+plt.close()
+
+# Plot horizontal polarizer intensity
+plt.scatter(position_vert, intensity_vert, s = 5, color = "black")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.title("Intensity vs. angluar position for vertical polarizer")
+plt.grid(True)
+plt.savefig("exercise3-vertical.pdf")
+plt.show()
+plt.close()
