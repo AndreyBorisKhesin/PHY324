@@ -53,11 +53,20 @@ test = polynomial_fit.deriv(2)(r_crit)
 # Find local minima (excluding endpoints)
 x_min = r_crit[test > 0]
 y_min = polynomial_fit(x_min)
+# Brewster's angle
 print "Minimum angle (Brewster angle):", x_min[0] / 2
 n1 = 1.00 	# Index of refraction of intial medium (air)
+# Determine refractive index of acrylic
 p_angle = x_min[0] / 2 * np.pi / 180.0
 n2 = n1 * np.tan(p_angle)
 print "Refractive index of acrylic:", n2
+
+# Determine reflection coefficients & reflectances
+theta_t = np.arcsin(n1 * np.sin(p_angle) / n2)		# Refracted angle
+r_perp = (n1 * np.cos(p_angle) - n2 * np.cos(theta_t)) / (n1 * np.cos(p_angle) + n2 * np.cos(theta_t))
+r_parallel = (n1 * np.cos(theta_t) - n2 * np.cos(p_angle)) / (n1 * np.cos(theta_t) + n2 * np.cos(p_angle))
+print "Normal reflectance:", r_perp ** 2
+print "Parallel reflectance:", r_parallel ** 2
 
 plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
 plt.xlabel("Sensor Position (degrees)")
