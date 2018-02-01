@@ -1,4 +1,26 @@
 \input{header}
+\usepackage{listings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
 \physics
 \begin{document}
 \papertitle{Analysis of Light Intensity with Polarizers}
@@ -7,7 +29,7 @@
 \paperdate{February 1, 2018}
 \begin{paperabs}
 	
-	TODO Abstract
+	This experiment studied the effects of polarized light with two polarizers,three polarizers, and an acrylic D-lens. This experiment used a light source paired with a detector to make these measurements. Lastly this experiment determined the amplitudes of the curves with two polarizers and with three polarizers, as well as Brewster's angle, the index of refraction, the perpendicular reflectance and the parallel reflectance for an acrylic D-lens. The values for these were determined to be $(3.8269 \pm .0008)\si{\volt}$, $(2.891 \pm .002) \si{\volt}$, $(54.0\pm.5)\si{\degree}$, $(1.38\pm.03)$, $(0.1\pm.01)$, and $(0\pm8)\si{E-6}$, respectively.
 	
 \end{paperabs}
 
@@ -17,25 +39,27 @@
 
 	Classical optics treats light as a transverse electromagnetic wave for which the directions of oscillation of electric and magnetic fields are both orthogonal to the direction of propagation. A light wave is said to be polarized if it has a well-defined, albeit possibly time-dependent, direction of oscillation of the electric field, also commonly referred to as the optical field. Light may be polarized by shining it through a sheet of Polaroid, transmitting only one component of light about a certain direction, coined the transmission axis of the polarizer.  
 	
-	The intensity of light passing through two polarizing elements can be shown to be a function of the angle between their transmission axes, resulting in an expression known as Malus's law. 
+	The intensity of light passing through two polarizers is a function of the angle between their transmission axes, resulting in an expression known as Malus's law. 
 	\papereq{MalusLaw}{I(\theta) = I_0 \cos^2 \pars{\theta}}{Serbanescu}
 	\begin{paperwhere}
-		\papervar{I_0}{intensity of incident light}{}
-		\papervar{I}{intensity of transmitted light}{}
+		\papervar{I_0}{intensity of incident light}{\volt}
+		\papervar{I}{intensity of transmitted light}{\volt}
 		\papervar{\theta}{angle between transmission axes}{}
 	\end{paperwhere}
 	
 	In a two polarizing element setup, the first element is known as the \textit{polarizer}; the second is referred to as the \textit{analyzer}. As clearly seen from \eqMalusLaw, crossing the polarizer and the analyzer (i.e., \( \theta = 90 \si{\degree}\)) results in no light exiting the arrangement.
 	
 	In an extended setup including a third polarizer, with the transmission axes of the first and last polarizers at \( 90 \si{\degree} \), an expression for light intensity may be found by applying \eqMalusLaw twice; now, it is given in terms of \( \phi = 45 \si{\degree} + \Theta \), where \( \Theta \) is the measured angle.
+	
 	\papereq{ThreePolarizers}{I_3 = \frac{I_1}{4} \sin^2 \pars{2 \phi} }{}
 	\begin{paperwhere}
-		\papervar{I_1}{intensity after first polarizer}{}
-		\papervar{I_3}{intensity of transmitted light}{}
+		\papervar{I_1}{intensity after first polarizer}{\volt}
+		\papervar{I_3}{intensity of transmitted light}{\volt}
 		\papervar{\phi}{angle between transmission axes of polarizers}{}
 	\end{paperwhere}
 	
-	The underlying physical concept behind a Polaroid is dichroism, or selective absorption of light. Other mechanisms involved in polarization of light include scattering, birefringence, and reflection. Of particular interest in this experiment was polarization of light by reflection. For a light beam reflected at an air-glass interface, the Fresnel equations provide the reflection coefficients \( r_{\parallel} \) and \( r_{\perp} \).
+	The underlying physical concept behind a Polaroid is dichroism, or selective absorption of light. Other mechanisms involved in polarization of light include scattering, birefringence, and reflection. Of particular interest in this experiment was polarization of light by reflection. For a light beam reflected at an air-glass interface, the Fresnel equations provide the values for the reflection coefficients \( r_{\parallel} \) and \( r_{\perp} \).
+	
 	\papereq{ReflectionPerp}{r_{\perp} = \frac{n_1 \cos \theta_1 - n_2 \cos \theta_2}{n_1 \cos \theta_1 + n_2 \cos \theta_2}}{Serbanescu}
 	\papereq{ReflectionParallel}{r_{\parallel} = \frac{n_1 \cos \theta_2 - n_2 \cos \theta_1}{n_1 \cos \theta_2 + n_2 \cos \theta_1}}{Serbanescu}
 	\begin{paperwhere}
@@ -48,7 +72,7 @@
 	\end{paperwhere}
 	
 	The subscripts of the above coefficients reflect the orientation of the optical field of incident ray with respect to the plane of incidence. The reflectances of the rays are defined as the squares of the respective reflection coefficients. 
-	\papereq{ReflectancePerp}{R_{\perp} = r_{\perp}^2}{Serbanescu}
+	\papereq{ReflectancePerp}{R_{\perp} = r_{\perp}^2}{Serbanescu}\vspace{-1em}
 	\papereq{ReflectanceParallel}{R_{\parallel} = r_{\parallel}^2}{Serbanescu}
 	\begin{paperwhere}
 		\papervar{R_{\perp}}{perpendicular reflectance}{}
@@ -65,27 +89,34 @@
 	To verify Malus's law for three polarizers, two polarizers were initially arranged to achieve maximum intensity of transmitted light. Further, a third polarizer with a rotary motion sensor was inserted between the two initial polarizers and rotated to obtain a minimum in the intensity of transmitted light. Intensity measurements were collected through \( 360 \si{\degree} \) using the provided software.
 	
 	The experimental arrangements for investigating polarization of light by reflection involved an acrylic D-lens, a polarizer mounted on the optical bench, a spectrophotometer table with a rotary motion sensor and an optional square polarizer to be mounter on the spectrophotometer table. Further, a set of collimating slits was used for focusing the light beam. To calibrate the setup, the polarizers were carefully rotated to ensure that their alignment was exactly as required, in addition to comparing the values listed on the outside (such as aligning a polarizer with the label 0, in the case of a vertical polarizer). The optical benches along with required optical elements are shown below. The experiment was carried out by rotating the platform with the detector while simultaneously rotating the D-lens to keep the reflected beam aligned with the detector.
-	
-	\paperfig{Setup}{\pdf{setup}}{The setup used in the experiments.
+	\paperfig{Setup}{\vspace{-1em}\pdf{setup}\vspace{-2em}}{The setup used in the experiments.
 	Along the top track are the three polarizers used in the second part of the experiment. For the first part of the experiment, the middle polarizer was removed. For the first two experiments, a light source was placed on the left of the top track, which shone into the light detector on the right of the top track. For the Brewster's angle experiment, the bottom track was used. The light source (bottom right corner) shone through a polarizer (bottom right), collimating slits (bottom middle), reflected off of the D-lens (bottom left), and was detected by the detector (middle left).}
 	
 \papersec{Observations}
 	
-	Intensity of light passing through two polarizers was measured as a function of position. Uncertainties in intensities and positions were found by recording non-changing decimal points in the measurements provided by the software; uncertainty in intensity was determined to be \( \pm .01 \si{\volt} \), uncertainty in position was \( \pm .02\). Obtained data is visualized below.
-	\paperfig{ExerciseOneData}{\pdf{exercise1-data}}{Intensity of light as a function of rotary sensor position for two polarizers. Error bars are 3included but are too small to be visible.}
+	Intensity of light passing through two polarizers was measured as a function of position. Uncertainties were detemined to be \( \pm .01 \si{\volt} \) in intensity and \( \pm .02\si{\degree}\) in position.
+	
+	\paperfig{ExerciseOneData}{\pdf{exercise1-data}\vspace{-1em}}{Intensity of light as a function of rotary sensor position for two polarizers. Error bars are 3included but are too small to be visible.}\pagebreak
 		
-	Further, intensity vs. position of the rotary motion sensor of the middle polarizer was measured for three polarizers. Uncertainties in intensity and position were again determined to be \( \pm .01 \si{\volt} \) and \( \pm .02\) respectively.
+	Further, intensity vs. position of the rotary motion sensor of the middle polarizer was measured for three polarizers. Uncertainties in intensity and position were again determined to be \( \pm .01 \si{\volt} \) and \( \pm .02\si{degree}\) respectively.
 	\paperfig{ExerciseTwoData}{\pdf{exercise2-data}}{Intensity of light as a function of rotary sensor position for three polarizers. Error bars are included but are too small to be visible.}
 	
-	Finally, intensity vs. position data was collected for the experimental setup investigating polarization by reflection. Uncertainties were taken to be \( \pm .01 \si{\volt} \) in intensity and \( \pm .02\) in position.
+	Finally, intensity vs position data was collected for the experimental setup investigating polarization by reflection. Uncertainties were taken to be \( \pm .01 \si{\volt} \) in intensity and \( \pm .02\si{degree}\) in position.
 	\paperfig{ExerciseThreeData}{\pdf{exercise3-data}}{Intensity of reflected ray as a function of position of the rotary motion sensor. Error bars are included but are too small to be visible.}
+	
+	The same data was also collected with a square polarizer in front of the detector. This allowed for the values of $I_{\perp}$ (when the polarizer was aligned vertically) and $I_{\parallel}$ (when the polarizer was aligned horizontally) to be measured.
+	\paperfig{Vertical}{\pdf{exercise3-vertical}}{Perpendicular intensity of reflected ray ($I_{\perp}$) as a function of position of the rotary motion sensor. Error bars are included but are too small to be visible.}
+	\paperfig{Horizontal}{\pdf{exercise3-horizontal}}{Parallel intensity of reflected ray ($I_{\parallel}$) as a function of position of the rotary motion sensor. Error bars are included but are too small to be visible.}
 	
 \papersec{Analysis} 
 	
-	To begin with, Malus's law was verified using the obtained data for two polarizers. Fitting the measured intensity and angles to \( \cos (\theta )\) using the least squares method yielded a poor fit characterized by a reduced \( \chi ^ 2 \) of \( 48020.4 \) and an \( R^2 \) value of \( -1.53364 \). Fitting the data to \eqMalusLaw instead (i.e. testing a dependence on cosine squared) yielded a better fit characterized by a reduced \( \chi ^ 2 \)	of \( 8.56036 \) and an \( R ^ 2 \) value of \( 0.999548 \), indicating that the data obeys the theoretical model. The fit parameter was determined to be \( I_0 = \pars{3.8269 \pm .0008} \). A visualization of the fit along with residuals is shown below.
+	All Python programs used for analysis of data were appended at the end of this paper.
+	
+	To begin with, Malus's law was verified using the obtained data for two polarizers. Fitting the measured intensity and angles to \( \cos (\theta )\) using the least squares method yielded a poor fit characterized by a reduced \( \chi ^ 2 \) of \( 48020.4 \) and an \( R^2 \) value of \( -1.53364 \). Fitting the data to \eqMalusLaw instead (i.e. testing a dependence on cosine squared) yielded a better fit characterized by a reduced \( \chi ^ 2 \)	of \( 8.56036 \) and an \( R ^ 2 \) value of \( 0.999548 \), indicating that the data obeys the theoretical model. The fit parameter was determined to be \( I_0 = \pars{3.8269 \pm .0008} \si{\volt}\). A visualization of the fit along with residuals is shown below.\pagebreak
+	
 	\paperfig{ExerciseOneFit}{\pdf{exercise1-model}}{Light intensity and fit residuals plotted against the angular position of the sensor for the two polarizer setup. The curve in red has the function \( \pars{3.8269 \pm .0008} \cos ^ 2( \theta )\); \( R ^ 2 \) value of the fit is \( 0.999548 \). Error bars were included but are too small to be visible.} 
 	
-	Further, the data obtained for three polarizers was fit to \eqThreePolarizers using the least squares method. The intentensity of light through the first polarizer, \( I_0 \), was determined to be \( \pars{2.891 \pm .002} \si{\volt} \). Reduced \( \chi^2 \) was \( 3.422214 \); \( R^2 \) for this fit was \( 0.994677 \).
+	Further, the data obtained for three polarizers was fit to \eqThreePolarizers using the least squares method. The intensity of light through the first polarizer, \( I_0 \), was determined to be \( \pars{2.891 \pm .002} \si{\volt} \). Reduced \( \chi^2 \) was \( 3.422214 \); \( R^2 \) for this fit was \( 0.994677 \).
 	\paperfig{ExerciseTwoFit}{\pdf{exercise2-model}}{Intensity of light exiting the third polarizer and fit residuals vs. the angular position of the second polarizer. The curve has the function \( \pars{2.891 \pm .002} \sin^2 \pars{2\phi} \). \( R^2 \) of this fit was \( 0.994677 \). Error bars are included but are too small to be visible.}
 	
 	The graph in \figExerciseTwoFit differs from the one in \figExerciseOneFit in two major ways. The first is that it has a frequency equal to double of the one in \figExerciseOneFit. The second is that it starts from a peak and descends, while the graph in \figExerciseOneFit does the opposite, by starting from a minimum.
@@ -94,21 +125,389 @@
 	
 	In the Brewster's angle experiment, the data was very noisy due to the fact that it is near impossible to rotate both the lens and the detector slowly while keeping the reflected light beam aligned with the detector. To estimate the value of Brewster's angle \( \theta_p \), given by \eqPolarizingAngle, obtained experimental data for intensity of light vs. angular position of the sensor (\figExerciseThreeData) was filtered to include only the maximum intensity data points, as those represented when the light beam was perfectly aligned with the detector. A least squares fit on the obtained boundary points was then performed with a cubic polynomial as the model function, which was deemed a good function to approximate the peak intensities of the data.
 	
-	This function was chosen not to model the curve, but to find the minimum of the dip. The fit was deemed a good approximation as it had a reduced $\chi^2$ value of 2.00305 and an $R^2$ value of 0.983524. By taking the minimum of the polynomial, Brewster's angle was found to be $54.0\pm.5$, which resulted in a refractive index of $1.38\pm.01$ for acrylic. All uncertainties were propagated using the method of quadratures.
-	
 	\paperfig{ExerciseThreeFit}{\hspace{-4ex}\scalebox{1.2}[1.2]{\pdf{exercise3-model}}}{Intensity of light vs sensor position for rays reflected off acrylic D-lens. Curve in red is a cubic polynomial; data was filtered by taking the maximum-intensity data point in 300-point intervals. The fit had an $R^2$ value of 0.983524. Error bars were included but were too small to be visible.}
 	
-	\textbf{TODO} exercise 3 questions.
+	This function was chosen not to model the curve, but to find the minimum of the dip. The fit was deemed a good approximation as it had a reduced $\chi^2$ value of 2.00305 and an $R^2$ value of 0.983524. By taking the minimum of the polynomial, Brewster's angle was found to be $(54.0\pm.5)\si{\degree}$, which resulted in a refractive index of $(1.38\pm.03)$ for acrylic through \eqPolarizingAngle. All uncertainties were propagated using the method of quadratures.
+	
+	With \eqReflectionPerp, \eqReflectionParallel, \eqReflectancePerp, and \eqReflectanceParallel, the values of $R_{\perp}$ and $R_{\parallel}$ were derived to be $(0.1\pm.01)$ and $(0\pm8)\SI{E-6}{}$, respectively. These values are reasonable as $R_{\parallel}$ is indeed expected to be 0 at Brewster's angle. All uncertainties were propagated using the method of quadratures.
+	
+	The refraction index of water is slightly lower than the obtained value for acrylic so if the light was reflecting off of water, Brewster's angle would be slightly smaller as per \eqPolarizingAngle. The data for an arrangement with a vertical square polarizer was recorded and shown above in \figVertical. The mechanism examined in this experiment demonstrates how polarized sunglasses reduce glare, which can come from polarized reflecting off of something like a pool of water. The polarization in the glasses is vertical, which keeps out a very large fraction of the incoming light. This can be checked by tilting one's head until the polarization in their sunglasses becomes parallel to the ground and seeing the glare from reflected light increase.
 	
 \papersec{Conclusion}
 
-	TODO Conclusion
+	The experiment was successful in demonstrating the effects of light polarization. However, it was not free from sources of error. The most error-prone section was ensuring that the light beam was shining directly into the detector. This was especially noticeable for the experiment measuring Brewster's angle, where both the D-lens and the detector had to be constantly moved at different rates, meaning that a lot of data was recorded where the light beam was not shining directly at the detector. This was mitigated by using a program to only record the highest point of intervals of fixed width.
+	
+	In conclusion, the experiment determined the value of $I_0$ in Malus's law for two polarizers to be $(3.8269 \pm .0008)\si{\volt}$. The experiment also determined the value of $I_1$ in \eqThreePolarizers to be $(2.891 \pm .002) \si{\volt}$. Finally, the experiment determined Brewster's angle, the index of refraction, the perpendicular reflectance and the parallel reflectance. The values for these were determined to be $(54.0\pm.5)\si{\degree}$, $(1.38\pm.03)$, $(0.1\pm.01)$, and $(0\pm8)\si{E-6}$, respectively.
 	
 \papersec{Sources}
 
 	\papersource{Serbanescu, R., Polarization of Light, 2017}
 
 \end{paper}
+\section*{Experiment 1 Code}
+\begin{lstlisting}
+#!/usr/bin/python
+# Fits obtained data for two polarizers for Intensity vs. cos(theta) and
+# Intensity vs. (cos(theta)) ** 2
 
-TODO PYTHON CODE
+# ---------- Import Statements ----------
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+# ---------- User-Defined Functions ----------
+
+# Fit function for optimizing #1
+# Intensity vs. cos(theta), a = I_0, initial intensity
+# (x, a) --> (f_value)
+# (float, float) --> (float)
+def f1(x, a):
+        return a * np.cos(x)
+
+# Fit function for optimizing #2
+# Intensity vs. (cos(theta)) ** 2, a = I_0, initial intensity
+# (x, a) --> (f_value)
+# (float, float) --> (float)
+def f2(x, a):
+        return a * np.cos(x) ** 2
+
+# ---------- Main Code ----------
+
+# Uncertainty in intensity
+I_unc = 0.01
+
+# Set desired font
+plt.rc('font', family = 'Times New Roman')
+path_to_file = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise1-1.txt"
+position, intensity = np.loadtxt(path_to_file, unpack = True)
+intensity_unc = np.full(intensity.size, I_unc)
+
+# Plot raw data
+plt.plot(position, intensity)
+plt.grid(True)
+plt.xlabel("Sensor Position (rad)")
+plt.ylabel("Light Intensity (V)")
+plt.title("Intensity vs. Position for Two Polarizers")
+plt.savefig("exercise1-data.pdf")
+plt.close()
+
+# Number of fit parameters
+num_parameters = 1
+# Find degrees of freedom for redeced chi squared
+ddof = intensity.size - num_parameters
+
+# Fit intensity vs. (cos(theta)) fitting
+print("Fitting to cos(theta)")
+popt, pcov = curve_fit(f1, position, intensity, sigma = intensity_unc)
+print("I_0:", popt[0], "+-", np.sqrt(pcov[0, 0]))
+# Find residuals
+r = intensity - f1(position, *popt)
+chisq = np.sum((r / intensity_unc) ** 2)
+print("Reduced chi squared:", chisq / ddof)
+# Calculate and print R^2
+ss_res = np.sum(r ** 2)
+ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
+r_squared = 1 - (ss_res / ss_tot)
+print("R^2:", r_squared)
+
+# Fit intensity vs. (cos(theta)) ** 2 fitting
+print("Fitting to cos(theta) ** 2")
+popt, pcov = curve_fit(f2, position, intensity, sigma = intensity_unc)
+print("I_0:", popt[0], "+-", np.sqrt(pcov[0, 0]))
+# Find residuals
+r = intensity - f2(position, *popt)
+chisq = np.sum((r / intensity_unc) ** 2)
+print("Reduced chi squared:", chisq / ddof)
+# Calculate and print R^2
+ss_res = np.sum(r ** 2)
+ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
+r_squared = 1 - (ss_res / ss_tot)
+print("R^2:", r_squared)
+
+# Plot and save raw data only
+plt.scatter(position, intensity, label = "Data", s = 10, color = "black")
+plt.errorbar(position, intensity, yerr = intensity_unc, linestyle = "None", color = "black")
+plt.title("Intensity vs. position for two polarizers")
+plt.xlabel("Sensor Position (rad)")
+plt.ylabel("Light Intensity (V)")
+plt.grid(True)
+plt.title("Intensity vs. position data for two polarizers")
+plt.savefig("exercise1-data.pdf")
+# plt.show()
+plt.close()
+
+fig1 = plt.figure(1)
+# Plot data + model
+frame1 = fig1.add_axes((0.1, 0.3, 0.8, 0.6))
+plt.scatter(position, intensity, label = "Data", s = 5, color = "black")
+plt.errorbar(position, intensity, yerr = intensity_unc, linestyle = "None", color = "black")
+plt.plot(position, f2(position, *popt), label = "Model", color = "red")
+plt.title("Intensity vs. position for two polarizers")
+plt.ylabel("Light Intensity (V)")
+#plt.xlim([-0.2, 3.2])
+frame1.set_xticklabels([])
+plt.grid(True)
+# Residual plot
+frame2 = fig1.add_axes((0.1, 0.1, 0.8, 0.2))
+plt.scatter(position, r, s = 10, color = "black")
+plt.grid(True)
+plt.xlabel("Sensor Position (rad)")
+plt.ylabel("Residuals")
+#plt.xlim([-0.2, 3.2])
+#plt.ylim([-3, 9])
+plt.savefig("exercise1-model.pdf")
+plt.show()
+plt.close()
+\end{lstlisting}
+
+\subsection*{Code Output}
+\begin{lstlisting}
+Fitting to cos(theta)
+I_0: 1.57477106402 +- 0.0499865567274
+Reduced chi squared: 48020.3665806
+R^2: -1.53364393683
+Fitting to cos(theta) ** 2
+I_0: 3.82685141159 +- 0.000757737807859
+Reduced chi squared: 8.56035764563
+R^2: 0.999548339594
+\end{lstlisting}\vfill\pagebreak
+\section*{Experiment 2 Code}
+\begin{lstlisting}
+#!/usr/bin/python
+# Fits obtained data for three polarizers
+
+# ---------- Import Statements ----------
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+# ---------- User-Defined Functions ----------
+
+# Function for fitting:
+
+def f(x, a):
+        return (a / 4) * np.sin(2 * (x)) ** 2
+        # return (a / 4) * np.sin(2 * (x + np.pi / 4)) ** 2
+
+# ---------- Main Code ----------
+
+# Set desired font
+plt.rc('font', family = 'Times New Roman')
+# Concatenate data files to conver 360 degrees
+path_to_file_1 = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise2-1.txt"
+path_to_file_2 = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise2-2.txt"
+pos_1, I_1 = np.loadtxt(path_to_file_1,unpack = True)
+pos_2, I_2 = np.loadtxt(path_to_file_2,unpack = True)
+# Shift second
+pos_2 = pos_2 + np.amax(pos_1)
+# Final data arrays
+position = np.concatenate((pos_1, pos_2))
+intensity = np.concatenate((I_1, I_2))
+
+# Uncertainty in intensity
+I_unc = 0.01
+intensity_unc = np.full(intensity.size, I_unc)
+
+# Number of fit parameters
+num_parameters = 1
+# Find degrees of freedom for redeced chi squared
+ddof = intensity.size - num_parameters
+
+# Fit intensity vs. (cos(theta)) fitting
+print("Fitting to sin(2(theta)) ** 2")
+popt, pcov = curve_fit(f, position, intensity, sigma = intensity_unc)
+print("I1:", popt[0], "+-", np.sqrt(pcov[0, 0]))
+# Find residuals
+r = intensity - f(position, *popt)
+chisq = np.sum((r / intensity_unc) ** 2)
+print("Reduced chi squared:", chisq / ddof)
+# Calculate and print R^2
+ss_res = np.sum(r ** 2)
+ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
+r_squared = 1 - (ss_res / ss_tot)
+print("R^2:", r_squared)
+
+fig1 = plt.figure(1)
+# Plot data + model
+frame1 = fig1.add_axes((0.1, 0.3, 0.8, 0.6))
+plt.scatter(position, intensity, label = "Data", s = 10, color = "black")
+plt.title("Intensity vs. position for three polarizers")
+plt.ylabel("Light Intensity (V)")
+plt.plot(position, f(position, *popt), color = "red")
+frame1.set_xticklabels([])
+plt.grid(True)
+# Residual plot
+frame2 = fig1.add_axes((0.1, 0.1, 0.8, 0.2))
+plt.scatter(position, r, s = 10, color = "black")
+plt.grid(True)
+plt.xlabel("Sensor Position (rad)")
+plt.ylabel("Residuals")
+plt.savefig("exercise2-model.pdf")
+plt.show()
+plt.close()
+\end{lstlisting}
+
+\subsection*{Code Output}
+\begin{lstlisting}
+Fitting to sin(2(theta)) ** 2
+I1: 2.89097142639 +- 0.00168062019253
+Reduced chi squared: 3.42221396661
+R^2: 0.994676784893
+\end{lstlisting}\vfill\pagebreak
+\section*{Experiment 3 Code}
+\begin{lstlisting}
+#!/bin/python
+# Filters data to get the maxima curve
+# Go back & relabel angles --> software took them incorrectly
+
+# ---------- Import Statements ----------
+
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib
+from scipy.optimize import curve_fit
+
+# ---------- User-Defined Function ----------
+
+# ---------- Main Code ----------
+
+# Set desired font
+plt.rc('font', family = 'Times New Roman')
+path_to_file = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise3-no-polarizer.txt"
+position_raw, intensity_raw = np.loadtxt(path_to_file, unpack = True)
+
+# Sort the two original arrays
+permutation = position_raw.argsort()
+position_raw = position_raw[permutation]
+intensity_raw = intensity_raw[permutation]
+position_raw = 120.0 - np.abs(180.0 - position_raw)
+
+position = np.array([])
+intensity = np.array([])
+
+# Number of ipoints per interval for selecting max
+pts_per_interval = 300
+for i in range(0, position_raw.size, pts_per_interval):
+        # Check not working w/ last interval:
+        if i < position_raw.size - pts_per_interval:
+                temp_index = np.argmax(intensity_raw[i:i + pts_per_interval])
+                position = np.append(position, position_raw[i:i + pts_per_interval][temp_index])
+                intensity = np.append(intensity, intensity_raw[i:i + pts_per_interval][temp_index])
+        # Last interval
+        else:
+                temp_index = np.argmax(intensity_raw[i:])
+                position = np.append(position, position_raw[i:][temp_index])
+                intensity = np.append(intensity, intensity_raw[i:][temp_index])
+
+position = position[1:]
+intensity = intensity[1:]
+# Fit filtered data to a polynomial
+coeffs =  np.polyfit(position, intensity, 3, full = False)
+polynomial_fit = np.poly1d(coeffs)
+intensity_fit = polynomial_fit(position)
+
+# Find the local minima
+crit = polynomial_fit.deriv().r
+r_crit = crit[crit.imag==0].real
+test = polynomial_fit.deriv(2)(r_crit)
+# Find local minima (excluding endpoints)
+x_min = r_crit[test > 0]
+y_min = polynomial_fit(x_min)
+print("Coefficients:", coeffs)
+# Find residuals
+r = intensity - intensity_fit
+chisq = np.sum((r / 0.01) ** 2)
+print("Reduced chi squared:", chisq / (intensity.size - 4))
+# Calculate and print R^2
+ss_res = np.sum(r ** 2)
+ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
+r_squared = 1 - (ss_res / ss_tot)
+print("R^2:", r_squared)
+# Brewster's angle
+print("Minimum angle (Brewster angle):", x_min[0] / 2)
+n1 = 1.00       # Index of refraction of intial medium (air)
+# Determine refractive index of acrylic
+p_angle = x_min[0] / 2 * np.pi / 180.0
+n2 = n1 * np.tan(p_angle)
+print("Refractive index of acrylic:", n2)
+
+# Determine reflection coefficients & reflectances
+theta_t = np.arcsin(n1 * np.sin(p_angle) / n2)          # Refracted angle
+r_perp = (n1 * np.cos(p_angle) - n2 * np.cos(theta_t)) / (n1 * np.cos(p_angle) + n2 * np.cos(theta_t))
+r_parallel = (n1 * np.cos(theta_t) - n2 * np.cos(p_angle)) / (n1 * np.cos(theta_t) + n2 * np.cos(p_angle))
+print("Normal reflectance:", r_perp ** 2)
+print("Parallel reflectance:", r_parallel ** 2)
+
+plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.ylim([0, 1.2])
+plt.title("Intensity vs. position, polarization by refraction")
+plt.grid()
+plt.savefig("exercise3-data.pdf")
+plt.show()
+plt.close()
+
+# Plot original (collected data)
+plt.subplot(121)
+plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
+plt.plot(position, intensity_fit, color = "red")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.xlim([94, 121])
+plt.ylim([0, 1.2])
+plt.gca().set_title('Collected data')
+# Plot filtered data
+plt.subplot(122)
+plt.scatter(position, intensity, s = 5, color = "black")
+# plt.plot(x_min, y_min, "o")
+# plt.plot(position, intensity_fit, color = "red")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intensity (V)")
+plt.xlim([94, 121])
+plt.ylim([0, 1.2])
+plt.gca().set_title('Filtered data')
+plt.savefig("exercise3-model.pdf")
+plt.close()
+
+position_hor, intensity_hor = np.loadtxt("C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise3-horizontal.txt", unpack = True)
+position_vert, intensity_vert = np.loadtxt("C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise3-vertical.txt", unpack = True)
+
+position_hor = 120.0 - np.abs(180.0 - position_hor)
+position_vert = 120.0 - np.abs(180.0 - position_vert)
+
+# Plot horizontal polarizer intensity
+plt.scatter(position_hor, intensity_hor, s = 5, color = "black")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.title("Intensity vs. angluar position for horizontal polarizer")
+plt.grid(True)
+plt.savefig("exercise3-horizontal.pdf")
+plt.show()
+plt.close()
+
+# Plot horizontal polarizer intensity
+plt.scatter(position_vert, intensity_vert, s = 5, color = "black")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.title("Intensity vs. angluar position for vertical polarizer")
+plt.grid(True)
+plt.savefig("exercise3-vertical.pdf")
+plt.show()
+plt.close()
+\end{lstlisting}
+
+\subsection*{Code Output}
+\begin{lstlisting}
+Coefficients: [  7.78927076e-05  -2.35896116e-02   2.36977631e+00  -7.81328762e+01
+]
+Reduced chi squared: 2.00305497198
+R^2: 0.983523761927
+Minimum angle (Brewster angle): 53.9936461819
+Refractive index of acrylic: 1.37606099182
+Normal reflectance: 0.0953611776688
+Parallel reflectance: 4.708853396e-33
+\end{lstlisting}
 \end{document}

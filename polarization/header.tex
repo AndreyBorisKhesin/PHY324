@@ -306,8 +306,7 @@
 \tag*{\fontsize{12pt}{12pt}\selectfont
 $\begin{array}{r}
 \cr{\text{(\arabic{papereqcounter})}}
-\cr{\fontsize{9pt}{9pt}\selectfont\textit{\ifx\\#3\\~\else(\fi#3\ifx\\#3\\~
-\else)\fi}}
+\cr{\fontsize{9pt}{9pt}\selectfont\textit{\ifx\\#3\\~\else(#3)\fi}}
 \end{array}$}
 \end{equation*}
 
@@ -317,8 +316,7 @@ $\begin{array}{r}
 
 % Where
 \newcommand{\papervar}[3]
-{&$#1$ & #2 \ifx\\#3\\~\else($\smash{\text{\si{\fi
-#3\ifx\\#3\\~\else}}}$)\fi\\}
+{&$#1$ & #2 \ifx\\#3\\~\else($\smash{\text{\si{#3}}}$)\fi\\}
 \newenvironment{paperwhere}
 {\begin{minipage}{\columnwidth}
 \bgroup\fontsize{9pt}{9pt}\selectfont Where:\vspace{2pt}\\\begin{tabular}

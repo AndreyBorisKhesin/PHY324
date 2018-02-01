@@ -77,8 +77,8 @@ print("Refractive index of acrylic:", n2)
 theta_t = np.arcsin(n1 * np.sin(p_angle) / n2)		# Refracted angle
 r_perp = (n1 * np.cos(p_angle) - n2 * np.cos(theta_t)) / (n1 * np.cos(p_angle) + n2 * np.cos(theta_t))
 r_parallel = (n1 * np.cos(theta_t) - n2 * np.cos(p_angle)) / (n1 * np.cos(theta_t) + n2 * np.cos(p_angle))
-print "Normal reflectance:", r_perp ** 2
-print "Parallel reflectance:", r_parallel ** 2
+print("Normal reflectance:", r_perp ** 2)
+print("Parallel reflectance:", r_parallel ** 2)
 
 plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
 plt.xlabel("Sensor Position (degrees)")
@@ -112,8 +112,8 @@ plt.gca().set_title('Filtered data')
 plt.savefig("exercise3-model.pdf")
 plt.close()
 
-position_hor, intensity_hor = np.loadtxt("/home/polina/Documents/3rd_Year/PHY324/polarization/exercise3-horizontal.txt", unpack = True)
-position_vert, intensity_vert = np.loadtxt("/home/polina/Documents/3rd_Year/PHY324/polarization/exercise3-vertical.txt", unpack = True)
+position_hor, intensity_hor = np.loadtxt("C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise3-horizontal.txt", unpack = True)
+position_vert, intensity_vert = np.loadtxt("C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise3-vertical.txt", unpack = True)
 
 position_hor = 120.0 - np.abs(180.0 - position_hor)
 position_vert = 120.0 - np.abs(180.0 - position_vert)

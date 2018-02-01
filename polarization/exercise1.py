@@ -31,7 +31,7 @@ I_unc = 0.01
 
 # Set desired font
 plt.rc('font', family = 'Times New Roman')
-path_to_file = "/home/polina/Documents/3rd_Year/PHY324/polarization/exercise1-1.txt"
+path_to_file = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise1-1.txt"
 position, intensity = np.loadtxt(path_to_file, unpack = True)
 intensity_unc = np.full(intensity.size, I_unc)
 
@@ -50,32 +50,32 @@ num_parameters = 1
 ddof = intensity.size - num_parameters
 
 # Fit intensity vs. (cos(theta)) fitting
-print "Fitting to cos(theta)"
+print("Fitting to cos(theta)")
 popt, pcov = curve_fit(f1, position, intensity, sigma = intensity_unc)
-print "I_0:", popt[0], "+-", np.sqrt(pcov[0, 0])
+print("I_0:", popt[0], "+-", np.sqrt(pcov[0, 0]))
 # Find residuals
 r = intensity - f1(position, *popt)
 chisq = np.sum((r / intensity_unc) ** 2)
-print "Reduced chi squared:", chisq / ddof
+print("Reduced chi squared:", chisq / ddof)
 # Calculate and print R^2
 ss_res = np.sum(r ** 2)
 ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
 r_squared = 1 - (ss_res / ss_tot)
-print "R^2:", r_squared
+print("R^2:", r_squared)
 
 # Fit intensity vs. (cos(theta)) ** 2 fitting
-print "Fitting to cos(theta) ** 2"
+print("Fitting to cos(theta) ** 2")
 popt, pcov = curve_fit(f2, position, intensity, sigma = intensity_unc)
-print "I_0:", popt[0], "+-", np.sqrt(pcov[0, 0])
+print("I_0:", popt[0], "+-", np.sqrt(pcov[0, 0]))
 # Find residuals
 r = intensity - f2(position, *popt)
 chisq = np.sum((r / intensity_unc) ** 2)
-print "Reduced chi squared:", chisq / ddof
+print("Reduced chi squared:", chisq / ddof)
 # Calculate and print R^2
 ss_res = np.sum(r ** 2)
 ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
 r_squared = 1 - (ss_res / ss_tot)
-print "R^2:", r_squared
+print("R^2:", r_squared)
 
 # Plot and save raw data only
 plt.scatter(position, intensity, label = "Data", s = 10, color = "black")

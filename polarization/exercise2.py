@@ -20,8 +20,8 @@ def f(x, a):
 # Set desired font
 plt.rc('font', family = 'Times New Roman')
 # Concatenate data files to conver 360 degrees
-path_to_file_1 = "/home/polina/Documents/3rd_Year/PHY324/polarization/exercise2-1.txt"
-path_to_file_2 = "/home/polina/Documents/3rd_Year/PHY324/polarization/exercise2-2.txt"
+path_to_file_1 = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise2-1.txt"
+path_to_file_2 = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise2-2.txt"
 pos_1, I_1 = np.loadtxt(path_to_file_1,unpack = True)
 pos_2, I_2 = np.loadtxt(path_to_file_2,unpack = True)
 # Shift second  
@@ -40,18 +40,18 @@ num_parameters = 1
 ddof = intensity.size - num_parameters
 
 # Fit intensity vs. (cos(theta)) fitting
-print "Fitting to sin(2(theta)) ** 2"
+print("Fitting to sin(2(theta)) ** 2")
 popt, pcov = curve_fit(f, position, intensity, sigma = intensity_unc)
-print "I1:", popt[0], "+-", np.sqrt(pcov[0, 0])
+print("I1:", popt[0], "+-", np.sqrt(pcov[0, 0]))
 # Find residuals
 r = intensity - f(position, *popt)
 chisq = np.sum((r / intensity_unc) ** 2)
-print "Reduced chi squared:", chisq / ddof
+print("Reduced chi squared:", chisq / ddof)
 # Calculate and print R^2
 ss_res = np.sum(r ** 2)
 ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
 r_squared = 1 - (ss_res / ss_tot)
-print "R^2:", r_squared
+print("R^2:", r_squared)
 
 fig1 = plt.figure(1)
 # Plot data + model
