@@ -65,11 +65,20 @@ ss_res = np.sum(r ** 2)
 ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
 r_squared = 1 - (ss_res / ss_tot)
 print("R^2:", r_squared)
+# Brewster's angle
 print("Minimum angle (Brewster angle):", x_min[0] / 2)
 n1 = 1.00 	# Index of refraction of intial medium (air)
+# Determine refractive index of acrylic
 p_angle = x_min[0] / 2 * np.pi / 180.0
 n2 = n1 * np.tan(p_angle)
 print("Refractive index of acrylic:", n2)
+
+# Determine reflection coefficients & reflectances
+theta_t = np.arcsin(n1 * np.sin(p_angle) / n2)		# Refracted angle
+r_perp = (n1 * np.cos(p_angle) - n2 * np.cos(theta_t)) / (n1 * np.cos(p_angle) + n2 * np.cos(theta_t))
+r_parallel = (n1 * np.cos(theta_t) - n2 * np.cos(p_angle)) / (n1 * np.cos(theta_t) + n2 * np.cos(p_angle))
+print "Normal reflectance:", r_perp ** 2
+print "Parallel reflectance:", r_parallel ** 2
 
 plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
 plt.xlabel("Sensor Position (degrees)")
@@ -101,5 +110,30 @@ plt.xlim([94, 121])
 plt.ylim([0, 1.2])
 plt.gca().set_title('Filtered data')
 plt.savefig("exercise3-model.pdf")
-plt.show()
+plt.close()
 
+position_hor, intensity_hor = np.loadtxt("/home/polina/Documents/3rd_Year/PHY324/polarization/exercise3-horizontal.txt", unpack = True)
+position_vert, intensity_vert = np.loadtxt("/home/polina/Documents/3rd_Year/PHY324/polarization/exercise3-vertical.txt", unpack = True)
+
+position_hor = 120.0 - np.abs(180.0 - position_hor)
+position_vert = 120.0 - np.abs(180.0 - position_vert)
+
+# Plot horizontal polarizer intensity
+plt.scatter(position_hor, intensity_hor, s = 5, color = "black")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.title("Intensity vs. angluar position for horizontal polarizer")
+plt.grid(True)
+plt.savefig("exercise3-horizontal.pdf")
+plt.show()
+plt.close()
+
+# Plot horizontal polarizer intensity
+plt.scatter(position_vert, intensity_vert, s = 5, color = "black")
+plt.xlabel("Sensor Position (degrees)")
+plt.ylabel("Light Intentisty (V)")
+plt.title("Intensity vs. angluar position for vertical polarizer")
+plt.grid(True)
+plt.savefig("exercise3-vertical.pdf")
+plt.show()
+plt.close()
