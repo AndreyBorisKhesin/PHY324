@@ -15,7 +15,7 @@ from scipy.optimize import curve_fit
 
 # Set desired font
 plt.rc('font', family = 'Times New Roman')
-path_to_file = "/home/polina/Documents/3rd_Year/PHY324/polarization/exercise3-no-polarizer.txt"
+path_to_file = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise3-no-polarizer.txt"
 position_raw, intensity_raw = np.loadtxt(path_to_file, unpack = True)
 
 # Sort the two original arrays
@@ -41,8 +41,10 @@ for i in range(0, position_raw.size, pts_per_interval):
 		position = np.append(position, position_raw[i:][temp_index])
 		intensity = np.append(intensity, intensity_raw[i:][temp_index])
 
+position = position[1:]
+intensity = intensity[1:]
 # Fit filtered data to a polynomial
-coeffs =  np.polyfit(position, intensity, 7, full = False)
+coeffs =  np.polyfit(position, intensity, 3, full = False)
 polynomial_fit = np.poly1d(coeffs)
 intensity_fit = polynomial_fit(position)
 
@@ -53,11 +55,21 @@ test = polynomial_fit.deriv(2)(r_crit)
 # Find local minima (excluding endpoints)
 x_min = r_crit[test > 0]
 y_min = polynomial_fit(x_min)
-print "Minimum angle (Brewster angle):", x_min[0] / 2
+print("Coefficients:", coeffs)
+# Find residuals
+r = intensity - intensity_fit
+chisq = np.sum((r / 0.01) ** 2)
+print("Reduced chi squared:", chisq / (intensity.size - 4))
+# Calculate and print R^2
+ss_res = np.sum(r ** 2)
+ss_tot = np.sum((intensity - np.mean(intensity)) ** 2)
+r_squared = 1 - (ss_res / ss_tot)
+print("R^2:", r_squared)
+print("Minimum angle (Brewster angle):", x_min[0] / 2)
 n1 = 1.00 	# Index of refraction of intial medium (air)
 p_angle = x_min[0] / 2 * np.pi / 180.0
 n2 = n1 * np.tan(p_angle)
-print "Refractive index of acrylic:", n2
+print("Refractive index of acrylic:", n2)
 
 plt.scatter(position_raw, intensity_raw, s = 5, color = "black")
 plt.xlabel("Sensor Position (degrees)")
