@@ -1,5 +1,7 @@
 # Thermoelectricity measurements and experiment notes
 
+# Resistance = 2.43 ohm (NOT the red one)
+
 # January 30, 2018 - 1	
 # Air temperature = 22.1 
 # T1 = T_out = heat sink
