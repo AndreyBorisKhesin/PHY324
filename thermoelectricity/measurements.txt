@@ -1,6 +1,6 @@
 # Thermoelectricity measurements and experiment notes
 
-# January 30, 2018
+# January 30, 2018 - 1	
 # Air temperature = 22.1 
 # T1 = T_out = heat sink
 # T2 = T_in = object being cooled
@@ -11,3 +11,26 @@
 22.7	27.4	0.982	2.044
 22.5	25.3	0.693	1.441
 22.3	23.3	0.006	0.014
+
+# February 1, 2018 - 2(a)
+# Air temperature = 21.1
+# T1 = T_out = heat sink
+# T2 = T_in = object being cooled
+# (Pictures for data points)
+
+# February 1, 2018 - 2(b)
+# Air temperature = 21.1
+# T1 = T_out = heat sink
+# T2 = T_in = object being cooled
+# V_DC (V) (first value when turned off remaining data in pictures)
+0.408
+0.396
+0.392
+0.367
+0.353
+0.336
+0.339
+0.337
+0.304
+0.281
+0.273
