@@ -16,7 +16,26 @@
 	
 \papersec{Introduction}
 	
-	Introduction goes here
+	A thermo-electric cooler (TEC) is a device that exploits Peltier and Seebeck effects to act as a solid-state heat pump. Composed of a set of metal-to-semiconductor thermocouple junctions, the TEC is capable of transferring heat from a cold environment to a warmer one, essentially acting as a reverse heat engine. 
+	
+	The Seebeck effect refers to the process of a temperature difference being converted into electricity. Given a circular loop composed of two different metals, it is evident that when maintained at the same temperature, the wires have different electron densities. As electrons move in the loop to correct the electron imbalance, net electric fields are created at the junctions. Further, introducing a temperature difference by keeping one junction at a constant temperature and increasing the temperature of the other gives electrons more kinetic energy and thus resulting in charge imbalances being corrected faster at the warmer junction. A net electric field is created in the loop; an electric potential difference and a current flow are established in the loop.
+	
+	The inverse of the Seebeck effect is referred to as the Peltier effect. As electric current passes through a loop made of two different junctions, a temperature difference between the two junctions is established. The junction where electron flow opposed the net electric field is being heated up as work is done by the electrons; at the other junction electron flow coincides with the direction of the net electric field and thus the junction is being cooled down. 
+	
+	On top of the above two effects underlying the functionality of a TEC, a variety of other processes are observed in the device. A significant example is ohmic heating, or the process of a circuit element with nonzero resistance being heated up as current flows through it. The process is simply described using the relationship below. 
+	
+	\papereq{OhmicHeating}{P = I ^ 2 R}{\textbf{TODO}}
+	\begin{paperwhere}
+		\papervar{P}{heat production per unit time}{\watt}
+		\papervar{I}{current}{\ampere}
+		\papervar{R}{resistance}{\ohm}
+	\end{paperwhere}
+
+	In this experiment, the above physical principles were used to connect various aspects of TEC's performance. In steady-state operation of the TEC, the three elements to be examined were an ideal Peltier reversible heat pump, Ohmic resistive heating, and non-electronic heat flow from from the hot output port of the TEC to the cold input port.
+	
+	The experimental setup included the TEC, \textbf{four} multimeters, current balance, Variac transformer, filter capacitors to filter out noise produced by the TEC, and a \textbf{thermometer}, all arranged as shown below.
+	
+	\paperfig{Setup}{\pdf{setup}}{}
 
 \noindent\begin{tikzpicture}
 \draw
