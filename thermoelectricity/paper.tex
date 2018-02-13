@@ -24,7 +24,7 @@
 	
 	On top of the above two effects underlying the functionality of a TEC, a variety of other processes are observed in the device. A significant example is ohmic heating, or the process of a circuit element with nonzero resistance being heated up as current flows through it. The process is simply described using the relationship below. 
 	
-	\papereq{OhmicHeating}{P = I ^ 2 R}{\textbf{TODO}}
+	\papereq{OhmicHeating}{P = I ^ 2 R}{AF, 2014}
 	\begin{paperwhere}
 		\papervar{P}{heat production per unit time}{\watt}
 		\papervar{I}{current}{\ampere}
@@ -107,8 +107,6 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 	\end{papertable}\vspace{-0.5em}}{Measurements of $T_{out}$ ($\si{\celsius}$), $T_{in}$ ($\si{\celsius}$), $I_{in}$ ($\si{\ampere}$), and $V_{in}$ ($\si{\volt}$) for the first part of the experiment.}
 	
 	Further, after allowing the system to cool off, the TEC was operated with an approximately fixed current supplied from the built-in power supply. The Variac transformer was turned off; measurements of voltage across the TEC and the current supplied to it, as well as the temperatures of the output and the input reservoir were taken.
-	
-	Finally, after reaching a \( 30 \si{\celsius} \) temperature difference, the Variac transformer was turned on to supply various power inputs to the system. Allowing the system to reach a semi-stable state (waiting roughly two minutes after changing the power), reservoir temperatures, input and output power, and the Seebeck voltage were measured. The Seebeck voltage was obtained by turning off the TEC and recording the highest reading of continuously running-off potential. 
 
 	\bgroup\centering\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]U|[inner]U|[outer]}\paperoline
 	\papertableindexheader\papertablecheadersymbol{T_{out}}\papertablecheadersymbol{T_{in}}\papertableuheadersymbol{V_d}\papertableuheadersymbole{I_d}\\
@@ -191,14 +189,23 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 \papertableindex\papertablecval{28.7}\papertablecval{5.4}\papertablecval{2.542}\papertablecval{14.8}\\\paperoline
 	\end{papertable}\vspace{-0.5em}}{TODO}
 
+	Finally, after reaching a \( 30 \si{\celsius} \) temperature difference, the Variac transformer was turned on to supply various power inputs to the system. Allowing the system to reach a semi-stable state (waiting roughly two minutes after changing the power), reservoir temperatures, input and output power, and the Seebeck voltage were measured. The Seebeck voltage was obtained by turning off the TEC and recording the highest reading of continuously running-off potential. 
 
 \papersec{Analysis} 
 	
 	To visualize the data with the open-circuited terminals, temperature difference was plotted against the input power. Uncertainties were propagated using the method of quadratures.
 	
-	\paperfig{part1}{\pdf{1}}{Temperature difference plotted against the power for the open-circuited terminals. The error bars were included but are too small to be visible.}
+	\paperfig{part1}{\pdf{1}}{Temperature difference plotted against the power for the open-circuited terminals. The error bars were included but were too small to be visible.}
 	
-	To visualize the results for the 
+	To visualize the results for the fixed current setup supplied by the built-in power supply, temperature difference and the electrical power input were plotted against time. All uncertainties were propagates using the method of quadratures.
+	
+	\paperfig{part2a}{\pdf{part2a-data}}{Power and temperature difference plotted against time. Uncertainties were included but were too small to be visible.}
+	
+	To visualize the results for various power inputs supplied by the Variac transformer, reservoir temperatures, power, and the Seebeck voltage were plotted versus the input power. All uncertainties were propagates using the method of quadratures.
+	
+	\paperfig{part2b}{\pdf{part2b-data}}{Temperature vs. input power (left), total electrical power vs. input power (middle) and total voltage across the TEC vs. input power (right). Uncertainties were included but were too small to be visible.}
+	
+	
 	
 \papersec{Conclusion}
 
