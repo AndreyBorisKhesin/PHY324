@@ -8,7 +8,16 @@
 \paperdate{February 12, 2018, Completed February 6, 2018}
 \begin{paperabs}
 	
-	Abstract goes here
+	This experiment investigated the properties of thermoelectric cooling. This
+process is based on the Peltier and Seeback effects to use energy to pump heat.
+This experiment measured various properties of the thermoelectric cooler.
+The thermal conductance between the two reservoirs, $K_d$, was found to be $(0.59\pm.06)\si{\watt\per\kelvin}$.
+The thermal conductance between the output heat sink and the ambient, $K_{hs}$, air was found to be $(7.1\pm.9)\si{\watt\per\kelvin}$.
+The Seebeck coefficient for the system, $S_d$, was determined to be $(11.6\pm.1)\si{\milli\volt\per\kelvin}$.
+The internal resistance of the thermoelectric cooler, $R_d$, was determined to be $(0.19\pm.01)\si{\ohm}$.
+The lowest achievable temperature at the thermal reservoir with no heat input was determined to be $(-9.1\pm.2)\si{\kelvin}$.
+The optimum drive current for the system was determined to be TODO.
+The lowest achievable temperature with the optimum input current was determined to be TODO.
 	
 \end{paperabs}
 
@@ -33,7 +42,7 @@
 
 	In this experiment, the above physical principles were used to connect various aspects of TEC's performance. In steady-state operation of the TEC, the three elements to be examined were an ideal Peltier reversible heat pump, Ohmic resistive heating, and non-electronic heat flow from from the hot output port of the TEC to the cold input port.
 	
-	The experimental setup included the TEC, \textbf{four} multimeters, current balance, Variac transformer, filter capacitors to filter out noise produced by the TEC, and a \textbf{thermometer}, all arranged as shown below.
+	The experimental setup included the TEC, four multimeters, current balance, Variac transformer, filter capacitors to filter out noise produced by the TEC, and a temperature sensor, all arranged as shown below.
 	
 	\paperfig{Setup}{\pdf{setup}}{}
 
@@ -93,7 +102,11 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 	
 \papersec{Observations}
 	
-	To begin with, the temperatures of the input and output reservoirs and the ambient air were measured for several values of input power. To make the measurements, the terminals were open-circuited (obtained by unplugging one of the chords connecting the TEC to the DC ammeter). The ambient temperature was determined to be \( \pars{22.1 \pm 0.1} \si{\celsius} \), and was found to remain constant throughout the obtaining of the measurements. 
+	To begin with, the temperatures of the input and output reservoirs and the ambient air were measured for several values of input power. To make the measurements, the terminals were open-circuited (obtained by unplugging one of the chords connecting the TEC to the DC ammeter).
+	
+	The ambient temperature was determined to be \( \pars{22.1 \pm 0.1} \si{\celsius} \), and was found to remain constant throughout the obtaining of the measurements. 
+	
+	The following are measured values of the temperatures of the input reservoir, the heat sink, the input potential and the input current.
 	
 	\paperfig{TableOne}{\centering\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]U|[inner]U|[outer]}\paperoline
 			\papertableindexheader\papertablecheadersymbol{T_{out}}\papertablecheadersymbol{T_{in}}\papertableuheadersymbol{V_{in}}\papertableuheadersymbole{I_{in}}\\
@@ -105,8 +118,6 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 			\papertableindex\papertablecval{22.5}\papertablecval{25.3}\papertableuval{1.441}{.004}\papertableuval{0.693}{.008}\\\paperiline
 			\papertableindex\papertablecval{22.3}\papertablecval{23.3}\papertableuval{0.014}{.003}\papertableuval{0.006}{.005}\\\paperoline
 	\end{papertable}\vspace{-0.5em}}{Measurements of $T_{out}$ ($\si{\celsius}$), $T_{in}$ ($\si{\celsius}$), $I_{in}$ ($\si{\ampere}$), and $V_{in}$ ($\si{\volt}$) for the first part of the experiment.}
-	
-	Further, after allowing the system to cool off, the TEC was operated with an approximately fixed current supplied from the built-in power supply. The Variac transformer was turned off; measurements of voltage across the TEC and the current supplied to it, as well as the temperatures of the output and the input reservoir were taken.
 
 	\bgroup\centering\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]U|[inner]U|[outer]}\paperoline
 	\papertableindexheader\papertablecheadersymbol{T_{out}}\papertablecheadersymbol{T_{in}}\papertableuheadersymbol{V_d}\papertableuheadersymbole{I_d}\\
@@ -171,7 +182,11 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 \papertableindex\papertablecval{28.1}\papertablecval{-9.0}\papertableuval{2.85}{.08}\papertableuval{10.25}{.03}\\\paperiline
 \papertableindex\papertablecval{28.1}\papertablecval{-9.0}\papertableuval{2.85}{.08}\papertableuval{10.27}{.03}\\\paperiline
 \papertableindex\papertablecval{28.2}\papertablecval{-9.1}\papertableuval{2.85}{.08}\papertableuval{10.31}{.03}\\\paperoline
-\end{papertable}\vspace{-0.5em}}{Measurements of $T_{out}$ ($\si{\celsius}$), $T_d$ ($\si{\celsius}$), $V_d$ ($\si{\volt}$), and $I_d$ ($\si{\ampere}$) for the first part of the second part of the experiment.}
+\end{papertable}\vspace{-0.5em}}{Measurements of $T_{out}$ ($\si{\celsius}$), $T_{in}$ ($\si{\celsius}$), $V_d$ ($\si{\volt}$), and $I_d$ ($\si{\ampere}$) for the first part of the second part of the experiment.}
+
+	Further, after allowing the system to cool off, the TEC was operated with an approximately fixed current supplied from the built-in power supply. The Variac transformer was turned off; measurements of voltage across the TEC and the current supplied to it, as well as the temperatures of the output and the input reservoir were taken (see \figPartTwoA).
+	
+	One of the main sources of error in the experiment was the non-constant potential of the current balance, which seemed to always be smaller than the marked potential of 6 volts. For this reason, a fourth multimeter was used in the data collection to account for this.
 
 	\paperfig{TableTwoBOne}{\centering\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]C|[inner]C|[outer]}\paperoline
 			\papertableindexheader\papertablecheadersymbol{T_{out}}\papertablecheadersymbol{T_{in}}\papertablecheadersymbol{V_d~(\si{\volt})}\papertablecheadersymbol{I_d~(\si{\ampere})}\\
@@ -187,7 +202,7 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 \papertableindex\papertablecval{28.9}\papertablecval{2.2}\papertablecval{2.447}\papertablecval{13.6}\\\paperiline
 \papertableindex\papertablecval{28.5}\papertablecval{4.0}\papertablecval{2.512}\papertablecval{14.3}\\\paperiline
 \papertableindex\papertablecval{28.7}\papertablecval{5.4}\papertablecval{2.542}\papertablecval{14.8}\\\paperoline
-	\end{papertable}\vspace{-0.5em}}{TODO}
+	\end{papertable}\vspace{-0.5em}}{Measurements of $T_{out}$ ($\si{\celsius}$), $T_d$ ($\si{\celsius}$), $V_d$ ($\si{\volt}$), and $I_d$ ($\si{\ampere}$) for the second part of the second part of the experiment.}\vspace{2em}
 
 	\paperfig{TableTwoBOne}{\centering\begin{papertable}{|[outer]I|[inner]U|[inner]U|[inner]C|[outer]}\paperoline
 			\papertableindexheader\papertableuheadersymbol{V_{in}}\papertableuheadersymbol{I_{in}}\papertablecheadersymbol{V_s}\\
@@ -203,7 +218,7 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 \papertableindex\papertableuval{1.90}{.06}\papertableuval{4.2}{.1}\papertablecval{0.304}\\\paperiline
 \papertableindex\papertableuval{2.03}{.06}\papertableuval{4.4}{.1}\papertablecval{0.281}\\\paperiline
 \papertableindex\papertableuval{2.13}{.06}\papertableuval{4.7}{.1}\papertablecval{0.273}\\\paperoline
-	\end{papertable}\vspace{-0.5em}}{TODO}
+	\end{papertable}\vspace{-0.5em}}{Measurements of $V_{in}$ ($\si{\volt}$), $I_{in}$ ($\si{\ampere}$), and $V_s$ ($\si{\volt}$) for the second part of the second part of the experiment.}\vspace{2em}
 
 
 	Finally, after reaching a \( 30 \si{\celsius} \) temperature difference, the Variac transformer was turned on to supply various power inputs to the system. Allowing the system to reach a semi-stable state (waiting roughly two minutes after changing the power), reservoir temperatures, input and output power, and the Seebeck voltage were measured. The Seebeck voltage was obtained by turning off the TEC and recording the highest reading of continuously running-off potential. 
@@ -212,13 +227,22 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 	
 	To visualize the data with the open-circuited terminals, temperature difference was plotted against the input power. Uncertainties were propagated using the method of quadratures.
 	
-	\paperfig{part1}{\pdf{1}}{Temperature difference plotted against the power for the open-circuited terminals. The error bars were included but were too small to be visible.}
+	\paperfig{PartOne}{\pdf{1}}{Temperature difference plotted against the power for the open-circuited terminals. The error bars were included but were too small to be visible. Linear functions were fitted to the two curves in the graph. The reciprocals of their slopes are the thermal conductances between the relevant materials. The thermal conductance between the two reservoirs, $K_d$, was found to be $(0.59\pm.06)\si{\watt\per\kelvin}$. This fit had a reduced $\chi^2$ of 24.2124 and an $R^2$ value of 0.962248. The thermal conductance between the output heat sink and the ambient, $K_{hs}$, air was found to be $(7.1\pm.9)\si{\watt\per\kelvin}$. This fit had a reduced $\chi^2$ of 0.307025 and an $R^2$ value of 0.933316.}
 	
 	To visualize the results for the fixed current setup supplied by the built-in power supply, temperature difference and the electrical power input were plotted against time. All uncertainties were propagates using the method of quadratures.
 	
-	\paperfig{part2a}{\pdf{part2a-data}}{Power and temperature difference plotted against time. Uncertainties were included but were too small to be visible.}
+	The thermal conductance between the input and the output reservoirs, $K_d$, obeys the following relation.
 	
-	An overall linear increase in the power input as a function of time was observed except for the rapid decreases that could be attributed to noise in the circuit. 
+	\papereq{Kd}{P_K=K_d\Delta T}{AF, 2014}
+	
+	The thermal conductance between the output heat sink and the ambient air, $K_{hs}$, obeys a similar relation. Thus, the values of $K_d$ and $K_{hs}$ were computed by fitting linear functions to the curves in \figPartOne and taking the reciprocals of the obtained values. The thermal conductance between the two reservoirs, $K_d$, was found to be $(0.59\pm.06)\si{\watt\per\kelvin}$.
+The thermal conductance between the output heat sink and the ambient, $K_{hs}$, air was found to be $(7.1\pm.9)\si{\watt\per\kelvin}$.
+	
+	\paperfig{partTwoa}{\pdf{part2a-data}}{Power and temperature difference plotted against time. Uncertainties were included but were too small to be visible. An increasing exponential function with a plateau was fit to the temperature difference. The plateau was determined to have a height of $(37.3\pm.2)\si{\kelvin}$. This fit had a reduced $\chi^2$ of 20.3006 and an $R^2$ value of 0.994558.}
+	
+	An overall linear increase in the power input as a function of time was observed except for the rapid decreases that could be attributed to noise in the circuit.
+	
+	The TEC model was used to predict the lowest achievable temperature with no heat input. This was done by modeling the graph in \figpartTwoa as an increasing exponential function with a plateau. This resulted in the largest possible temperature difference, which was compared against the existing data in \figPartTwoA. As a result, the lowest achievable temperature at the thermal reservoir with no heat input was determined to be $(-9.1\pm.2)\si{\kelvin}$.
 	
 	To visualize the results for various power inputs supplied by the Variac transformer, reservoir temperatures, power, and the Seebeck voltage were plotted versus the input power. All uncertainties were propagates using the method of quadratures.
 	
@@ -228,8 +252,19 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 	
 \papersec{Conclusion}
 
-	Conclusion goes here
+	Although most of the values obtained in this experiment had high precision, the experiment was not free from sources of error. The primary source of error was the fluctuating potential of the current balance. An attempt was made to mitigate this by adding a fourth multimeter to the data collection.
+
+	A secondary source of error came from the fact that both the input thermal reservoir and the heat sink were both in contact with the surrounding air, in which eddies and other current were free to exchange heat, thereby introducing uncertainty into the measurements in this experiment.
 	
+	Aside from the sources of error, the experiment was successful in determining the key values in question. These were determined to be the following.
+The thermal conductance between the two reservoirs, $K_d$, was found to be $(0.59\pm.06)\si{\watt\per\kelvin}$.
+The thermal conductance between the output heat sink and the ambient, $K_{hs}$, air was found to be $(7.1\pm.9)\si{\watt\per\kelvin}$.
+The Seebeck coefficient for the system, $S_d$, was determined to be $(11.6\pm.1)\si{\milli\volt\per\kelvin}$.
+The internal resistance of the thermoelectric cooler, $R_d$, was determined to be $(0.19\pm.01)\si{\ohm}$.
+The lowest achievable temperature at the thermal reservoir with no heat input was determined to be $(-9.1\pm.2)\si{\kelvin}$.
+The optimum drive current for the system was determined to be TODO.
+The lowest achievable temperature with the optimum input current was determined to be TODO.
+
 \papersec{Sources}
 
 	\papersource{Albanelli, P., Fomichev, S., Thermoelectricity, 2014}
