@@ -10,6 +10,9 @@ from scipy.optimize import curve_fit
 
 # ---------- User-Defined Function ----------
 
+def func(x, a, b, c):
+	return a + b * np.exp(c * x)
+
 # ---------- Main Code ----------
 
 plt.rc('font', family = 'Times New Roman')
@@ -19,6 +22,27 @@ V, I, T1, T2 = np.loadtxt(path_to_file, unpack = True)
 
 P = V * I
 delta_T = T1 - T2
+delta_T_unc = np.full((1, delta_T.size), np.sqrt(2) * 0.1)[0]
+
+ddof = delta_T.size - 3
+
+# Time array
+t = np.arange(0, 1.0 * delta_T.size, 1.0)
+
+popt, pcov = curve_fit(func, t, delta_T, p0 = [37, -37, -1/14])
+print "a:", popt[0], "+-", np.sqrt(pcov[0, 0])
+print "b:", popt[1], "+-", np.sqrt(pcov[1, 1])
+print "c:", popt[2], "+-", np.sqrt(pcov[2, 2])
+# Find residuals
+r = delta_T - func(t, *popt)
+chisq = np.sum((r / delta_T_unc) ** 2)
+print "Reduced chi squared:", chisq / ddof
+
+# Calculate and print R^2
+ss_res = np.sum(r ** 2)
+ss_tot = np.sum((delta_T - np.mean(delta_T)) ** 2)
+r_squared = 1 - (ss_res / ss_tot)
+print "R^2:", r_squared
 
 plt.figure(num = None, figsize = (10, 6), dpi = 80, facecolor = 'w')
 # Plot power
@@ -30,7 +54,8 @@ plt.xticks([], [])
 plt.ylabel("Power (W)")
 # Plot temperature difference
 plt.subplot(122)
-plt.plot(delta_T, color = "blue", label = "Temperature difference (K)")
+plt.plot(t, delta_T, color = "blue", label = "Temperature difference (K)")
+plt.plot(t, func(t, *popt))
 plt.gca().set_title("Temperature change")
 plt.xticks([], [])
 plt.grid(True)

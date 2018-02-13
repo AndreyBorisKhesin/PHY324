@@ -21,6 +21,16 @@ P_in = V_in * I_in
 delta_T = T1 - T2
 P_d = V_d * I_d
 
+K_d = 0.58858351619
+K_d_unc = 0.0582914163177 
+
+# S_d = (V_in * I_in + 0.5 * V_d * I_d + K_d * (T1 - T2)) / (T2 * I_d)
+S_d = V_s / (T1 - T2)
+print "S_d:", np.mean(S_d), "+-", np.std(S_d)
+
+R_d = V_d / I_d
+print "R_d:", np.mean(R_d), "+-", np.std(R_d)
+
 # Plot data
 plt. figure(num = None, figsize = (14, 8), dpi = 80, facecolor = 'w')
 # Temperature difference
