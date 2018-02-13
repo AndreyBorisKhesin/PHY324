@@ -16,8 +16,8 @@ The thermal conductance between the output heat sink and the ambient, $K_{hs}$, 
 The Seebeck coefficient for the system, $S_d$, was determined to be $(11.6\pm.1)\si{\milli\volt\per\kelvin}$.
 The internal resistance of the thermoelectric cooler, $R_d$, was determined to be $(0.19\pm.01)\si{\ohm}$.
 The lowest achievable temperature at the thermal reservoir with no heat input was determined to be $(-9.1\pm.2)\si{\kelvin}$.
-The optimum drive current for the system was determined to be TODO.
-The lowest achievable temperature with the optimum input current was determined to be TODO.
+The optimum drive current for the system was determined to be $(17.0\pm.9)\si{\ampere}$.
+The lowest achievable temperature with the optimum input current was determined to be $(-18.4\pm.3)\si{\celsius}$.
 	
 \end{paperabs}
 
@@ -204,7 +204,7 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 \papertableindex\papertablecval{28.7}\papertablecval{5.4}\papertablecval{2.542}\papertablecval{14.8}\\\paperoline
 	\end{papertable}\vspace{-0.5em}}{Measurements of $T_{out}$ ($\si{\celsius}$), $T_d$ ($\si{\celsius}$), $V_d$ ($\si{\volt}$), and $I_d$ ($\si{\ampere}$) for the second part of the second part of the experiment.}\vspace{2em}
 
-	\paperfig{TableTwoBOne}{\centering\begin{papertable}{|[outer]I|[inner]U|[inner]U|[inner]C|[outer]}\paperoline
+	\paperfig{TableTwoBTwo}{\centering\begin{papertable}{|[outer]I|[inner]U|[inner]U|[inner]C|[outer]}\paperoline
 			\papertableindexheader\papertableuheadersymbol{V_{in}}\papertableuheadersymbol{I_{in}}\papertablecheadersymbol{V_s}\\
 			\papertableuheadersymbol{(\si{\volt})}\papertableuheadersymbol{(\si{\ampere})}\papertablecheadersymbol{(\si{\volt})}\\\paperiline
 \papertableindex\papertableuval{0.00}{.02}\papertableuval{0.00}{.01}\papertablecval{0.408}\\\paperiline
@@ -227,14 +227,19 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 	
 	To visualize the data with the open-circuited terminals, temperature difference was plotted against the input power. Uncertainties were propagated using the method of quadratures.
 	
-	\paperfig{PartOne}{\pdf{1}}{Temperature difference plotted against the power for the open-circuited terminals. The error bars were included but were too small to be visible. Linear functions were fitted to the two curves in the graph. The reciprocals of their slopes are the thermal conductances between the relevant materials. The thermal conductance between the two reservoirs, $K_d$, was found to be $(0.59\pm.06)\si{\watt\per\kelvin}$. This fit had a reduced $\chi^2$ of 24.2124 and an $R^2$ value of 0.962248. The thermal conductance between the output heat sink and the ambient, $K_{hs}$, air was found to be $(7.1\pm.9)\si{\watt\per\kelvin}$. This fit had a reduced $\chi^2$ of 0.307025 and an $R^2$ value of 0.933316.}
+	\paperfig{PartOne}{\pdf{1}}{Temperature difference plotted against the power for the open-circuited terminals. The error bars were included but were too small to be visible. Linear functions were fitted to the two curves in the graph. The reciprocals of their slopes are the thermal conductances between the relevant materials. The thermal conductance between the two reservoirs, $K_d$, was found to be $(0.59\pm.06)\si{\watt\per\kelvin}$. This fit had a reduced $\chi^2$ of 24.2124 and an $R^2$ value of 0.962248. The thermal conductance between the output heat sink and the ambient, $K_{hs}$, air was found to be $(7.1\pm.9)\si{\watt\per\kelvin}$. This fit had a reduced $\chi^2$ of 0.307025 and an $R^2$ value of 0.933316.}\vspace{2em}
 	
 	To visualize the results for the fixed current setup supplied by the built-in power supply, temperature difference and the electrical power input were plotted against time. All uncertainties were propagates using the method of quadratures.
 	
 	The thermal conductance between the input and the output reservoirs, $K_d$, obeys the following relation.
 	
 	\papereq{Kd}{P_K=K_d\Delta T}{AF, 2014}
-	
+	\begin{paperwhere}
+	\papervar{P_K}{power}{\watt}
+	\papervar{K_d}{thermal conductance}{\watt\per\kelvin}
+	\papervar{\Delta T}{temperature difference}{\kelvin}
+	\end{paperwhere}
+
 	The thermal conductance between the output heat sink and the ambient air, $K_{hs}$, obeys a similar relation. Thus, the values of $K_d$ and $K_{hs}$ were computed by fitting linear functions to the curves in \figPartOne and taking the reciprocals of the obtained values. The thermal conductance between the two reservoirs, $K_d$, was found to be $(0.59\pm.06)\si{\watt\per\kelvin}$.
 The thermal conductance between the output heat sink and the ambient, $K_{hs}$, air was found to be $(7.1\pm.9)\si{\watt\per\kelvin}$.
 	
@@ -246,9 +251,59 @@ The thermal conductance between the output heat sink and the ambient, $K_{hs}$, 
 	
 	To visualize the results for various power inputs supplied by the Variac transformer, reservoir temperatures, power, and the Seebeck voltage were plotted versus the input power. All uncertainties were propagates using the method of quadratures.
 	
-	\paperfig{part2b}{\pdf{part2b-data}}{Temperature vs. input power (left), total electrical power vs. input power (middle) and total voltage across the TEC vs. input power (right). Uncertainties were included but were too small to be visible.}
+	\paperfig{part2b}{\pdf{part2b-data}}{Temperature vs. input power (left), total electrical power vs. input power (middle) and total voltage across the TEC vs. input power (right). Uncertainties were included but were too small to be visible.}\vspace{2em}
+		
+	The internal resistance of the thermoelectric cooler, $R_d$, was determined using Ohm's law.
 	
+	\papereq{OhmAgain}{R_d=\frac{V_d}{I_d}}{AF, 2014}
+	\begin{paperwhere}
+	\papervar{R_d}{TEC resistance}{\ohm}
+	\papervar{V_d}{TEC potential}{\volt}
+	\papervar{I_d}{TEC current}{\ampere}
+	\end{paperwhere}
 	
+	By combining \eqOhmAgain with data from \figTableTwoBOne, the internal resistance of the thermoelectric cooler, $R_d$, was determined to be $(0.19\pm.01)\si{\ohm}$.
+	
+	By a similar process, the Seebeck coefficient was determined by using the model for the TEC.
+	
+	\papereq{Seebeck}{S_d=\frac{V_s}{\Delta T}}{AF, 2014}
+	\begin{paperwhere}
+	\papervar{S_d}{Seebeck coefficient}{\volt\per\kelvin}
+	\papervar{V_s}{Seebeck potential}{\volt}
+	\papervar{\Delta T}{temperature difference}{\kelvin}
+	\end{paperwhere}
+	
+	By combining \eqSeebeck with data from \figTableTwoBOne and \figTableTwoBTwo, the Seebeck coefficient for the system, $S_d$, was determined to be $(11.6\pm.1)\si{\milli\volt\per\kelvin}$.
+	
+	By examining the derivative of $P_{in}$ with an output temperature of $\SI{35}{\celsius}$ and an input temperature not exceeding $\SI{5}{\celsius}$, the optimum input current was determined using the TEC model. It is known that $P_{in}$ obeys the following relation.
+	
+	\papereq{Pin}{\fontsize{10pt}{10pt}\selectfont P_{in}=(T_{out}-\Delta T)S_dI_d-\frac12R_dI^2_d-K_d\Delta T}{AF, 2014}
+	\begin{paperwhere}
+	\papervar{P_{in}}{input power}{\watt}
+	\papervar{T_{out}}{output temperature}{\kelvin}
+	\papervar{\Delta T}{temperature difference}{\kelvin}
+	\papervar{S_d}{Seebeck coefficient}{\volt\per\kelvin}
+	\papervar{I_d}{TEC current}{\ampere}
+	\papervar{R_d}{TEC resistance}{\ohm}
+	\papervar{K_d}{thermal conductance}{\watt\per\kelvin}
+	\end{paperwhere}
+	
+	When differentiated and set to zero to find the maximum, the optimal input current was shown to be equal to the following.
+	
+	\papereq{Diff}{I_d=\frac{(T_{out}-\Delta T)S_d}{R_d}}{}
+	\begin{paperwhere}
+	\papervar{T_{out}}{output temperature}{\kelvin}
+	\papervar{\Delta T}{temperature difference}{\kelvin}
+	\papervar{S_d}{Seebeck coefficient}{\volt\per\kelvin}
+	\papervar{I_d}{TEC current}{\ampere}
+	\papervar{R_d}{TEC resistance}{\ohm}
+	\end{paperwhere}
+	
+	The optimal current was thus found to be $(17.0\pm.9)\si{\ampere}$.
+	
+	If no heat were admitted to the reservoir, $P_{in}$ is set to 0. By using the value for the optimal current and rearranging \eqPin to solve for $T_{in}$, the lowest input temperature was shown to be $(-18.4\pm.3)\si{\celsius}$.
+	
+	Lastly, to have a dynamic model, the PID stabilization algorithm could be used. This could be done in combination with the well known heat equation to create a model for the spread of heat through the system. These partial differential equations could be solved with numerical methods for modeling the transition of heat between the boundaries of the TEC elements.
 	
 \papersec{Conclusion}
 
@@ -262,8 +317,8 @@ The thermal conductance between the output heat sink and the ambient, $K_{hs}$, 
 The Seebeck coefficient for the system, $S_d$, was determined to be $(11.6\pm.1)\si{\milli\volt\per\kelvin}$.
 The internal resistance of the thermoelectric cooler, $R_d$, was determined to be $(0.19\pm.01)\si{\ohm}$.
 The lowest achievable temperature at the thermal reservoir with no heat input was determined to be $(-9.1\pm.2)\si{\kelvin}$.
-The optimum drive current for the system was determined to be TODO.
-The lowest achievable temperature with the optimum input current was determined to be TODO.
+The optimum drive current for the system was determined to be $(17.0\pm.9)\si{\ampere}$.
+The lowest achievable temperature with the optimum input current was determined to be $(-18.4\pm.3)\si{\celsius}$.
 
 \papersec{Sources}
 
