@@ -95,24 +95,28 @@ Positive and negative terminals were not shown on the upper ammeter and voltmete
 	
 	To begin with, the temperatures of the input and output reservoirs and the ambient air were measured for several values of input power. To make the measurements, the terminals were open-circuited (obtained by unplugging one of the chords connecting the TEC to the DC ammeter). The ambient temperature was determined to be \( \pars{22.1 \pm 0.1} \si{\celsius} \), and was found to remain constant throughout the obtaining of the measurements. 
 	
+	\paperfig{TableOne}{\centering\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]U|[inner]U|[outer]}\paperoline
+			\papertableindexheader\papertablecheadersymbol{T_{out}}\papertablecheadersymbol{T_{in}}\papertableuheadersymbol{I_{in}}\papertableuheadersymbole{V_{in}}\\
+			\papertablecheadersymbol{\pm.1\degree}\papertablecheadersymbol{\pm.1\degree}\papertableuheaderunit{\si{\ampere}}\papertableuheaderunite{\si{\volt}}\\\paperiline
+			\papertableindex\papertablecval{23.0}\papertablecval{31.8}\papertableuval{1.54}{.01}\papertableuval{3.197}{.005}\\\paperiline
+			\papertableindex\papertablecval{22.9}\papertablecval{31.4}\papertableuval{1.39}{.01}\papertableuval{2.884}{.004}\\\paperiline
+			\papertableindex\papertablecval{22.9}\papertablecval{30.2}\papertableuval{1.20}{.01}\papertableuval{2.488}{.004}\\\paperiline
+			\papertableindex\papertablecval{22.7}\papertablecval{27.4}\papertableuval{0.98}{.01}\papertableuval{2.044}{.004}\\\paperiline
+			\papertableindex\papertablecval{22.5}\papertablecval{25.3}\papertableuval{0.693}{.008}\papertableuval{1.441}{.004}\\\paperiline
+			\papertableindex\papertablecval{22.3}\papertablecval{23.3}\papertableuval{0.006}{.005}\papertableuval{0.014}{.003}\\\paperoline
+	\end{papertable}\vspace{-0.5em}}{Measurements of $T_{out}$ ($\si{\celsius}$), $T_{in}$ ($\si{\celsius}$), $I_{in}$ ($\si{\ampere}$), and $V_{in}$ ($\si{\volt}$) for the first part of the experiment.}
+	
 	Further, after allowing the system to cool off, the TEC was operated with an approximately fixed current supplied from the built-in power supply. The Variac transformer was turned off; measurements of voltage across the TEC and the current supplied to it, as well as the temperatures of the output and the input reservoir were taken.
 	
 	Finally, after reaching a \( 30 \si{\celsius} \) temperature difference, the Variac transformer was turned on to supply various power inputs to the system. Allowing the system to reach a semi-stable state (waiting roughly two minutes after changing the power), reservoir temperatures, input and output power, and the Seebeck voltage were measured. The Seebeck voltage was obtained by turning off the TEC and recording the highest reading of continuously running-off potential. 
-	
-	\paperfig{TableOne}{\centering\begin{papertable}{|[outer]I|[inner]C|[inner]C|[inner]U|[inner]U|[outer]}\paperoline
-	\papertableindexheader\papertablecheadersymbol{T_{out}}\papertablecheadersymbol{T_{in}}\papertableuheadersymbol{I_{in}}\papertableuheadersymbole{V_{in}}\\
-	\papertablecheadersymbol{\pm.1\degree}\papertablecheadersymbol{\pm.1\degree}\papertableuheaderunit{\si{\ampere}}\papertableuheaderunite{\si{\volt}}\\\paperiline
-\papertableindex\papertablecval{23.0}\papertablecval{31.8}\papertableuval{1.541}{.01}\papertableuval{3.197}{.005}\\\paperiline
-\papertableindex\papertablecval{22.9}\papertablecval{31.4}\papertableuval{1.386}{.01}\papertableuval{2.884}{.004}\\\paperiline
-\papertableindex\papertablecval{22.9}\papertablecval{30.2}\papertableuval{1.197}{.01}\papertableuval{2.488}{.004}\\\paperiline
-\papertableindex\papertablecval{22.7}\papertablecval{27.4}\papertableuval{0.982}{.01}\papertableuval{2.044}{.004}\\\paperiline
-\papertableindex\papertablecval{22.5}\papertablecval{25.3}\papertableuval{0.693}{.008}\papertableuval{1.441}{.004}\\\paperiline
-\papertableindex\papertablecval{22.3}\papertablecval{23.3}\papertableuval{0.006}{.005}\papertableuval{0.014}{.003}\\\paperoline
-\end{papertable}\vspace{-0.5em}}{Measurements of $T_{out}$ ($\si{\celsius}$), $T_{in}$ ($\si{\celsius}$), $I_{in}$ ($\si{\ampere}$), and $V_{in}$ ($\si{\volt}$) for the first part of the experiment.}
 
 \papersec{Analysis} 
 	
+	To visualize the data with the open-circuited terminals, temperature difference was plotted against the input power. Uncertainties were propagated using the method of quadratures.
 	
+	\paperfig{part1}{\pdf{1}}{Temperature difference plotted against the power for the open-circuited terminals. The error bars were included but are too small to be visible.}
+	
+	To visualize the results for the 
 	
 \papersec{Conclusion}
 
