@@ -20,8 +20,8 @@ def f(x, a):
 # Set desired font
 plt.rc('font', family = 'Times New Roman')
 # Concatenate data files to conver 360 degrees
-path_to_file_1 = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise2-1.txt"
-path_to_file_2 = "C:\\Users\\Andrey\\Documents\\PHY324\\polarization\\exercise2-2.txt"
+path_to_file_1 = "exercise2-1.txt"
+path_to_file_2 = "exercise2-2.txt"
 pos_1, I_1 = np.loadtxt(path_to_file_1,unpack = True)
 pos_2, I_2 = np.loadtxt(path_to_file_2,unpack = True)
 # Shift second  

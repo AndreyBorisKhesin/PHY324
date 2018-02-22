@@ -1,0 +1,21 @@
+# thickness = 0.95 mm
+
+# Measurement #1
+micrometer reading w/o slide = 12.650
+micrometer reading w/ slide = 10.005
+
+# Measurement #2
+micrometer reading w/o slide = 12.605
+micrometer reading w/ slide = 9.995
+
+# Measurement #3
+micrometer reading w/o slide = 12.595
+micrometer reading w/ slide = 9.970
+
+# Measurement #4
+micrometer reading w/o slide = 12.590
+micrometer reading w/ slide = 9.975
+
+# Measurement #5
+micrometer reading w/o slide = 12.590
+micrometer reading w/ slide = 9.970
