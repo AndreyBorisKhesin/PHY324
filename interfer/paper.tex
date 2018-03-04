@@ -1,7 +1,4 @@
 \input{header}
-\usepackage{tikz}
-\usetikzlibrary{optics}
-
 \physics
 \begin{document}
 \papertitle{Interferometers}
@@ -13,12 +10,12 @@
 	Abstract goes here
 	
 \end{paperabs}
-
+	
 \begin{paper}
 	
 \papersec{Introduction}
 	
-	Interference patterns produced by various light sources may be studied using interferometers, which operate by dividing either the wavefront or the amplitude of the original light beam. In this experiment, an amplitude-splitting interferometer, the Michelson interferometer, was used extensively to determine the indexes of refraction of a transparent solid and a gas after being calibrated using a sodium light. 
+	Interference patterns produced by various light sources may be studied using interferometers, which operate by dividing either the wavefront or the amplitude of the original light beam. In this experiment, the Michelson interferometer was used extensively to determine the indexes of refraction of a transparent solid and a gas after being calibrated using a sodium light. As seen from the schematic below, the Michelson interferometer operates by splitting the amplitude of the incident beam. 
 	
 	\paperfig{MichelsonInterferometer}{% Still need to figure out labels (esp. the slide location)
 	\begin{tikzpicture}[use optics]
@@ -41,9 +38,9 @@
 		\draw[] (1.70, -0.45) -- (1.55, -0.3);
 		\draw[->-] (1.55, -0.3) -- (-0.15, -0.3);
 		\draw[->-] (-0.15, -0.3) -- (-0.15, -3.0);
-		\node[sensor line, rotate = -90] at (0, -3.2) {};	% May switch this to another element
+		\node[thin optics element, rotate = -90] at (0, -3.0) {};
 		\node[thin optics element, rotate = 90] at (0, 2.25) {};
-	\end{tikzpicture}}{Schematic diagram of the Michelson interferometer.}
+	\end{tikzpicture}}{\textbf{TODO}}
 	
 	Prior to making any measurements, the Michelson interferometer was calibrated against a sodium lamp with an assumed mean wavelength value of \( \lambda = 598.3 \) \si{nm}. The calibration curve itself was obtained by moving the carriage toward the observer, counting the number of fringes disappearing from the middle of the field of view and plotting the results. 
 	
