@@ -1,21 +1,29 @@
 \input{header}
+\usepackage{tikz}
+\usetikzlibrary{optics}
+
 \physics
 \begin{document}
-\papertitle{Interferometers}
+\papertitle{Analysis of Interferometer Properties}
 \paperauth{A}{Khesin}{1002442029}
 \paperauth{P}{Zavyalova}{1002345036}
-\paperdate{}
+\paperdate{March 5, 2018, Completed February 27, 2018}
 \begin{paperabs}
 	
-	Abstract goes here
+	This experiment investigated various uses of inteferometers for determining unknown constants. The experiment produced results that were consistent with the current ones. The calibration curve for the Michelson interferometer was fit with the function \( \pars{5770 \pm 30 } x + \pars{19.991 \pm .006} \), a $\chi^2$ value of 7.9231, and an \( R^2 \) value of \( 0.9993 \).
+	The refractive index for the microscope slide was determined to be $(1.480\pm.03)$, which was close to the accepted value of 1.5251.
+	The pressure as a function of the number of fringes was found to be \( \pars{16.39 \pm 0.04}x \), with a $\chi^2$ value of 1.5654, and an \( R^2 \) value of \( 0.9992 \).
+	The refractive index for air was determined to be $(1.00029\pm.00001)$, which was close to the accepted value of 1.000277.
+	The Fabry-Per\'ot interferometer calibration curve was found to be \( \pars{5390 \pm 30} x + \pars{12.146 \pm .005 } \), with a $\chi^2$ value of 6.6118, and an \( R^2 \) value of \( 0.9994 \).
+	The sodium doublet wavelength separation was found to be $(0.60\pm.03)\si{\nano\meter}$, which is close to the accepted value of \SI{0.5974}{\nano\meter}.
 	
 \end{paperabs}
-	
+
 \begin{paper}
 	
 \papersec{Introduction}
 	
-	Interference patterns produced by various light sources may be studied using interferometers, which operate by dividing either the wavefront or the amplitude of the original light beam. In this experiment, the Michelson interferometer was used extensively to determine the indexes of refraction of a transparent solid and a gas after being calibrated using a sodium light. As seen from the schematic below, the Michelson interferometer operates by splitting the amplitude of the incident beam. 
+	Interference patterns produced by various light sources may be studied using interferometers, which operate by dividing either the wavefront or the amplitude of the original light beam. In this experiment, an amplitude-splitting interferometer, the Michelson interferometer, was used extensively to determine the indexes of refraction of a transparent solid and a gas after being calibrated using a sodium light. 
 	
 	\paperfig{MichelsonInterferometer}{% Still need to figure out labels (esp. the slide location)
 	\begin{tikzpicture}[use optics]
@@ -38,15 +46,17 @@
 		\draw[] (1.70, -0.45) -- (1.55, -0.3);
 		\draw[->-] (1.55, -0.3) -- (-0.15, -0.3);
 		\draw[->-] (-0.15, -0.3) -- (-0.15, -3.0);
-		\node[thin optics element, rotate = -90] at (0, -3.0) {};
+		\node[sensor line, rotate = -90] at (0, -3.2) {};	% May switch this to another element
 		\node[thin optics element, rotate = 90] at (0, 2.25) {};
-	\end{tikzpicture}}{\textbf{TODO}}
+	\end{tikzpicture}}{Schematic diagram of the Michelson interferometer. The light source comes in from the left, and splits by reflecting up and refracting to the right, when the beams are recombined in the middle, they proceed towards the observer at the bottom, and since the top mirror can be moved, small changes in path difference can make the waves from the light interfere constructively or destructively.}
 	
-	Prior to making any measurements, the Michelson interferometer was calibrated against a sodium lamp with an assumed mean wavelength value of \( \lambda = 598.3 \) \si{nm}. The calibration curve itself was obtained by moving the carriage toward the observer, counting the number of fringes disappearing from the middle of the field of view and plotting the results. 
+	\paperfig{SetupM}{\scalebox{1}[0.7]{\pdf{setup1}}}{The experimental setup of the Michelson interferometer.}
 	
-	Once the interferometer was calibrated, the setup could be used to determine the index of refraction of various materials. For instance, the index of refraction of a transparent solid---a microscope slide---was found. In general, the index of refraction of a solid can be shown to obey the following relation.
+	Prior to making any measurements, the Michelson interferometer was setup as in \figSetupM and calibrated against a sodium lamp with an assumed mean wavelength value of $\lambda = \SI{598.3}{\nano\meter}$. The calibration curve itself was obtained by moving the carriage toward the observer, counting the number of fringes disappearing from the middle of the field of view and plotting the results to determine the relation between the micrometer screw reading and the movement of the carriage, 50 fringes at a time. 
 	
-	\papereq{SolidRefractiveIndex}{\mu = \frac{m \lambda}{2d} + 1}{\textbf{TODO}}
+	Once the interferometer was calibrated, the setup could be used to determine the index of refraction of various materials. For instance, the index of refraction of a transparent solid---a microscope slide---was found by measuring the difference between the peaks of the white light fringes both with and without the microscope slide. In general, the index of refraction of a solid obeys the following relation.
+	
+	\papereq{SolidRefractiveIndex}{\mu = \frac{m \lambda}{2d} + 1}{AF, 2014}
 	\begin{paperwhere}
 		\papervar{\mu}{index of refraction}{}
 		\papervar{m}{number of fringes displaced}{}
@@ -56,21 +66,242 @@
 	
 	As seen from \eqSolidRefractiveIndex, inserting a transparent solid into the optical path of the beam results in a displacement of the interference pattern produced by the light source. 
 	
+	Additionally, a derivation from the ideal gas law shows that if instead of a solid, a gas was inserted into the path of the beam, then the refractive index of the gas can be obtained.
+	
+	\papereq{GasRefractiveIndex}{n=1+\frac{\d N}{\d P}\frac{\lambda}{2l}\frac{760T}{273.15}}{AF, 2014}
+	\begin{paperwhere}
+	    \papervar{n}{refractive index of gas}{}
+	    \papervar{N}{number of fringes counted}{}
+	    \papervar{P}{pressure inside gas chamber}{mmHg}
+	    \papervar{l}{thickness of gas chamber}{\meter}
+	    \papervar{T}{temperature}{\kelvin}
+	\end{paperwhere}
+	
+	\paperfig{SetupF}{\scalebox{1}[0.7]{\pdf{setup2}}}{The experimental setup of the Fabry-Per\'ot interferometer.}
+	
+	Lastly, a Fabry-Per\'ot was used to find the wavelength separation of the doublet of sodium spectral lines.
+	
+	\papereq{Doublet}{\Delta\lambda=\frac{\overline{\lambda}^2}{2fM}}{AF, 2014}
+	\begin{paperwhere}
+	    \papervar{\Delta\lambda}{sodium doublet separation}{\meter}
+	    \papervar{\overline{\lambda}}{wavelength of sodium}{\meter}
+	    \papervar{f}{conversion factor}{}
+	    \papervar{M}{micrometer screw reading}{\meter}
+	\end{paperwhere}
+	
+	With \eqDoublet, the separation of the doublet could be determined.
+	
 \papersec{Observations}
 	
-	Observations go here
+	The calibration curve for the Michelson interferometer was obtained by first counting the number of fringes that went by and writing down the micrometer screw readings for each fringe that went by.\pagebreak
+	
+	\paperfig{CalibrationCurve}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}\paperoline
+	    \papertableindexheader&\multirow{2}{*}{\textsc{Fringes}}&\textsc{Reading}\\
+	    &\papertablecheadersymbol{(\pm.005)}\\\paperiline
+	    \papertableindex\papertablecval{0}\papertablecval{20.000}\\\paperiline
+	    \papertableindex\papertablecval{50}\papertablecval{20.085}\\\paperiline
+	    \papertableindex\papertablecval{100}\papertablecval{20.160}\\\paperiline
+	    \papertableindex\papertablecval{150}\papertablecval{20.245}\\\paperiline
+	    \papertableindex\papertablecval{200}\papertablecval{20.320}\\\paperiline
+	    \papertableindex\papertablecval{250}\papertablecval{20.410}\\\paperiline
+	    \papertableindex\papertablecval{300}\papertablecval{20.485}\\\paperiline
+	    \papertableindex\papertablecval{350}\papertablecval{20.570}\\\paperiline
+	    \papertableindex\papertablecval{400}\papertablecval{20.670}\\\paperiline
+	    \papertableindex\papertablecval{450}\papertablecval{20.775}\\\paperiline
+	    \papertableindex\papertablecval{500}\papertablecval{20.865}\\\paperiline
+	    \papertableindex\papertablecval{550}\papertablecval{20.950}\\\paperiline
+	    \papertableindex\papertablecval{600}\papertablecval{21.010}\\\paperiline
+	    \papertableindex\papertablecval{650}\papertablecval{21.090}\\\paperiline
+	    \papertableindex\papertablecval{700}\papertablecval{21.165}\\\paperiline
+	    \papertableindex\papertablecval{750}\papertablecval{21.250}\\\paperiline
+	    \papertableindex\papertablecval{800}\papertablecval{21.335}\\\paperiline
+	    \papertableindex\papertablecval{850}\papertablecval{21.420}\\\paperiline
+	    \papertableindex\papertablecval{900}\papertablecval{21.530}\\\paperiline
+	    \papertableindex\papertablecval{950}\papertablecval{21.620}\\\paperiline
+	    \papertableindex\papertablecval{1000}\papertablecval{21.700}\\\paperoline
+	\end{papertable}\vspace{-1.5em}}{A table showing the reading of the micrometer screw for each interval at intervals in which 50 fringes disappear in the field of view.}
+	
+	In \figCalibrationCurve, the results for the first part of the experiment are shown.
+	The micrometer screw readings are shown which were taken in intervals of 50 fringes.
+	
+	In the second part of the experiment, the thickness of the microscope slide was measured using a caliper and was found to be $(.95\pm.05)\si{\milli\meter}$.
+	Next, the positions on the micrometer screw where the white light fringes were observed without the slide, and where they were observed with the slide, was recorded.\\
+	
+	\paperfig{WLF}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}\paperoline
+	\papertableindexheader&\textsc{With Slide}&\textsc{Without Slide}\\
+	\papertablecheadersymbol{(\pm.005\si{\micro\meter})}\papertablecheadersymbol{(\pm.005\si{\micro\meter})}\\\paperiline
+	\papertableindex\papertablecval{10.005}\papertablecval{12.650}\\\paperiline
+	\papertableindex\papertablecval{9.995}\papertablecval{12.605}\\\paperiline
+	\papertableindex\papertablecval{9.970}\papertablecval{12.595}\\\paperiline
+	\papertableindex\papertablecval{9.975}\papertablecval{12.590}\\\paperiline
+	\papertableindex\papertablecval{9.970}\papertablecval{12.590}\\\paperoline
+	\end{papertable}\vspace{-1.5em}}{A table of the readings of the micrometer screw at the position of the white light fringes both with a slide and without. The difference between the two readings is $(2.63\pm.03)\si{\micro\meter}$.}\\
+	
+	Shown in \figWLF are the micrometer screw readings for the positions of the white light fringes both with the microscope slide and without it.
+	The difference between the two readings is $(2.63\pm.03)\si{\micro\meter}$.
+	
+	In the third part of the experiment, the number of fringes that went by was recorded as the pressure in a gas chamber was decreased. The thickness of the gas chamber with both of its glass covers removed was measured with a caliper to be $(49.95\pm.05)\si{\milli\meter}$.
+	
+	\paperfig{Pressure}{\scalebox{1}[0.92]{\begin{papertable}{|[outer]I|[inner]C|[outer]}\paperoline
+	\papertableindexheader&\textsc{Pressure}\\
+	\papertablecheadersymbol{P$ $(\pm\SI{5}{mmHg})}\\\paperiline
+\papertableindex\papertablecval{20}\\\paperiline
+\papertableindex\papertablecval{40}\\\paperiline
+\papertableindex\papertablecval{50}\\\paperiline
+\papertableindex\papertablecval{60}\\\paperiline
+\papertableindex\papertablecval{80}\\\paperiline
+\papertableindex\papertablecval{100}\\\paperiline
+\papertableindex\papertablecval{120}\\\paperiline
+\papertableindex\papertablecval{130}\\\paperiline
+\papertableindex\papertablecval{150}\\\paperiline
+\papertableindex\papertablecval{170}\\\paperiline
+\papertableindex\papertablecval{190}\\\paperiline
+\papertableindex\papertablecval{210}\\\paperiline
+\papertableindex\papertablecval{220}\\\paperiline
+\papertableindex\papertablecval{230}\\\paperiline
+\papertableindex\papertablecval{250}\\\paperiline
+\papertableindex\papertablecval{270}\\\paperiline
+\papertableindex\papertablecval{290}\\\paperiline
+\papertableindex\papertablecval{300}\\\paperiline
+\papertableindex\papertablecval{320}\\\paperiline
+\papertableindex\papertablecval{330}\\\paperiline
+\papertableindex\papertablecval{350}\\\paperiline
+\papertableindex\papertablecval{370}\\\paperiline
+\papertableindex\papertablecval{390}\\\paperiline
+\papertableindex\papertablecval{400}\\\paperiline
+\papertableindex\papertablecval{420}\\\paperiline
+\papertableindex\papertablecval{440}\\\paperiline
+\papertableindex\papertablecval{460}\\\paperiline
+\papertableindex\papertablecval{470}\\\paperiline
+\papertableindex\papertablecval{480}\\\paperiline
+\papertableindex\papertablecval{500}\\\paperiline
+\papertableindex\papertablecval{520}\\\paperiline
+\papertableindex\papertablecval{540}\\\paperiline
+\papertableindex\papertablecval{550}\\\paperiline
+\papertableindex\papertablecval{560}\\\paperiline
+\papertableindex\papertablecval{580}\\\paperiline
+\papertableindex\papertablecval{600}\\\paperiline
+\papertableindex\papertablecval{620}\\\paperiline
+\papertableindex\papertablecval{640}\\\paperiline
+\papertableindex\papertablecval{660}\\\paperiline
+\papertableindex\papertablecval{670}\\\paperiline
+\papertableindex\papertablecval{680}\\\paperiline
+\papertableindex\papertablecval{690}\\\paperiline
+\papertableindex\papertablecval{710}\\\paperiline
+\papertableindex\papertablecval{720}\\\paperiline
+\papertableindex\papertablecval{730}\\\paperiline
+\papertableindex\papertablecval{750}\\\paperoline
+	\end{papertable}}\vspace{-0.5em}}{Table of measurements of pressure as a function of fringe index.}
+	
+	The measurements in \figPressure show the pressure in the chamber for each passing fringe, as seen in the interferometer.
+	
+	In the last part of the experiment, the Fabry-Per\'ot interferometer was used to measure the wavelength difference of the sodium doublet.
+	
+	\paperfig{FP}{\begin{papertable}{|[outer]I|[inner]C|[inner]C|[outer]}\paperoline
+	    \papertableindexheader&\multirow{2}{*}{\textsc{Fringes}}&\textsc{Reading}\\
+	    &\papertablecheadersymbol{(\pm.005)}\\\paperiline
+	    \papertableindex\papertablecval{0}\papertablecval{12.120}\\\paperiline
+	    \papertableindex\papertablecval{50}\papertablecval{12.205}\\\paperiline
+	    \papertableindex\papertablecval{100}\papertablecval{12.295}\\\paperiline
+	    \papertableindex\papertablecval{150}\papertablecval{12.380}\\\paperiline
+	    \papertableindex\papertablecval{200}\papertablecval{12.475}\\\paperiline
+	    \papertableindex\papertablecval{250}\papertablecval{12.560}\\\paperiline
+	    \papertableindex\papertablecval{300}\papertablecval{12.640}\\\paperiline
+	    \papertableindex\papertablecval{350}\papertablecval{12.725}\\\paperiline
+	    \papertableindex\papertablecval{400}\papertablecval{12.795}\\\paperiline
+	    \papertableindex\papertablecval{450}\papertablecval{12.870}\\\paperiline
+	    \papertableindex\papertablecval{500}\papertablecval{12.950}\\\paperiline
+	    \papertableindex\papertablecval{550}\papertablecval{13.020}\\\paperiline
+	    \papertableindex\papertablecval{600}\papertablecval{13.100}\\\paperiline
+	    \papertableindex\papertablecval{650}\papertablecval{13.180}\\\paperiline
+	    \papertableindex\papertablecval{700}\papertablecval{13.250}\\\paperiline
+	    \papertableindex\papertablecval{750}\papertablecval{13.325}\\\paperiline
+	    \papertableindex\papertablecval{800}\papertablecval{13.410}\\\paperiline
+	    \papertableindex\papertablecval{850}\papertablecval{13.500}\\\paperiline
+	    \papertableindex\papertablecval{900}\papertablecval{13.575}\\\paperiline
+	    \papertableindex\papertablecval{950}\papertablecval{13.650}\\\paperiline
+	    \papertableindex\papertablecval{1000}\papertablecval{13.730}\\\paperoline
+	\end{papertable}\vspace{-1.5em}}{A table showing the readings of the micrometer screw for each interval of 50 fringes disappearing in the field of view of the Fabry-Per\'ot interferometer.}
+	
+	The Fabry-Per\'ot interferometer was calibrated using the same procedure as the Michelson interferometer using the measurements in \figFP, which recorded the readings of the micrometer screw every time 50 fringes disappeared in the field of view.
+	
+	\paperfig{Doublet}{\begin{papertable}{|[outer]I|[inner]C|[outer]}\paperoline
+	\papertableindexheader&\textsc{Micrometer Screw Reading}\\
+	\papertablecheadersymbol{(\pm.005)}\\\paperiline
+	\papertableindex\papertablecval{13.530}\\\paperiline
+	\papertableindex\papertablecval{15.095}\\\paperiline
+	\papertableindex\papertablecval{16.645}\\\paperiline
+	\papertableindex\papertablecval{18.210}\\\paperiline
+	\papertableindex\papertablecval{19.770}\\\paperiline
+	\papertableindex\papertablecval{21.335}\\\paperoline
+	\end{papertable}\vspace{-1em}}{The micrometer screw readings for instances of coincidence between the sodium doublet lines.}
+	
+	The measurements in \figDoublet were taken every time the sodium doublet lines were in coincidence. The average difference between a pair of readings was $(1.56\pm.01)$.
 	
 \papersec{Analysis} 
 	
-	Analysis goes here
+	To begin with, a calibration curve was built for a Michelson interferometer with a sodium lamp by rotating the micrometer screw, recording its reading every 50 disappearing fringes. The following linear plot of micrometer screw reading vs. the number of fringes was obtained by plotting the data in \figCalibrationCurve.
+	
+	\paperfig{MichelsonReadingCount}{\pdf{calibration1}\vspace{-1em}}{Micrometer reading vs. fringe count calibration curve for a Michelson interferometer with sodium light.} 
+	
+	One can relate the distance moved by the carriage to the number of fringes by applying the following relation.
+	
+	\papereq{DistanceNumberFringes}{2d = m\lambda}{AF, 2014}
+	\begin{paperwhere}
+	    \papervar{d}{distance moved by the carriage}{m}
+	    \papervar{m}{number of fringes}{}
+	    \papervar{\lambda}{wavelength of light}{m}
+    \end{paperwhere}
+    
+    Upon converting the number of fringes to the distance moved by the carriage and fitting the data using the least squares method, the following fit was obtained. Reduced \( \chi^2 \) value for this fit was \( 7.9231 \); \( R^2 \) was determined to be \( 0.9993 \). 
+    
+    \paperfig{MichelsonCalibration}{\pdf{calibration2}\vspace{-1em}}{Micrometer reading and fit residuals plotted against the carriage displacement of the interferometer. The linear relation has the function \( \pars{5770 \pm 30 } x + \pars{19.991 \pm .006} \). \( R^2 \) of the fit is \( 0.9993 \). Error bars were included but were too small to be visible.}
+
+	The slope of the fit was used in the following parts of the experiment to convert micrometer readings to distances moved by the mirror carriage. The visible linearity of the curve as well as reduced \( \chi^2 \) and \( R^2 \) values of the fit suggest that the micrometer screw is fairly uniform when the mirror carriage is moved towards the observer. The conversion factor, $f$, becomes the reciprocal of the slope, so it is $(1.733\pm.009)\SI{E-4}{}$.
+	
+	\papereq{Index}{\mu=\frac{Mf}{t}+1}{AF, 2014}
+	\begin{paperwhere}
+	\papervar{\mu}{refractive index}{}
+	\papervar{M}{micrometer screw reading}{\meter}
+	\papervar{f}{conversion factor}{}
+	\papervar{t}{thickness of solid}{\meter}
+	\end{paperwhere}
+	
+	By using the average displacement between the values in \figWLF, \eqIndex was used to find the refractive index to be $(1.480\pm.03)$. This was close to the actual refractive index of low-iron sodaglass, which microscope slides are made of. This material typically has a refractive index of 1.5251 and 1.5230.
+	
+	The Michelson interferometer was further used to determine the refractive index of a gas. By counting and recording the number of passing fringes at various pressures, a curve of pressure vs. number of fringes was obtained. Additionally, a least-squares fit was performed on the obtained data using a linear model. The reduced \( \chi ^ 2 \) value was determined to be \( 1.5654 \); \( R ^ 2 \) was \( 0.9992 \).
+	
+	\paperfig{GasLinearFit}{\pdf{gas-fit}}{Pressure vs. number of fringes passed the field of view of a Michelson interferometer. The linear function followed the relation \( \pars{16.39 \pm 0.04}x \). \( R^2 \) of the fit was \( 0.9992 \). Error bars were included but were too small to be visible.} 
+	
+	Using the slope obtained from the fit above, the thickness of the chamber, and the mean wavelength of sodium the refractive index of the gas could be found with \eqGasRefractiveIndex. The result is that the refractive index of air is $(1.00029\pm.00001)$. The very high precision of the value comes from the fact that a small value with a reasonable uncertainty was added to 1.
+	
+	At various pressures, the length of the cell was measured with the caps on, and the measurement was found to be constant with pressure. Thus, it was determined that the pressure does not affect the length of the cell. The relative humidity of the cell was not deemed as a significant source of error, as the experiment was conducted slowly so that the humidity in the cell could settle on the walls, thereby minimising its change to the refractive index in the interior of the cell.
+	
+	Prior to using the Fabry-Per\'ot interferometer, a calibration curve similar to the one prior in the experiment was built. By counting the number of fringes passing the field of view as the micrometer screw is rotated, a linear curve is obtained. The data was further fit using the least-squares method, yielding a reduced \( \chi ^ 2  \) value of \( 6.6118 \) and an \( R ^ 2 \) value of \( 0.9994 \).
+	
+	\paperfig{FabryPerotCalibration}{\pdf{calibration3}}{Micrometer screw reading vs. the number of fringes passed the field of view for a Fabry-Per\'ot interferometer. The linear function followed the relation \( \pars{5390 \pm 30} x + \pars{12.146 \pm .005 } \). \( R^2 \) of the fit was \( 0.9994 \). Error bars were included but were too small to be visible. }
+	
+	The reciprocal of the slope in \figFabryPerotCalibration was used as the conversion factor between the micrometer reading and the carriage displacement. Together with \eqDoublet, and with the displacements between doublet coincidences from \figDoublet, the wavelength separation of the sodium doublet was obtained to be $(0.60\pm.03)\si{\nano\meter}$, which is within range of the accepted \SI{0.5974}{\nano\meter}.
 	
 \papersec{Conclusion}
 
-	Conclusion goes here
+	Although the experiment was highly accurate, it was not free from sources of error. The main sources of error were the counting of the fringes, which relied on human accuracy to view a faint interference pattern. If the micrometer screw was turned too quickly or too slowly, it was difficult to maintain an accurate count. Since the resulting fit was very accurate, it is improbable that this significantly affected the results of the experiment.
+	
+	The portion of the experiment which involved the white light fringes and the microscope slide had a lot of benchmarks and was relatively free from sources of error. However, no procedure was found that would mitigate the humidity of the gas inside the cell, which resulted in another source of error.
+	
+	Lastly, the positions of the coincidences were hard to see and were determined as best as possible, but not in a manner that was free from sources of error.
+	
+The calibration curve for the Michelson interferometer was fit with the function \( \pars{5770 \pm 30 } x + \pars{19.991 \pm .006} \), a $\chi^2$ value of 7.9231, and an \( R^2 \) value of \( 0.9993 \).
+	The refractive index for the microscope slide was determined to be $(1.480\pm.03)$, which was close to the accepted value of 1.5251.
+	The pressure as a function of the number of fringes was found to be \( \pars{16.39 \pm 0.04}x \), with a $\chi^2$ value of 1.5654, and an \( R^2 \) value of \( 0.9992 \).
+	The refractive index for air was determined to be $(1.00029\pm.00001)$, which was close to the accepted value of 1.
+	The Fabry-Per\'ot interferometer calibration curve was found to be \( \pars{5390 \pm 30} x + \pars{12.146 \pm .005 } \), with a $\chi^2$ value of 6.6118, and an \( R^2 \) value of \( 0.9994 \).
+	The sodium doublet wavelength separation was found to be $(0.60\pm.03)\si{\nano\meter}$, which is close to the accepted value of \SI{0.5974}{\nano\meter}.
+	
 	
 \papersec{Sources}
 
-	\papersource{}
+	\papersource{P. Albanelli, S. Fomichev, Interferometry, 2014}
 
 \end{paper}
 \end{document}
