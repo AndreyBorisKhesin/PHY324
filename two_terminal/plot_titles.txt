@@ -1,0 +1,12 @@
+# Directory name	XY plot title	Index of .csv file (prior to CH*)
+1-short	Characteristic curve, short circuit	02
+2-47	Characteristic curve, 47 ohm resistor	01
+3-1000	Characteristic curve, 1000 ohm resistor	03
+4a-cell-up	Characteristic curve, 47 ohm resistor with a dry cell (up)	04
+4b-cell-down	Characteristic curve, 47 ohm resistor with a dry cell (down)	05
+5-germanium	Characteristic curve, germanium diode	06
+6-silicon	Characteristic curve, silicon diode	07
+7-selenium	Characteristic curve, selenium rectifier	08
+8-vacuum	Characteristic curve, diode vacuum tube	09
+9-zener	Characteristic curve, zener diode	11
+10-thermistor	Characteristic curve, thermistor	12
