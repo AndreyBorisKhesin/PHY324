@@ -16,19 +16,21 @@ plt.rc('font', family = 'Times New Roman')
 directories = np.genfromtxt("plot_titles.txt", dtype = "str", delimiter = "\t")
 print directories
 
+R = 4.7	# ohms
+
 for line in directories:
 		
 	ch1_file = "data/" + line[0] + "/F00" + line[2] + "CH1.CSV"
 	ch2_file = "data/" + line[0] + "/F00" + line[2] + "CH2.CSV"
 
-
 	# Import channel 1, channel 2 data
 	ch1_data = np.genfromtxt(ch1_file, delimiter = ",")
 	ch2_data = np.genfromtxt(ch2_file, delimiter = ",")
 
+	# Extract the t, potential data only
 	t = ch1_data[:, 3]
 	ch1_data = ch1_data[:, 4]
-	ch2_data = ch2_data[:, 4]
+	ch2_data = ch2_data[:, 4] / R
 
 	# Determine left & right bounds of the plot (want fixed to visualize the slope)
 	left_bound = np.min([np.min(ch1_data), np.min(ch2_data)])
@@ -37,7 +39,7 @@ for line in directories:
 	right_bound += (right_bound - left_bound) / 10
 
 	# Graph XY graph
-	plt.plot(ch2_data, ch1_data, color = "black")
+	plt.plot(ch1_data, ch2_data, color = "black")
 	# plt.xlim([left_bound, right_bound])
 	# plt.ylim([left_bound, right_bound])
 	plt.xlabel("Channel 2 potential (V)")

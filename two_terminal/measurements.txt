@@ -1,0 +1,11 @@
+Resistances
+1  - 0 ohms (both orientations)
+2  - 47.0 ohms (both orientations)
+3  - 0.992 kohms (both orientations)
+4  - 5.214 Mohms, infinity (both orientations)
+5  - 2.833 kohms (red at the cathode), infinity (oscillating rapidly) (red at the anode)
+6  - 3.333 Mohms (red at the cathode), infinity (red at the anode)
+7  - 18.38 kohms (red at the cathode), 61.39 kohms (red at the anode)
+8  - 7.016 kohms (red at the cathode), infinity (red at the anode)
+9  - 25.24 Mohms (red at the cathode), infinity (red at the anode)
+10 - 1.153 kohms (both orientations)
