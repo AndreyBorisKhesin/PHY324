@@ -1,4 +1,3 @@
-#!/bin/python
 # Reads .csv files (oscilloscope's) output for channels 1 and 2 and graphs the corresponding XY plot
 
 # ---------- Import Statements ----------
@@ -14,14 +13,14 @@ import matplotlib.pyplot as plt
 plt.rc('font', family = 'Times New Roman')
 
 directories = np.genfromtxt("plot_titles.txt", dtype = "str", delimiter = "\t")
-print directories
+print(directories)
 
 R = 4.7	# ohms
 
 for line in directories:
 		
-	ch1_file = "data/" + line[0] + "/F00" + line[2] + "CH1.CSV"
-	ch2_file = "data/" + line[0] + "/F00" + line[2] + "CH2.CSV"
+	ch1_file = "data\\" + line[0] + "\\F00" + line[2] + "CH1.CSV"
+	ch2_file = "data\\" + line[0] + "\\F00" + line[2] + "CH2.CSV"
 
 	# Import channel 1, channel 2 data
 	ch1_data = np.genfromtxt(ch1_file, delimiter = ",")
