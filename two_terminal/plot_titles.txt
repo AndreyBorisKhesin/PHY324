@@ -10,3 +10,9 @@
 8-vacuum	Characteristic curve, diode vacuum tube	09
 9-zener	Characteristic curve, zener diode	11
 10-thermistor	Characteristic curve, thermistor	12
+11-68.6-inductor	Characteristic curve, inductor	00
+12-1.68-inductor	Characteristic curve, inductor	01
+13-1-uF-capacitor	Characteristic curve, capacitor	02
+14-22-nF-capacitor	Characteristic curve, capacitor	03
+15-0.1-uF-capacitor	Characteristic curve, capacitor	04
+16-potentiometer	Characteristic curve, potentiometer	06

@@ -39,7 +39,7 @@ for line in directories:
 	right_bound += (right_bound - left_bound) / 10
 
 	# Graph XY graph
-	plt.plot(ch1_data, ch2_data, color = "black")
+	plt.scatter(ch1_data, ch2_data, color = "black", s = 5)
 	# plt.xlim([left_bound, right_bound])
 	# plt.ylim([left_bound, right_bound])
 	plt.xlabel("Channel 2 potential (V)")
