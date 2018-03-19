@@ -1,5 +1,4 @@
 \input{header}
-
 \physics
 \begin{document}
 \papertitle{Two-Terminal Devices}
@@ -17,7 +16,36 @@
 \papersec{Introduction}
 	
 	Introduction goes here
-	
+
+\paperfig{Circuit}{\begin{center}
+\begin{tikzpicture}
+\draw
+(2,2) rectangle (3,3)
+(2.5,2) |- (5,1.5)
+(2.5,1.5) to[resistor] (2.5,0)
+(1,0) -- (5,0)
+(2.5,3) |- (5,3.5)
+(2.5,3.5) to[resistor] (1,3.5) -- (1,2.1)
+(-0.05,2.1) node[transformer core]{}
+(4,0) node[ground]{}
+(5,0) node[above]{\small Ground}
+(5,1.5) node[above]{\small Y Input}
+(5,3.5) node[below]{\small X Input}
+(2.5,2.5) node[]{\small Device}
+(2.7,0.9) node[right]{\small $R_2$}
+(2.7,0.6) node[right]{\small\SI{4.7}{\ohm}}
+(1.75,3.4) node[below]{\small $R_1$}
+(0.5,1.3) node[right]{\small \SI{6.3}{\volt}}
+(0.5,1) node[right]{\small RMS}
+(0.5,0.7) node[right]{\small A. C.}
+(-0.5,0.85) node[left]{\small A. C.}
+(-0.5,1.15) node[left]{\small \SI{60}{\hertz}}
+;
+\end{tikzpicture}\end{center}}
+{The circuit used in the experiment.
+The value of $R_1$ was varied depending on what was used for the Device.
+The $X$ and $Y$ nodes were connected to an oscilloscope.}
+
 \papersec{Observations}
 	
 	Observations go here
