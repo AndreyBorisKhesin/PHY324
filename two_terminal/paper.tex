@@ -2,6 +2,8 @@
 \usepackage{tikz}
 \usetikzlibrary{optics}
 
+\usepackage{verbatim}
+
 \physics
 \begin{document}
 \papertitle{Two-Terminal Devices}
@@ -18,15 +20,55 @@
 	
 \papersec{Introduction}
 	
-	Introduction goes here
+	The operation of a two-terminal device may be completely described by providing a relationship between the current through the device and the voltage across it. In this lab, the latter relation was determined for a variety of circuit elements, including resistors, a resistor in series with a dry cell, several diodes, a thermistor, and a section of a rectifier. 
+	
+	\textbf{TODO}: circuit diagram + description.
+	
+	Prior to wiring the circuit as displayed above, vertical and horizontal sensitivities of the oscilloscope along with its zeros were set. The desired I vs. V curves were displayed in the Y vs. X mode of the oscilloscope; to obtain current as opposed to potential on the dependent axes, the Y voltage was divided by \( R_2 = 4.7 \si{\ohm} \) before plotting. The final experimental setup looked as shown below.
+	
+	\paperfig{SetupMain}{\pdf{setup_main}}{Experimental setup used to determine I vs. V plots for a variety of provided circuit components, with the diode vacuum tube specifically investigated here.}
+	
+	To further interpret the obtained I vs. V curves, a multimeter was used to measure the resistance of each component, with the connections made in both possible directions. 
+	
+	Additionally, I vs. V graphs of several capacitors, inductors, and a potentiometer were obtained. The same circuit as in \textbf{TODO} was used, resulting in the following setup.
+	
+	\paperfig{SetupAdditional}{\pdf{setup_additional}}{Experimental setup used to determine I vs. V curves of additional circuit components, with a \( 100 \si{\kilo\ohm} \) connected here.}
 	
 \papersec{Observations}
 	
-	Observations go here
+	To obtain I vs. V plots for the circuit components investigated, measurements were first saved using the \textit{Save} function of the oscilloscope. Dividing the channel two voltage by the resistance as described above, the desired plots were obtained.  Note that \( R_1 \) in \textbf{TODO} varied for each circuit component. 
+	
+	% \begin{comment}
+	\paperfig{ShortCircuit}{\pdf{char_curves/1-short}}{I vs. V curve for a short circuit, with \( R_1 \) set to \( 100 \si{\ohm} \).}
+	\paperfig{Resistor47}{\pdf{char_curves/2-47}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor, with \( R_1 \) set to \( 100 \si{\ohm} \).}	
+	\paperfig{Resistor1000}{\pdf{char_curves/3-1000}}{I vs. V curve for a \( 1000 \si{\ohm} \) resistor, with \( R_1 \) set to \( 100 \si{\ohm} \).}	
+	\paperfig{CellUp}{\pdf{char_curves/4a-cell-up}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor in series with a 1 1/2 volt dry cell in the \textbf{positive direction???}. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}	
+	\paperfig{CellDown}{\pdf{char_curves/4b-cell-down}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor in series with a 1 1/2 volt dry cell in the \textbf{negative direction???}. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{Germanium}{\pdf{char_curves/5-germanium}}{I vs. V curve for a germanium diode. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{Silicon}{\pdf{char_curves/6-silicon}}{I vs. V curve for a silicon diode. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{Selenium}{\pdf{char_curves/7-selenium}}{I vs. V curve for a one section of a selenium rectifier. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{Vacuum}{\pdf{char_curves/8-vacuum}}{I vs. V curve for a diode vacuum tube. Here, \( R_1 \) of \( 0 \si{\ohm} \) was used.}
+	\paperfig{Zener}{\pdf{char_curves/9-zener}}{I vs. V curve for a zener diode. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{Thermistor}{\pdf{char_curves/10-thermistor}}{I vs. V curve for a thermistor. Here, \( R_1 \) of \( 50 \si{\ohm} \) was used.}
+	% \end{comment}
+	
+	\begin{comment}
+	\paperfig{ShortCircuit}{\pdf{char_curves\\1-short}}{I vs. V curve for a short circuit, with \( R_1 \) set to \( 100 \si{\ohm} \).}
+	\paperfig{ShortCircuit}{\pdf{char_curves\\2-47}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor, with \( R_1 \) set to \( 100 \si{\ohm} \).}
+	\paperfig{Resistor1000}{\pdf{char_curves\\3-1000}}{I vs. V curve for a \( 1000 \si{\ohm} \) resistor, with \( R_1 \) set to \( 100 \si{\ohm} \).}	
+	\paperfig{CellUp}{\pdf{char_curves\\4a-cell-up}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor in series with a 1 1/2 volt dry cell in the \textbf{positive direction???}. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{CellDown}{\pdf{char_curves\\4b-cell-down}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor in series with a 1 1/2 volt dry cell in the \textbf{negative direction???}. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{Germanium}{\pdf{char_curves\\5-germanium}}{I vs. V curve for a germanium diode. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{Silicon}{\pdf{char_curves\\6-silicon}}{I vs. V curve for a silicon diode. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	paperfig{Selenium}{\pdf{char_curves\\7-selenium}}{I vs. V curve for a one section of a selenium rectifier. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{Vacuum}{\pdf{char_curves\\8-vacuum}}{I vs. V curve for a diode vacuum tube. Here, \( R_1 \) of \( 0 \si{\ohm} \) was used.}
+	\paperfig{Zener}{\pdf{char_curves\\9-zener}}{I vs. V curve for a zener diode. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{Thermistor}{\pdf{char_curves\\10-thermistor}}{I vs. V curve for a thermistor. Here, \( R_1 \) of \( 50 \si{\ohm} \) was used.}
+	\end{comment}
 	
 \papersec{Analysis} 
 	
-	Analysis goes here
+	
 	
 \papersec{Conclusion}
 
