@@ -121,9 +121,19 @@ The entries in the table are for the following devices: a short circuit, a \SI{4
 	
 \papersec{Analysis} 
 	
-	As stated in the introduction, the I vs. V curve provides a complete description of the functionality of an electrical component. Here, slopes, intercepts, and points of bending of the curves were examined where applicable and compared to the results available in the literature.  
+	As stated in the introduction, the I vs. V curve provides a complete description of the functionality of an electrical component. Here, slopes, intercepts, and points of bending of the curves were examined where applicable and compared to the results available in the literature. \textbf{TODO}: explain why couldn't fit data.
 	
-	For a short circuit, one would ideally expect a vertical line corresponding to 
+	An ideal short circuit offers no resistance to the moving electrons, and therefore one would expect to observe a vertical line on the I vs. V curve. In this lab, I was found to vary linearly as a function of V, but the resulting line was not vertical. Instead, the curve had a small positive slope that was approximated to be \( \pars{2.00 \pm 0.07} \times 10^-3 \). This is readily explained by the fact that in practice all wires have a nonzero resistance, and thus the I vs. V curve will never be truly vertical.
+	
+	The shape of the I vs. V curve for a \( 47 \si{\ohm} \)  resistor is similar to that of the short circuit, with the exception of a change in the slope. This time, the inverse of the slope, which corresponds to the resistance of the circuit element, was approximated to be \( \pars{48 \pm 4} \si{\ohm} \). This value agrees with the measured resistance in \figResistances.
+	
+	As expected, the familiar linear I vs. V curve reappeared again for the \( 1000 \si{\ohm} \)) resistor. The inverse of the slope in this case was found to be \( \pars{1.0 \pm 0.3} \times 10^4 \si{\ohm} \). \textbf{WHY DOESN'T THIS MATCH?}
+	
+	The inverse slope of the linear characteristic curve of the \( 47 \si{\ohm} \) resistor in series with a dry cell oriented \textbf{up???} was approximated to be \( \pars{550 \pm 40 } \).
+	
+	The inverse slope of the linear characteristic curve of the \( 47 \si{\ohm} \) resistor in series with a dry cell oriented \textbf{down???} was approximated to be \( \pars{510 \pm 20 } \).
+	
+	\textbf{Need to do the thermistor slope + everything else}
 	
 \papersec{Conclusion}
 

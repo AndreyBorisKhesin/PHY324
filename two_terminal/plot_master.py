@@ -39,7 +39,7 @@ for line in directories:
 	ch2_data = (ch2_data[:, 4] / R)
 
 	# Index of elements whose i vs. v is linear (can fit for slope)
-	need_slope = np.array(["1", "2", "2", "4a", "4b", "10"])
+	need_slope = np.array(["1", "2", "3", "4a", "4b", "10"])
 
 	print line
 	'''
@@ -76,4 +76,6 @@ for line in directories:
 	plt.ylabel("Device Current (I)")
 	plt.title(line[1])
 	plt.savefig("char_curves/" + line[0] + ".pdf")
+	if line[0][ : (line[0]).find("-") ] in need_slope:
+		plt.show()
 	plt.close()

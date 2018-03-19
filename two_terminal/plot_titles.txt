@@ -1,6 +1,6 @@
 # Directory name	XY plot title	Index of .csv file (prior to CH*)
-1-short	Characteristic curve, short circuit	02
-2-47	Characteristic curve, 47 ohm resistor	01
+1-short	Characteristic curve, short circuit	01
+2-47	Characteristic curve, 47 ohm resistor	02
 3-1000	Characteristic curve, 1000 ohm resistor	03
 4a-cell-up	Characteristic curve, 47 ohm resistor with a dry cell (up)	04
 4b-cell-down	Characteristic curve, 47 ohm resistor with a dry cell (down)	05
