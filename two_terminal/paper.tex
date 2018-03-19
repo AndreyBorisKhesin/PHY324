@@ -1,6 +1,4 @@
 \input{header}
-\usepackage{tikz}
-\usetikzlibrary{optics}
 
 \physics
 \begin{document}
@@ -23,6 +21,37 @@
 \papersec{Observations}
 	
 	Observations go here
+	
+\paperfig{Resistances}{\begin{papertable}{|[outer]I|[inner]C|[inner]U|[outer]}\paperoline
+\papertableindexheader&\multirow{2}{*}{\textsc{Device}}\papertableuheadersymbole{\textsc{Resistance}}\\
+&\papertableuheadersymbole{R$ $(\si{\ohm})}\\\paperiline
+\papertableindex\papertablecval{Short Circuit}\papertableuval{0.0}{.3}\\\paperiline
+\papertableindex\papertablecval{\SI{47}{\ohm} Resistor}\papertableuval{47.0}{.8}\\\paperiline
+\papertableindex\papertablecval{\SI{1}{\kilo\ohm} Resistor}\papertableuval{990}{10}\\\paperiline
+\papertableindex\papertablecval{With Cell (+/-)}\papertableuval{(5.21}{.04)\SI{E6}{}}\\\paperiline
+\papertableindex\papertablecval{Ge (+ Cathode)}\papertableuval{2830}{30}\\\paperiline
+\papertableindex\papertablecval{Ge (+ Anode)}\papertableuval{$\infty$}{?}\\\paperiline
+\papertableindex\papertablecval{Si (+ Cathode)}\papertableuval{(3.33}{.03)\SI{E6}{}}\\\paperiline
+\papertableindex\papertablecval{Si (+ Anode)}\papertableuval{$\infty$}{?}\\\paperiline
+\papertableindex\papertablecval{Se (+ Cathode)}\papertableuval{(18.4}{.2)\SI{E3}{}}\\\paperiline
+\papertableindex\papertablecval{Se (+ Anode)}\papertableuval{(61.4}{.5)\SI{E3}{}}\\\paperiline
+\papertableindex\papertablecval{Tube (+ Cathode)}\papertableuval{7020}{60}\\\paperiline
+\papertableindex\papertablecval{Tube (+ Anode)}\papertableuval{$\infty$}{?}\\\paperiline
+\papertableindex\papertablecval{Zener (+ Cathode)}\papertableuval{(25.2}{.2)\SI{E6}{}}\\\paperiline
+\papertableindex\papertablecval{Zener (+ Anode)}\papertableuval{$\infty$}{?}\\\paperiline
+\papertableindex\papertablecval{Thermistor}\papertableuval{1150}{10}\\\paperiline
+\papertableindex\papertablecval{\SI{68.6}{\milli\henry} Inductor}\papertableuval{0.3}{.3}\\\paperiline
+\papertableindex\papertablecval{\SI{1.68}{\milli\henry} Inductor}\papertableuval{0.0}{.3}\\\paperiline
+\papertableindex\papertablecval{\SI{1.0}{\micro\farad} Capacitor}\papertableuval{$\infty$}{?}\\\paperiline
+\papertableindex\papertablecval{\SI{22}{\nano\farad} Capacitor}\papertableuval{$\infty$}{?}\\\paperiline
+\papertableindex\papertablecval{\SI{0.1}{\micro\farad} Capacitor}\papertableuval{$\infty$}{?}\\\paperiline
+\papertableindex\papertablecval{5-\SI{50}{\ohm} Pot.}\papertableuval{5.0}{.3}\\\paperoline
+\end{papertable}\vspace{-1.5em}}
+{A table of the resistances of various devices used in the experiment.
+For each device, the resistance was measured in both directions, if it was found to be the same, it was recorded in a single line,
+otherwise, it was recorded with a note indicating if the positive lead of the multimeter was at the cathode or the anode of the device.
+In cases where the resistance was so large that it could not be accurately measured by the multimeter, or in the cases where it was oscillating between large and small values and was not stabilising, $(\infty\pm?)$ was recorded.
+The entries in the table are for the following devices: a short circuit, a \SI{47}{\ohm} resistor, a \SI{1}{\kilo\ohm} resistor, a \SI{47}{\ohm} resistor in series with a \SI{1.5}{\volt} battery in both directions, a germanium diode, a silicon diode, one section of a selenium rectifier, a diode vacuum tube, a zener diode, a thermistor, a \SI{68.6}{\milli\henry} inductor, a \SI{1.68}{\milli\henry} inductor, a \SI{1.0}{\micro\farad} capacitor, a \SI{22}{\nano\farad} capacitor, a \SI{0.1}{\micro\farad} capacitor, and a a $5-\SI{50}{\ohm}$ potentiometer which was set to its lowest setting.}
 	
 \papersec{Analysis} 
 	
