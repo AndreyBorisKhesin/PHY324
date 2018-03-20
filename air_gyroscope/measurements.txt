@@ -1,0 +1,7 @@
+diameter w/ falt side = 48.620
+diameter (spherical) = 50.525
+radius = 25.2625
+arccos((48.62000 - 25.2625) / 25.2625) * 2
+44.7862397 deg
+
+
