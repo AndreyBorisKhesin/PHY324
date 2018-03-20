@@ -41,7 +41,7 @@ for line in directories:
 	# Index of elements whose i vs. v is linear (can fit for slope)
 	need_slope = np.array(["1", "2", "3", "4a", "4b", "10"])
 
-	print line
+	print(line)
 	'''
 	unc_ch1 = ch1_data * 0.04
 	unc_ch2 = ch2_data * 0.04

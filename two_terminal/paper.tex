@@ -1,13 +1,13 @@
 \input{header}
 \physics
 \begin{document}
-\papertitle{Two-Terminal Devices}
+\papertitle{Analysis of Various Two-Terminal Devices}
 \paperauth{A}{Khesin}{1002442029}
 \paperauth{P}{Zavyalova}{1002345036}
 \paperdate{March 19, 2018, Completed March 13, 2018}
 \begin{paperabs}
 
-	Abstract goes here
+	This experiment analyzed the behaviours of various two-terminal devices. The devices were connected to a circuit and an oscilloscope which allowed for the I vs. V curves of the devices to be determined. From there, their behaviour was observed by changing the sign of the current, which was especially significant for four the two-terminal devices, which were diodes. The inverses of the slopes of the linear parts of the curves were determined and compared to the measured resistances of the devices.
 	
 \end{paperabs}
 
@@ -15,7 +15,7 @@
 	
 \papersec{Introduction}
 	
-	The operation of a two-terminal device may be completely described by providing a relationship between the current through the device and the voltage across it. In this lab, the latter relation was determined for a variety of circuit elements, including resistors, a resistor in series with a dry cell, several diodes, a thermistor, and a section of a rectifier. 
+	The operation of a two-terminal device may be completely described by providing a relationship between the current through the device and the voltage across it. In this experiment, the latter relation was determined for a variety of circuit elements, including resistors, a resistor in series with a dry cell, several diodes, a thermistor, and a section of a rectifier. 
 
 	\paperfig{Circuit}{\begin{center}
 			\begin{tikzpicture}
@@ -48,24 +48,24 @@
 
 	Prior to wiring the circuit as displayed above, vertical and horizontal sensitivities of the oscilloscope along with its zeros were set. The desired I vs. V curves were displayed in the Y vs. X mode of the oscilloscope; to obtain current as opposed to potential on the dependent axes, the Y voltage was divided by \( R_2 = 4.7 \si{\ohm} \) before plotting. The final experimental setup looked as shown below.
 	
-	\paperfig{SetupMain}{\pdf{setup_main}}{Experimental setup used to determine I vs. V plots for a variety of provided circuit components, with the diode vacuum tube specifically investigated here.}
+	\paperfig{SetupMain}{\pdf{setup_main}\vspace{-1.5em}}{Experimental setup used to determine I vs. V plots for a variety of provided circuit components, with the diode vacuum tube specifically investigated here.}
 	
 	To further interpret the obtained I vs. V curves, a multimeter was used to measure the resistance of each component, with the connections made in both possible directions. 
 	
-	Additionally, I vs. V graphs of several capacitors, inductors, and a potentiometer were obtained. The same circuit as in \textbf{TODO} was used, resulting in the following setup.
+	Additionally, I vs. V graphs of several capacitors, inductors, and a potentiometer were obtained. The same circuit as in \figCircuit was used, resulting in the following setup.
 	
-	\paperfig{SetupAdditional}{\pdf{setup_additional}}{Experimental setup used to determine I vs. V curves of additional circuit components, with a \( 100 \si{\kilo\ohm} \) connected here.}
+	\paperfig{SetupAdditional}{\pdf{setup_additional}\vspace{-1.5em}}{Experimental setup used to determine I vs. V curves of additional circuit components, with a \( 100 \si{\kilo\ohm} \) connected here.}
 	
 \papersec{Observations}
 	
-	To obtain I vs. V plots for the circuit components investigated, measurements were first saved using the \textit{Save} function of the oscilloscope. Dividing the channel two voltage by the resistance as described above, the desired plots were obtained.  Note that \( R_1 \) in \textbf{TODO} varied for each circuit component. 
+	To obtain I vs. V plots for the circuit components investigated, measurements were first saved using the \textit{Save} function of the oscilloscope. Dividing the channel two voltage by the resistance as described above, the desired plots were obtained.  Note that \( R_1 \) in \figCircuit varied for each circuit component. 
 	
 	% \comment{
 	\paperfig{ShortCircuit}{\pdf{char_curves/1-short}}{I vs. V curve for a short circuit, with \( R_1 \) set to \( 100 \si{\ohm} \).}
 	\paperfig{Resistor47}{\pdf{char_curves/2-47}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor, with \( R_1 \) set to \( 100 \si{\ohm} \).}	
 	\paperfig{Resistor1000}{\pdf{char_curves/3-1000}}{I vs. V curve for a \( 1000 \si{\ohm} \) resistor, with \( R_1 \) set to \( 100 \si{\ohm} \).}	
-	\paperfig{CellUp}{\pdf{char_curves/4a-cell-up}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor in series with a 1 1/2 volt dry cell in the \textbf{positive direction???}. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}	
-	\paperfig{CellDown}{\pdf{char_curves/4b-cell-down}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor in series with a 1 1/2 volt dry cell in the \textbf{negative direction???}. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
+	\paperfig{CellUp}{\pdf{char_curves/4a-cell-up}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor in series with a \SI{1.5}{\volt} dry cell aligned positively with the circuit. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}	
+	\paperfig{CellDown}{\pdf{char_curves/4b-cell-down}}{I vs. V curve for a \( 47 \si{\ohm} \) resistor in series with a \SI{1.5}{\volt}dry cell aligned negatively with the circuit. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
 	\paperfig{Germanium}{\pdf{char_curves/5-germanium}}{I vs. V curve for a germanium diode. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
 	\paperfig{Silicon}{\pdf{char_curves/6-silicon}}{I vs. V curve for a silicon diode. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
 	\paperfig{Selenium}{\pdf{char_curves/7-selenium}}{I vs. V curve for a one section of a selenium rectifier. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
@@ -87,6 +87,9 @@
 	\paperfig{Zener}{\pdf{char_curves\\9-zener}}{I vs. V curve for a zener diode. Here, \( R_1 \) of \( 100 \si{\ohm} \) was used.}
 	\paperfig{Thermistor}{\pdf{char_curves\\10-thermistor}}{I vs. V curve for a thermistor. Here, \( R_1 \) of \( 50 \si{\ohm} \) was used.}
 }
+
+The ``resistances'' of all the devices were also measured in both possible directions.
+The results were included below.
 	
 \paperfig{Resistances}{\begin{papertable}{|[outer]I|[inner]C|[inner]U|[outer]}\paperoline
 \papertableindexheader&\multirow{2}{*}{\textsc{Device}}\papertableuheadersymbole{\textsc{Resistance}}\\
@@ -121,23 +124,34 @@ The entries in the table are for the following devices: a short circuit, a \SI{4
 	
 \papersec{Analysis} 
 	
-	As stated in the introduction, the I vs. V curve provides a complete description of the functionality of an electrical component. Here, slopes, intercepts, and points of bending of the curves were examined where applicable and compared to the results available in the literature. \textbf{TODO}: explain why couldn't fit data.
+	As stated in the introduction, the I vs. V curve provides a complete description of the functionality of an electrical component. Here, slopes, intercepts, and points of bending of the curves were examined where applicable and compared to the results available in the literature. Due to the chaotic nature of the I vs. V curves and the sweep rate of the oscilloscope, it proved to be impossible to accurately fit the slopes of the I vs. V curves while making sure to account for the random noise in the data.
+The slopes were determined by determining the slopes of straight lines that would pass through the areas of the curves where the datapoints were concentrated most densely.
 	
-	An ideal short circuit offers no resistance to the moving electrons, and therefore one would expect to observe a vertical line on the I vs. V curve. In this lab, I was found to vary linearly as a function of V, but the resulting line was not vertical. Instead, the curve had a small positive slope that was approximated to be \( \pars{2.00 \pm 0.07} \times 10^-3 \). This is readily explained by the fact that in practice all wires have a nonzero resistance, and thus the I vs. V curve will never be truly vertical.
+	An ideal short circuit offers no resistance to the moving electrons, and therefore one would expect to observe a vertical line on the I vs. V curve. In this lab, I was found to vary linearly as a function of V, but the resulting line was not vertical. Instead, the curve had a small positive slope that was approximated to be \( \pars{2.00 \pm 0.07} \times 10^\text{-3} \). This is readily explained by the fact that in practice all wires have a nonzero resistance, and thus the I vs. V curve will never be truly vertical.
 	
 	The shape of the I vs. V curve for a \( 47 \si{\ohm} \)  resistor is similar to that of the short circuit, with the exception of a change in the slope. This time, the inverse of the slope, which corresponds to the resistance of the circuit element, was approximated to be \( \pars{48 \pm 4} \si{\ohm} \). This value agrees with the measured resistance in \figResistances.
 	
-	As expected, the familiar linear I vs. V curve reappeared again for the \( 1000 \si{\ohm} \)) resistor. The inverse of the slope in this case was found to be \( \pars{1.0 \pm 0.3} \times 10^4 \si{\ohm} \). \textbf{WHY DOESN'T THIS MATCH?}
+	As expected, the familiar linear I vs. V curve reappeared again for the \( 1000 \si{\ohm} \) resistor. The inverse of the slope in this case was found to be \( \pars{1.0 \pm 0.3} \times 10^3 \si{\ohm} \), matching what was observed for the previous resistor.
 	
-	The inverse slope of the linear characteristic curve of the \( 47 \si{\ohm} \) resistor in series with a dry cell oriented \textbf{up???} was approximated to be \( \pars{550 \pm 40 } \).
+	The inverse slope of the linear characteristic curve of the \( 47 \si{\ohm} \) resistor in series with a dry cell oriented positively aligned with the circuit was approximated to be \( \pars{550 \pm 40 } \), meaning that there was significantly less resistance, as the circuit looked more like a short circuit.
 	
-	The inverse slope of the linear characteristic curve of the \( 47 \si{\ohm} \) resistor in series with a dry cell oriented \textbf{down???} was approximated to be \( \pars{510 \pm 20 } \).
+	The inverse slope of the linear characteristic curve of the \( 47 \si{\ohm} \) resistor in series with a dry cell oriented negatively aligned with the circuit was approximated to be \( \pars{510 \pm 20 } \) and the same result was observed as when it was oriented positively.
 	
-	\textbf{Need to do the thermistor slope + everything else}
+	For each of the four diodes, it was observed that the current was consistently 0 when the potential was such that the flow was oriented against the diode. When this was not the case, the current flowed through the diode. As far as it is visible from the plots, the points of bending are all (0, 0). These are also the intercepts of the diode plots, consistent for all four diodes. The only exceptions to this are the silicon diode, which has point of bending (-7, 0) and the Zener diode, which has points of bending (-50, 0) and (7, 0).
+	
+	The diodes have slopes $(6.6\pm.3)\SI{E-4}{}$ for the germanium diode, $(1.0\pm.1)\SI{E-2}{}$ for the silicon diode, $(7.3\pm.4)\SI{E-4}{}$ for the diode vacuum tube, and $(1.0\pm.2)\SI{E-2}{}$ for the Zener diode. These slopes are consistent with theory as we find lower resistances for diodes made out of materials with higher conductivities, such as silicon.
+	
+	The two fixed potentials on the Zener diode were at \SI{-50}{\volt} and \SI{7}{\volt}. Additionally, we note that touching the glass bead of the thermistor increased the slope of the curve, thereby lowering its resistance. This was due to the fact that human skin is significantly warmer than air temperature, and the resistance of a thermistor decreases if it is heated.
+	
+	When analyzing the resistances in \figResistances, we find that all components which are not diodes conduct just fine in both directions, but all the diodes only conduct in one direction. This is exactly what is to be expected, as the multimeter is effectively connecting a potential source to the circuit. As is clear from the I vs. V curves of the devices, there is no current going through the diodes if the circuit is oriented against the diode. Hence, the resistances of the diodes were infinite in one direction and reasonable in another. For most devices, we find that the inverses of the slopes of the I vs. V curves are very similar to the observed resistances, which is exactly what is to be expected from Ohm's law.
 	
 \papersec{Conclusion}
 
-	Conclusion goes here
+	This experiment was succesful in determining the I vs. V curves of various two-terminal devices, but it was not free from sources of error. The first source of error was the uncertainties in measurements of the resistances of the components, which can be erratic if a device does not have a perfectly linear I vs. V curve as the multimeter will then just measure the inverse of the slope at a given point, determined by its internal potential.
+	
+	The second source of error was in determining the slopes of the I vs. V curves from the plots. This was mostly unavoidable due to the chaotic nature of the oscilloscope. However, an attempt to cleanup the data and get as accurate of a reading as possible, it was impossible to do this without adding any error to the experiment.
+	
+	Overall, the experiment was succesful in relating the measured resistances of various two-terminal devices to the inverses of the slopes of their I vs. V curves.
 	
 \papersec{Sources}
 
