@@ -4,7 +4,7 @@
 \papertitle{The Franck-Hertz Experiment}
 \paperauth{A}{Khesin}{1002442029}
 \paperauth{P}{Zavyalova}{1002345036}
-\paperdate{March 121, 2018, Completed March 15, 2018}
+\paperdate{March 21, 2018, Completed March 15, 2018}
 \begin{paperabs}
 
 	Abstract goes here
@@ -19,11 +19,49 @@
 	
 	Primary components of the experimental setup include a filament used for emitting electrons, electron-accelerating grids and an anode collecting the electrons; all of these are contained in a mercury vapor filled tube. Additionally, power supplies for heating the filament and accelerating the electrons, an oven for heating the tube, an electrometer and a voltmeter were used. The required devices are shown below.
 	
-	\paperfig{Setup}{\vspace{-1em} \pdf{setup} \vspace{-3em}}{Apparatus used in the experiment prior to wiring. The final apparatus was connected using the schematic circuit diagram further below. The panel supports four DC voltages with functions explained below.}
+	\paperfig{Setup}{\vspace{-1em} \pdf{setup} \vspace{-3em}}{Apparatus used in the experiment prior to wiring. The final apparatus was connected using the schematic circuit diagram further below. The panel supports four DC voltages with functionality explained below.}
+
+	\textbf{Schematic circuit diagram + description}.
+
+	Prior to beginning data acquisition, the accelerating voltage was connected to the \textit{Manual} panel ports. The filament supply and the screen grid voltage were adjusted until the electrometer reflected smooth and regular raises and decreases as the accelerating voltage was slowly changed. 
+	
+	Throughout the course of the experiment, two voltages were recorded with the help of provided software: the accelerating voltage (X, channel 1) and the voltage recorded by the Keithley electrometer (Y, channel 2). All measurements were taken with the tube heated to \textbf{TODO: tube temperature}.
 
 \papersec{Observations}
 	
-	Observations go here
+	The resulting collected data took form of Channel 2 (Keithley elecrometer reading) vs. Channel 1 (accelerating potential) curves. A total of 17 curves were obtained, with some taking the desired smooth periodic form, and some having sudden peaks that could be explained with deviations of the tube temperature from the optimal value. The latter data sets could still be used whenever the horizontal distance between minima was not affected by the peaks. Presented below are three sample runs of varying smoothness and periodicity that correspond to the primary types of data collected throughout the experiment.  
+	
+	\paperfig{DataClean}{\pdf{16}}{Keithley electrometer potential vs. accelerating potential data for a run exhibiting a smooth, periodic curve with no spikes due to temperature fluctuations.}
+	
+	\paperfig{DataCleanNotSmooth}{\pdf{9}}{Keithley electrometer potential vs. accelerating potential data for a run exhibiting a periodic curve with no spikes due to temperature fluctuations. However, due to a consistently non-optimal temperature throughout this run, the curve is as smooth as desired, complicating locating the x-positions of the minima.}
+	
+	\paperfig{DataSpike}{\pdf{17}}{Keithley electrometer potential vs. accelerating potential data for a run exhibiting a smooth, periodic curve with potential spikes that may be attributed to temperature fluctuations throughout the run. Periodicity of the data still allows this curve to be used to measure horizontal distance between spikes.}
+	
+	The amount of energy transferred from an electron to a mercury atom in the vapor filling the tube in the course of an inelastic collision was inferred from the obtained curves by measuring the horizontal distances between the minima. The measured distances between peaks are shown below. \vspace{1em}
+	
+	\paperfig{Doublet}{\begin{papertable}{|[outer]I|[inner]C|[outer]}\paperoline
+			\papertableindexheader&\textsc{Horizontal Distance Between Peaks (V)}\\
+			\papertablecheadersymbol{(\pm.3)}\\\paperiline
+			\papertableindex\papertablecval{5.2}\\\paperiline
+			\papertableindex\papertablecval{5.1}\\\paperiline
+			\papertableindex\papertablecval{5.4}\\\paperiline
+			\papertableindex\papertablecval{5.4}\\\paperiline
+			\papertableindex\papertablecval{5.1}\\\paperiline	
+			\papertableindex\papertablecval{5.1}\\\paperiline
+			\papertableindex\papertablecval{5.1}\\\paperiline
+			\papertableindex\papertablecval{5.3}\\\paperiline
+			\papertableindex\papertablecval{4.8}\\\paperiline
+			\papertableindex\papertablecval{5.2}\\\paperiline
+			\papertableindex\papertablecval{5.1}\\\paperiline
+			\papertableindex\papertablecval{5.2}\\\paperiline
+			\papertableindex\papertablecval{5.3}\\\paperiline
+			\papertableindex\papertablecval{5.3}\\\paperiline
+			\papertableindex\papertablecval{5.2}\\\paperiline
+			\papertableindex\papertablecval{5.4}\\\paperiline
+			\papertableindex\papertablecval{5.3}\\\paperoline
+		\end{papertable} \vspace{-1em} }{Horizontal distance between minima of the Keithley electrometer potential vs. accelerating voltage for several runs of the Franck-Hertz experiment. }
+	
+	Since the distances were measured by selecting the position of the minima by eye, the uncertainty arises from the uncertainty of selection of the minimum point. Selecting the minimum point was made significantly more difficult due to the upward trend in the Channel 2 potential. 
 	
 \papersec{Analysis} 
 	

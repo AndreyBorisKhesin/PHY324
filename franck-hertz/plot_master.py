@@ -26,7 +26,7 @@ for i in range(0, num_data_files):
 	plt.plot(ch1_data, ch2_data, color = "black")
 	plt.xlabel("Channel 1 Potential (V)")
 	plt.ylabel("Channel 2 Potential (V)")
-	plt.title("Current vs. accelerating voltage")
+	plt.title("Keithley electrometer reading vs. accelerating voltage")
 	plt.savefig(str(i + 1) + ".pdf")
 	plt.close()
 
