@@ -1,3 +1,4 @@
+#!/bin/python
 # Reads .csv files (oscilloscope's) output for channels 1 and 2 and graphs the corresponding XY plot
 
 # ---------- Import Statements ----------

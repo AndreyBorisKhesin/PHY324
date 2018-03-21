@@ -1,5 +1,5 @@
-Chart Recorder Data File Thu, Mar 15, 2018 10:35 AM
-CH1 (V)  	CH2 (V)  
+# Chart Recorder Data File Thu, Mar 15, 2018 10:35 AM
+# CH1 (V)  	CH2 (V)  
 -0.437226562	0.146972656
 -0.437226562	0.142578125
 -0.437226562	0.138183594
