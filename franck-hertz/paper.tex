@@ -7,7 +7,8 @@
 \paperdate{March 21, 2018, Completed March 15, 2018}
 \begin{paperabs}
 
-	Abstract goes here
+	The Franck-Hertz experiment hints at the quantum nature of atoms by showing that they lose energy in discrete chunks when bombarded with electrons.
+The energy they lose between two peaks was shown to be $(8.3\pm.3)\SI{E-19}{\joule}$. The associated wavelength of light that photons release was shown to be $(240\pm10)\si{\nano\meter}$.
 	
 \end{paperabs}
 
@@ -20,12 +21,14 @@
 	Primary components of the experimental setup include a filament used for emitting electrons, electron-accelerating grids and an anode collecting the electrons; all of these are contained in a mercury vapor filled tube. Additionally, power supplies for heating the filament and accelerating the electrons, an oven for heating the tube, an electrometer and a voltmeter were used. The required devices are shown below.
 	
 	\paperfig{Setup}{\vspace{-1em} \pdf{setup} \vspace{-3em}}{Apparatus used in the experiment prior to wiring. The final apparatus was connected using the schematic circuit diagram further below. The panel supports four DC voltages with functionality explained below.}
+	
+	The circuit was setup according to the following diagram.
 
-	\textbf{Schematic circuit diagram + description}.
+	\paperfig{Circuit}{\pdf{images}\vspace{-3em}}{Citcuit diagram used in the experiment. Ports E1 through E4 are localed on the device and the other nodes are on the accompanying box. Source for diagram: Serbanescu, 2017.}\\
 
 	Prior to beginning data acquisition, the accelerating voltage was connected to the \textit{Manual} panel ports. The filament supply and the screen grid voltage were adjusted until the electrometer reflected smooth and regular raises and decreases as the accelerating voltage was slowly changed. 
 	
-	Throughout the course of the experiment, two voltages were recorded with the help of provided software: the accelerating voltage (X, channel 1) and the voltage recorded by the Keithley electrometer (Y, channel 2). All measurements were taken with the tube heated to \textbf{TODO: tube temperature}.
+	Throughout the course of the experiment, two voltages were recorded with the help of provided software: the accelerating voltage (X, channel 1) and the voltage recorded by the Keithley electrometer (Y, channel 2). All measurements were taken with the tube heated to \SI{169}{\celsius}.
 
 \papersec{Observations}
 	
@@ -61,15 +64,46 @@
 			\papertableindex\papertablecval{5.3}\\\paperoline
 		\end{papertable} \vspace{-1em} }{Horizontal distance between minima of the Keithley electrometer potential vs. accelerating voltage for several runs of the Franck-Hertz experiment. }
 	
-	Since the distances were measured by selecting the position of the minima by eye, the uncertainty arises from the uncertainty of selection of the minimum point. Selecting the minimum point was made significantly more difficult due to the upward trend in the Channel 2 potential. 
+	Since the distances were measured by selecting the position of the minima by using the software cursors, the uncertainty arises from the uncertainty of selection of the minimum point. Selecting the minimum point was made significantly more difficult due to the upward trend in the Channel 2 potential. 
 	
 \papersec{Analysis} 
 	
-	Analysis goes here
-	
+The data in \figDoublet shows that the average potential difference between two peaks was $(5.2\pm.2)\si{\volt}$.
+This was used to find the transfered energy.
+The energy is related to the potential and the wavelength of the particles with the following equation.
+
+\papereq{E}{E=eV=\frac{hc}\lambda}{}
+\begin{paperwhere}
+\papervar{E}{energy}{\joule}
+\papervar{e}{fundamental charge}{\coulomb}
+\papervar{V}{potential}{\volt}
+\papervar{h}{Planck's constant}{\joule\second}
+\papervar{c}{speed of light}{\meter\per\second}
+\papervar{\lambda}{wavelength}{\meter}
+\end{paperwhere}
+
+The following values were used for fundamental constants. The value of $e$ was taken to be \SI{1.60217662E-19}{\coulomb}, the value of $h$ was taken to be \SI{6.62607004E-34}{\joule\second}, and the value of $c$ was taken to be \SI{299792458}{\meter\per\second}, the following results were obtained.
+
+The Energy transfered was calculated with \eqE to be $(8.3\pm.3)\SI{E-19}{\joule}$.
+The associated wavelength was calculated with \eqE to be $(240\pm10)\si{\nano\meter}$.
+
+The original experiment used mercury instead of hydrogen gas as the gas needs to be heavy in order for the collisions with the electrons to be inelastic.
+As hydrogen is much lighter than mercury, a collision of an electron with a hydrogen atom has a much lower chance of being inelastic.
+
+On the graphs of the data plots, the patterns showed smooth dips and not sharp sawtooth patterns.
+This was because the odds of an electron being absorbed by an atom increase at the corresponding potenials.
+However, these odds are never a certainty, they slowly increase due to the various energies present in the electrons, and they reach their peak when the means of the two distributions, those being those of the energies of the mercury atoms and the electrons, are at the optimal distance apart. This made the results less precise as the minimum of the distribution was harder to locate and was possibly shifted, making this harder to measure than if it had been a sawtooth pattern.
+
 \papersec{Conclusion}
 
-	Conclusion goes here
+Although this experiment was successful, it was not free from sources of error.
+The most important source of error was the ability to accurately record and measure the data.
+The software would frequently display large jumps and discontinuities as seen in \figDataSpike.
+This made it difficult to get an accurate value for the distance between two consecutive minima.
+This would have been reduced by collecting more data and aggregating all of the values.
+
+The final results of this experiment hint at the quantum nature of atoms by showing that they lose energy in discrete chunks when bombarded with electrons.
+The energy they lose between two peaks was shown to be $(8.3\pm.3)\SI{E-19}{\joule}$. The associated wavelength of light that photons release was shown to be $(240\pm10)\si{\nano\meter}$.
 	
 \papersec{Sources}
 
