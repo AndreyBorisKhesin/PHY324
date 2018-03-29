@@ -91,7 +91,8 @@ Next, the torque was calculated using the following formula, which is an expansi
 
 The resulting vector from \eqL is the vector (0,$(6.74\pm.02)\SI{E-9}{}\rho g$,0).
 This is sensible as there is no torque in the $x$ or $z$ component, but only torque in the $y$ component.
-Thus, $L=(3.37\pm.01)\SI{E-9}{}\rho g$.
+Thus, $L=(6.74\pm.01)\SI{E-9}{}\rho g$.
+This value was confirmed with the attached Python program.
 Without plugging in the values of $R$ and $\delta$, the $y$ component of the above integrates to $\frac{\pi\delta^2(2r-\delta)^2\rho g}{4}$, which can be rewritten as $\frac{g\rho\pi R^4\epsilon^2(2-\epsilon)^2}{4}$.
 
 For the moment of inertia of the sphere, the integral is done by subtracting the moment of intertia of the sliced off piece from that of a sphere, then integrating over expanding rings.
@@ -103,6 +104,7 @@ The result is the following.
 \end{paperwhere}
 
 The result from \eqI is $I=(1.72\pm.01)\SI{E-8}{}\rho$.
+This value was confirmed with the attached Python program.
 Without plugging in the values of $R$ and $\delta$, the above integrates to $\rho\left(\frac{8\pi R^5}{15}-\frac{\delta^3\pi(3\delta^2-15\delta R+20R^2)}{30}\right)$, which can be rewritten as $\frac{\rho\pi R^5(2-\epsilon)^3(\epsilon^2+\epsilon+\frac23)}{10}$.
 
 It is known that the ratio of the torque and the product of the moment of inertia and the angular velocity about the sphere's axis is equal to the angular velocity of the precession in the plane.
@@ -131,5 +133,15 @@ Thus, we obtain the final result of $g=(9.79\pm.02)\si{\metre\per\second\squared
 
 	\papersource{`g' Using Precession of an Air Gyroscope, gmg/gdl -- 1971, jbv 1990}
 
+
+The python code used in the paper was included below.
+
 \end{paper}
+
+\lstinputlisting[language=python]{integration.py}\vspace{1em}
+
+\noindent\textbf{Code Output:}\\
+\texttt{I: 1.7230995215847794e-08 +- 1.4898266915990117e-10\\
+L, x: 0.0 +- 2.3683077368253794e-19\\
+L, y: 6.7377143167828465e-09 +- 1.4314418219540796e-11}
 \end{document}

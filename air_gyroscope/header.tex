@@ -8,7 +8,8 @@
 \usepackage[strict]{changepage}
 \usepackage{chngcntr}
 \usepackage[americanvoltage,siunitx]{circuitikz}
-\usepackage{color,colortbl}
+\usepackage{color}
+\usepackage{colortbl}
 \usepackage{etoolbox}
 \usepackage{fancyhdr}
 \usepackage[T1]{fontenc}
@@ -18,6 +19,7 @@
 \usepackage{hyperref}
 \usepackage{import}
 \usepackage{indentfirst}
+\usepackage{listings}
 \usepackage{mathptmx}
 \usepackage{mathrsfs}
 \usepackage{multicol}
@@ -31,6 +33,32 @@
 \usepackage{tabularx}
 \usepackage{tikz}
 \usepackage{xspace}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
 
 \patchcmd{\thebibliography}{\section*{\refname}}{\vspace{-1em}}{}{}
 
@@ -265,7 +293,7 @@
 
 %Sources
 \newsavebox{\sourcebox}
-\newcommand{\papersource}[1]{
+\newcommand{\papersource}[1]{\bgroup
 \vspace{-2em}
 \text{}\\*
 \fontsize{9pt}{9pt}\selectfont
@@ -278,7 +306,7 @@
 \setlength{\listparindent}{0pt}
 \item\textit{\hspace{-0.35in}#1}
 \end{enumerate}}}
-\usebox{\sourcebox}
+\usebox{\sourcebox}\egroup
 }
 
 %Section headers

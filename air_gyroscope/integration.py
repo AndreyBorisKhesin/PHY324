@@ -1,4 +1,3 @@
-#!/bin/python
 # Integrates the volume of the truncated sphere
 
 # ---------- Import Statements ----------
@@ -47,9 +46,9 @@ rho = 1
 g = 1
 
 val1 = integrate.dblquad(func1, R - delta, R, gfun1, hfun1)
-print "I:", rho * (8 * np.pi * R ** 5) / 15 - val1[0], "+-", val1[1]
+print("I:", rho * (8 * np.pi * R ** 5) / 15 - val1[0], "+-", val1[1])
 
 val2x = integrate.dblquad(func2x, - R, R - delta, gfun2, hfun2)
 val2y = integrate.dblquad(func2y, - R, R - delta, gfun2, hfun2)
-print "L, x:", rho * g * val2x[0], "+-", val2x[1]
-print "L, y:", rho * g * val2y[0], "+-", val2y[1]
+print("L, x:", rho * g * val2x[0], "+-", val2x[1])
+print("L, y:", rho * g * val2y[0], "+-", val2y[1])
